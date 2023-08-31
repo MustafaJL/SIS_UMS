@@ -1,0 +1,52 @@
+﻿@model SIS_UMS.Models.Campus
+
+<div class="row">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Create Campus</h3>
+        </div>
+        <form asp-action="CreateCampus">
+            <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="campus_name" class="control-label">Campus Name:</label>
+                <input asp-for="campus_name" class="form-control" required/>
+                <span asp-validation-for="campus_name" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="campus_address" class="control-label">Campus Address:</label>
+                <input asp-for="campus_address" class="form-control" required/>
+                <span asp-validation-for="campus_address" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="campus_phone_number" class="control-label">Campus Phone Number:</label>
+                <input asp-for="campus_phone_number" class="form-control" required />
+                <span asp-validation-for="campus_phone_number" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="campus_email" class="control-label">Campus Email:</label>
+                <input asp-for="campus_email" class="form-control" required />
+                <span asp-validation-for="campus_email" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="campus_fax" class="control-label">Campus Fax:</label>
+                <input asp-for="campus_fax" class="form-control" required/>
+                <span asp-validation-for="campus_fax" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-block btn-dark btn-lg" />
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
