@@ -1,0 +1,57 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `process_transaction`(
+    in sp_transaction_type_id int,
+    in sp_transaction_way_id int,
+    in sp_from_account_id int,
+    in sp_to_account_id int,
+    in sp_amount_to_pay_dollar decimal(5, 2),
+    in sp_amount_to_pay_lebanese decimal(15, 2)
+)
+BEGIN
+    -- Update statement is responsible for updating the 'accounts' table to
+    -- reflect changes in account balances
+	-- when a transaction occurs where money is transferred or deducted 
+    -- from the 'from_account_id'.
+    -- In this context:
+	-- - 'from_account_id' is the identifier of the account from which money is being deducted.
+	-- - 'sp_amount_to_pay_dollar' represents the amount of money in US Dollars to be deducted.
+	-- - 'sp_amount_to_pay_lebanese' represents the amount of money in Lebanese Pounds to be deducted.
+    update accounts
+    set
+        need_to_pay_dollar = need_to_pay_dollar - sp_amount_to_pay_dollar,
+        need_to_pay_lebanese = need_to_pay_lebanese - sp_amount_to_pay_lebanese
+    where account_id = sp_from_account_id;
+
+    -- Update statement is responsible for updating the 'accounts' table 
+    -- to reflect changes in account balances
+	-- when a transaction occurs where money is transferred or added
+    -- to the 'to_account_id'.
+    -- In this context:
+	-- - 'to_account_id' is the identifier of the account to which money is being added.
+	-- - 'sp_amount_to_pay_dollar' represents the amount of money in US Dollars to be added.
+	-- - 'sp_amount_to_pay_lebanese' represents the amount of money in Lebanese Pounds to be added.
+    update accounts
+    set
+        need_to_purchase_dollar = sp_amount_to_pay_dollar - need_to_purchase_dollar ,
+        need_to_purchase_lebanese = sp_amount_to_pay_lebanese - need_to_purchase_lebanese 
+    where account_id = sp_to_account_id;
+
+    -- Add the transaction into the transactions table
+    insert into transactions (
+        transaction_type_id,
+        transaction_way_id,
+        from_account_id,
+        to_account_id,
+        amount_to_pay_dollar,
+        amount_to_pay_lebanese,
+        is_deleted
+    )
+    values (
+        sp_transaction_type_id,
+        sp_transaction_way_id,
+        sp_from_account_id,
+        sp_to_account_id,
+        sp_amount_to_pay_dollar,
+        sp_amount_to_pay_lebanese,
+        false
+    );
+END

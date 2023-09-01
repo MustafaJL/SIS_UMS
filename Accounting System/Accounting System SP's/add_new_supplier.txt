@@ -1,0 +1,10 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_supplier`(
+    in supplier_name_param VARCHAR(255),
+    in supplier_details_param TEXT,
+    in supplier_phone_param VARCHAR(20),
+    in is_deleted_param BOOL
+)
+BEGIN
+    insert into supplier (supplier_name, supplier_details, supplier_phone, is_deleted)
+    value (supplier_name_param, supplier_details_param, supplier_phone_param, is_deleted_param);
+END

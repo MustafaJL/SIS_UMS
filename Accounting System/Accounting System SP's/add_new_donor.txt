@@ -1,0 +1,7 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_donor`(
+    in sp_user_id int
+)
+BEGIN
+    insert into donor (user_id, is_deleted)
+    values (sp_user_id, false);
+END

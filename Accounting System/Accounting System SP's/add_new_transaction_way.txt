@@ -1,0 +1,8 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_transaction_way`(
+    in sp_transaction_way_name varchar(255)
+)
+BEGIN
+    -- Add a new record into the transaction_way table
+    insert into transacation_way (transaction_way_name, is_deleted)
+    values (sp_transaction_way_name, false);
+END

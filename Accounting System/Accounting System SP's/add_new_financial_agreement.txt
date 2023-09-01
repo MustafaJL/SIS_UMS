@@ -1,0 +1,14 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_financial_agreement`(
+    in sp_office_id int,
+    in sp_student_id varchar(10),
+    in sp_agreement_date date,
+    in sp_agreement_details text,
+    in sp_start_date date,
+    in sp_end_date date,
+    in sp_is_active bool
+)
+BEGIN
+    -- Add a new record into the financial_agreements table
+    insert into financial_agreements (office_id, student_id, agreement_date, agreement_details, start_date, end_date, is_active, is_deleted)
+    values (sp_office_id, sp_student_id, sp_agreement_date, sp_agreement_details, sp_start_date, sp_end_date, sp_is_active, false);
+END
