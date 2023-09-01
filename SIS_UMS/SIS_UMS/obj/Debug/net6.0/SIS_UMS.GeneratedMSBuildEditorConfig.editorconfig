@@ -16,8 +16,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Admin\Documents\github projects\SIS_UMS\SIS_UMS\SIS_UMS
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/AllCampuses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXEFsbENhbXB1c2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/CreateCampus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXENyZWF0ZUNhbXB1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/EditCampusDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXEVkaXRDYW1wdXNEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Index.cshtml]

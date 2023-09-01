@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SIS_UMS.Models.Campus>
+
+@{
+    ViewData["Title"] = "All Campuses";
+}
+
+<h1>All Campuses</h1>
+
+<p>
+    <a asp-action="CreateCampus">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.campus_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.campus_address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.campus_phone_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.campus_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.campus_fax)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.campus_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.campus_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.campus_phone_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.campus_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.campus_fax)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditCampusDetails", new { id=item.campus_id })
+                @Html.ActionLink("Delete", "DeleteCampus", new { id=item.campus_id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

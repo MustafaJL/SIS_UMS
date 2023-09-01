@@ -48,5 +48,52 @@ namespace SIS_UMS.Controllers
                  return View();
             }
         }
+
+        // GET: CampusController
+        [HttpGet("AllCampuses")]
+        public ActionResult AllCampuses()
+        {
+            IEnumerable<Campus> campuses = _campusRepository.GetAllCampuses();
+            return View(campuses);
+        }
+
+        // GET: CampusController
+        [HttpGet("EditCampusDetails/{id}")]
+        public ActionResult EditCampusDetails(int id)
+        {
+            Campus campus=_campusRepository.GetCampus(id);
+            return View(campus);
+        }
+
+        // POST: CampusController
+        [HttpPost("EditCampusDetails/{id}")]
+        public ActionResult EditCampusDetails(int id , Campus campus)
+        {
+            try
+            {
+                bool isSuccess = _campusRepository.EditCampus(id, campus.campus_name, campus.campus_address, campus.campus_phone_number, campus.campus_fax, campus.campus_email);
+                if (isSuccess)
+                {
+                    return RedirectToAction("AllCampuses");
+                }
+                else
+                {
+                    // Handle failure case here, if needed
+                    ModelState.AddModelError("", "Name already exists");
+                    return View(campus);
+                }
+            }
+            catch
+            {
+                return View(campus);
+            }
+        }
+
+        public ActionResult DeleteCampus(int id)
+        {
+            _campusRepository.DeleteCampus(id);
+            return RedirectToAction("AllCampuses");
+        }
+
     }
 }
