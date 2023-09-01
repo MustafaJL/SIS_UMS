@@ -1,0 +1,26 @@
+﻿@model BlockCampusViewModel
+
+@{
+    ViewData["Title"] = "CreateBlock";
+}
+
+<form asp-action="CreateBlock" asp-controller="Block">
+
+    <input asp-for="block.block_code" placeholder="block code" />
+
+    <div class="form-group">
+        <label asp-for="block.campus_id">Select Campus:</label>
+        <select asp-for="block.campus_id" asp-items="new SelectList(Model.campus, nameof(campus.campus_id), nameof(campus.campus_name))" class="form-control">
+            <option value="">-- Select Campus --</option>
+        </select>
+         
+    </div>
+
+
+
+    <input asp-for="block.floor_count" placeholder="floor" />
+    <input asp-for="block.room_count" placeholder=" room" />
+  
+    
+    <input type="submit" />
+</form>

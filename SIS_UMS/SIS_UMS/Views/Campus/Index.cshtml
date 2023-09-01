@@ -1,0 +1,64 @@
+﻿@model IEnumerable<campus>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="CreateCampus" >Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+          
+
+            <th>Id</th>
+            <th>email</th>
+            <th>Name</th>
+            <th>fax</th>
+            <th>nb</th>
+            <th>add</th>
+
+         
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          
+           
+            <tr>
+                <td width="30%">
+                        @item.campus_id
+                </td>
+                <td width="30%">
+                        @item.campus_email
+                </td>
+                <td width="30%">
+                        @item.campus_name
+                </td>
+                <td width="30%">
+                        @item.campus_fax
+                </td>
+                <td width="30%">
+                        @item.campus_phone_number
+                </td>
+                <td width="30%">
+                        @item.campus_address
+                </td>
+                <td>
+                    <div>
+                        <a asp-action="UpdateCampus" asp-controller="Campus" asp-route-id="@item.campus_id" class="btn btn-primary m-md-2">Edit </a>
+                        <a asp-action="DeleteCampus" asp-controller="Campus" asp-route-id="@item.campus_id" class="btn btn-primary m-md-2">Delete </a>
+
+                    </div>
+                </td>
+            </tr>
+         
+        </tr>
+}
+    </tbody>
+</table>

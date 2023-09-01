@@ -1,0 +1,65 @@
+﻿@model IEnumerable<block>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="CreateBlock">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+
+            <th>Id</th>
+            <th>code</th>
+            <th>campus</th>
+            <th>floor</th>
+            <th>room</th>
+            <th>date</th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+            <tr>
+                <td width="30%">
+                        @item.block_code
+                </td>
+                <td width="30%">
+                        @item.block_code
+                </td>
+                <td width="30%">
+                        @item.campus_id
+                </td>
+                <td width="30%">
+                        @item.floor_count
+                </td>
+                <td width="30%">
+                        @item.room_count
+                </td>
+                <td width="30%">
+                        @item.created_at
+                </td>
+                <td>
+                    <div>
+                        <a asp-action="UpdateBlock" asp-controller="Block" asp-route-id="@item.block_id" class="btn btn-primary m-md-2">Edit </a>
+                        <a asp-action="DeleteBlock" asp-controller="Block" asp-route-id="@item.block_id" class="btn btn-primary m-md-2">Delete </a>
+
+                    </div>
+                </td>
+            </tr>
+
+            </tr>
+        }
+    </tbody>
+</table>

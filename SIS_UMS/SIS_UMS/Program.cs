@@ -1,7 +1,14 @@
+using SIS_UMS.DatabaseHelper.Interfaces;
+using SIS_UMS.DatabaseHelper.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<ICampusRepository , CampusRepository>();
+builder.Services.AddScoped<IBlockRepository, BlockRepository>();
+//builder.Services.AddScoped<IRoomRepository , RoomRepository>();
 
 var app = builder.Build();
 

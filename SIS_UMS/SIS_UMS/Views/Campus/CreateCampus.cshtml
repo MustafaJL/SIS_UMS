@@ -1,0 +1,16 @@
+﻿@model campus
+
+@{
+    ViewData["Title"] = "CreateCampus";
+}
+
+<form asp-action="CreateCampus" asp-controller="Campus">
+
+    <input asp-for="campus_name " placeholder="campus name" />
+    <input asp-for="campus_email" placeholder="campus email" />
+    <input asp-for="campus_address" placeholder="campus address" />
+    <input asp-for="campus_fax" placeholder="campus fax" />
+    <input asp-for="campus_phone_number" placeholder="campus phonenumber" />
+    
+    <input type="submit" />
+</form>

@@ -1,0 +1,57 @@
+﻿@model block
+
+@{
+    ViewData["Title"] = "UpdateBlock";
+}
+
+<h1>Update Block</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateBlock">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="block_id" />
+
+            <div class="form-group">
+                <label asp-for="block_code" class="control-label">block Name:</label>
+                <input asp-for="block_code" class="form-control" />
+                <span asp-validation-for="block_code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="campus_id" class="control-label">campus id:</label>
+                <input asp-for="campus_id" class="form-control" />
+                <span asp-validation-for="campus_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="floor_count" class="control-label">floor</label>
+                <input asp-for="floor_count" class="form-control" />
+                <span asp-validation-for="floor_count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="room_count" class="control-label">room</label>
+                <input asp-for="room_count" class="form-control" />
+                <span asp-validation-for="room_count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="created_at" class="control-label"> date</label>
+                <input asp-for="created_at" class="form-control" />
+                <span asp-validation-for="created_at" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
