@@ -13,7 +13,7 @@ namespace SIS_UMS.Controllers
             _studentRepository = studentRepository;
         }
 
-        // GET: students
+        // GET: students/student-courses
         [HttpGet("student-courses")]
         public IActionResult GetAllStudentCourses()
         {
