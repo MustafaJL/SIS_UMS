@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\SIS_UMS",
+    "\\SIS_UMS\\Models",
     "\\SIS_UMS\\Views",
     "\\SIS_UMS\\Views\\Home",
     "\\SIS_UMS\\wwwroot",
     "\\SIS_UMS\\wwwroot\\css"
   ],
-  "SelectedNode": "\\SIS_UMS\\Views\\Home\\Index.cshtml",
+  "SelectedNode": "\\SIS_UMS\\Models\\StudentCourse.cs",
   "PreviewInSolutionExplorer": false
 }

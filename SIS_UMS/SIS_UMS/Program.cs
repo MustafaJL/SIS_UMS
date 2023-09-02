@@ -16,6 +16,8 @@ var connectionString = DotNetEnv.Env.GetString("DB_CONNECTION_STRING");
 builder.Configuration["ConnectionStrings:Default"] = connectionString;
 
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IApplicationFormRepository, ApplicationFormRepository>();
+
 
 var app = builder.Build();
 

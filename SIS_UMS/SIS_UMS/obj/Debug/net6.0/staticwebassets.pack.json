@@ -5,12 +5,40 @@
       "PackagePath": "staticwebassets\\SIS_UMS.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\adminlte.min.css",
+      "PackagePath": "staticwebassets\\css\\adminlte.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\adminlte.min.css.map",
+      "PackagePath": "staticwebassets\\css\\adminlte.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\buttons.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\css\\buttons.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\dataTables.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\css\\dataTables.bootstrap4.min.css"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\responsive.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\css\\responsive.bootstrap4.min.css"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\datatables\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\datatables\\jquery.dataTables.min.js"
     },
     {
       "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\img\\agreement.png",
@@ -45,8 +73,76 @@
       "PackagePath": "staticwebassets\\img\\unipay.png"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\jquery\\jquery.min.map",
+      "PackagePath": "staticwebassets\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\adminlte.min.js",
+      "PackagePath": "staticwebassets\\js\\adminlte.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\adminlte.min.js.map",
+      "PackagePath": "staticwebassets\\js\\adminlte.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\applicationForm.js",
+      "PackagePath": "staticwebassets\\js\\applicationForm.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\buttons.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\js\\buttons.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\buttons.colVis.min.js",
+      "PackagePath": "staticwebassets\\js\\buttons.colVis.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\dataTables.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\js\\dataTables.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\js\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\js\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\demo.js",
+      "PackagePath": "staticwebassets\\js\\demo.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\responsive.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\js\\responsive.bootstrap4.min.js"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\jszip\\jszip.min.js",
+      "PackagePath": "staticwebassets\\jszip\\jszip.min.js"
     },
     {
       "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\lib\\bootstrap\\LICENSE",
@@ -275,6 +371,18 @@
     {
       "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\pdfmake\\pdfmake.min.js",
+      "PackagePath": "staticwebassets\\pdfmake\\pdfmake.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\pdfmake\\pdfmake.min.js.map",
+      "PackagePath": "staticwebassets\\pdfmake\\pdfmake.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\pdfmake\\vfs_fonts.js",
+      "PackagePath": "staticwebassets\\pdfmake\\vfs_fonts.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SIS_UMS.Microsoft.AspNetCore.StaticWebAssets.props",
