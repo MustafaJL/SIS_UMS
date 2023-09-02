@@ -8,7 +8,7 @@ namespace SIS_UMS.Controllers
         [HttpGet("accounting")]
         public IActionResult Accounting()
         {
-            return View();
+            return View("AccountingLandingPage");
         }
     }
 }
