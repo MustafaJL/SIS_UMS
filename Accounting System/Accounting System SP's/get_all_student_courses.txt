@@ -1,0 +1,7 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `get_all_student_courses`()
+BEGIN
+    select sc.*, c.course_name
+    from student_courses sc
+    join course_offering co on sc.course_offering_id = co.course_offering_id
+    join courses c on co.course_id = c.course_id;
+END
