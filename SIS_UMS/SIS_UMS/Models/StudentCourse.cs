@@ -1,5 +1,8 @@
 ﻿namespace SIS_UMS.Models
 {
+    /// <summary>
+    /// Represents an StudentCoure model
+    /// </summary>
     public class StudentCourse
     {
         public string? StudentId { get; set; }

@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "USAL | Create New Application Forms";
+}
+
+<section class="content">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Add New Application Form</h3> <!-- Card title -->
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="ApplicationForm" asp-action="CreateApplicationForm">
+                        <!-- Office Name Input -->
+                        <div class="form-group">
+                            <label for="inputName">Office Name</label>
+                            <input type="text" id="inputName" class="form-control">
+                        </div>
+                        <!-- Student ID Input -->
+                        <div class="form-group">
+                            <label for="inputDescription">Student ID</label>
+                            <input id="inputDescription" class="form-control" rows="4" />
+                        </div>
+                        <!-- Application Date Input -->
+                        <div class="form-group">
+                            <label>Application Date</label>
+                            <div class="input-group date" id="reservationdatetime1" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime1" />
+                                <div class="input-group-append" data-target="#reservationdatetime1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Application Type Select -->
+                        <div class="form-group">
+                            <label for="inputStatus">Application Type</label>
+                            <select id="inputStatus" class="form-control custom-select">
+                                <option selected disabled>Select one</option>
+                                <option>Financial Statement</option>
+                                <option>Financial Agreement</option>
+                            </select>
+                        </div>
+                        <!-- Status Select -->
+                        <div class="form-group">
+                            <label for="inputStatus">Status</label>
+                            <select id="inputStatus" class="form-control custom-select">
+                                <option>Pending</option>
+                                <option>Accepted</option>
+                                <option>Rejected</option>
+                            </select>
+                        </div>
+                        <!-- Processing Date Input -->
+                        <div class="form-group">
+                            <label>Processing Date</label>
+                            <div class="input-group date" id="reservationdatetime1" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime1" />
+                                <div class="input-group-append" data-target="#reservationdatetime1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Additional Info Textarea -->
+                        <div class="form-group">
+                            <label for="inputProjectLeader">Additional Info</label>
+                            <textarea type="text" id="inputProjectLeader" class="form-control"></textarea>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(function () {
+            // Initialize Date and time picker
+            $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });
+        })
+    </script>
+}

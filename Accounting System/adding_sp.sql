@@ -4,6 +4,12 @@ call add_new_official_body(3, 'NGO');
 
 call add_new_application_form(1, '1121050', '2023-09-01', 'Scholarship', 'Pending', '2023-09-02', 'Additional details...');
 
+call add_new_application_form(1, '1121010', '2023-09-01', 'Sports Aid', 'Pending', '2023-09-02', "Null");
+
+select * from application_form;
+
+delete from application_form where form_id = 2;
+
 CALL add_new_financial_agreement(1, '1121050', '2023-09-01', 'Agreement details...', '2023-09-01', '2023-12-31', true);
 
 CALL add_new_financial_statement(1, '1121050', 100.00, 150000.00, 50.00, 75000.00, 50.00, 75000.00, true);
@@ -11,6 +17,7 @@ CALL add_new_financial_statement(1, '1121050', 100.00, 150000.00, 50.00, 75000.0
 CALL add_new_fee_type('Tuition Fee', 2000.00, 2500000.00, true);
 
 CALL add_new_donor(1);
+
 
 CALL add_new_scholarship('Merit Scholarship', 10.00, 15.00);
 
@@ -55,3 +62,6 @@ CALL process_transaction(1, 1, 40, 41, 56.00, 602500.00);
 select * from transactions;
 
 call add_new_supplier('xxx', 'xxx', '434343', false);
+
+
+call get_all_application_forms();

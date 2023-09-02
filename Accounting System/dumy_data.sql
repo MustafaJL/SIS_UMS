@@ -252,7 +252,7 @@ VALUES ('1121010', 12, 'Registered', false),
 ('1121010', 11, 'Registered', false),
 ('1121010', 7, 'Registered', false);
 
-select * from student_courses;
+call get_all_student_courses();
 
 delete from student_courses;
 
