@@ -2,10 +2,9 @@
 
 namespace SIS_UMS.Controllers
 {
-    [Route("accounting")]
+    [Route("/")]
     public class AccountingController : Controller
     {
-        [HttpGet("accounting")]
         public IActionResult Accounting()
         {
             return View("AccountingLandingPage");

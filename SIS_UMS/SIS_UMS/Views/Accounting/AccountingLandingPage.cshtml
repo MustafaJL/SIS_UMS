@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - list</title>
+    <title>USAL | Accounting System</title>
     <link rel="stylesheet" href="~/css/home.css">
 </head>
 <body>
@@ -74,7 +74,7 @@
 
     <div class="info-box-container">
         <!-- Application Form Container that must redirect to the student application form to fill with the office -->
-        <a href="#" class="centered-link">
+        <a asp-controller="ApplicationForm" asp-action="GetAllApplicationForm" class="centered-link">
             <div class="info-box">
                 <div class="icon">
                     <img class="option-icon" src="~/img/form.png" alt="" />
@@ -82,6 +82,7 @@
                 <div class="text">Application Form</div>
             </div>
         </a>
+
     </div>
 </body>
 </html>

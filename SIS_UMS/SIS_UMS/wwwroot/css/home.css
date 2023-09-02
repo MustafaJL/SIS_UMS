@@ -8,14 +8,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top:50px;
+    margin-top:100px;
 }
 
 /* General styles for .info-box elements */
 .info-box {
     border-radius: 6px;
     background-color: #fff;
-    box-shadow: 0 7px 4px -5px rgba(0, 0, 0, 0.2), 0 8px 0 -4px #fff, 0 9px 3px -4px #ccc, 0 14px 0 -7px #fff, 0 18px 13px rgba(0, 0, 0, 0.15);
+    box-shadow:  7px 4px -5px rgba(0, 0, 0, 0.2), 0 8px 0 -4px #fff, 0 9px 3px -4px #ccc, 0 14px 0 -7px #fff, 0 18px 13px rgba(0, 0, 0, 0.15);
     width: 500px;
 }
     
@@ -28,6 +28,7 @@
         display: inline-block;
         vertical-align: middle;
         margin-left: 80px;
+        margin-top: 30px;
     }
 
     .info-box .icon {
@@ -56,8 +57,8 @@
 
 /* Center the specific <a> element in the middle of the screen */
 a.centered-link {
-    position: fixed;
-    top: calc(50% + 150px);
+    position: relative;
+    top: calc(50% + 350px);
     left: 50%;
     transform: translate(-50%, -50%);
 }

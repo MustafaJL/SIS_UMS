@@ -73,6 +73,14 @@
       "PackagePath": "staticwebassets\\img\\unipay.png"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\img\\usal.png",
+      "PackagePath": "staticwebassets\\img\\usal.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\img\\user.png",
+      "PackagePath": "staticwebassets\\img\\user.png"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\jquery\\jquery.min.js",
       "PackagePath": "staticwebassets\\jquery\\jquery.min.js"
     },

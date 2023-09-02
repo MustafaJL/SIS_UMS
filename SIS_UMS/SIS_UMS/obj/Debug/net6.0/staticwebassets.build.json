@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "STGLE7j/fZMs6kafhgXPaOEQpQfzq8KtfGZxGVbFJIc=",
+  "Hash": "ZyS2sZdNXZdWf78IZSCdlmRGMeNYlRi/0Scv69IM/js=",
   "Source": "SIS_UMS",
   "BasePath": "_content/SIS_UMS",
   "Mode": "Default",
@@ -338,6 +338,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\unipay.png"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\img\\usal.png",
+      "SourceId": "SIS_UMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\",
+      "BasePath": "_content/SIS_UMS",
+      "RelativePath": "img/usal.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\usal.png"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\img\\user.png",
+      "SourceId": "SIS_UMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\",
+      "BasePath": "_content/SIS_UMS",
+      "RelativePath": "img/user.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\user.png"
     },
     {
       "Identity": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\jquery\\jquery.min.js",
