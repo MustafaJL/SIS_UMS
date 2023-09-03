@@ -97,12 +97,6 @@ namespace SIS_UMS.Controllers
             return View(updatedForm);
         }
 
-
-
-
-
-
-
         // POST: application-form/delete/{formId}
         [HttpPost("delete/{formId}")]
         public IActionResult DeleteApplicationForm(int formId)

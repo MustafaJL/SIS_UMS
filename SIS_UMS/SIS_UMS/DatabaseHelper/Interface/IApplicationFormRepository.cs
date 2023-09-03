@@ -20,7 +20,6 @@ namespace SIS_UMS.DatabaseHelper.Interface
         /// <returns>The ID of the newly created application form, or -1 if creation fails.</returns>
         void CreateApplicationForm(string? officeName, string? studentId, string? applicationType, string? status, string? additionalApplicationDetails);
 
-
         /// <summary>
         /// Gets all application forms.
         /// </summary>
@@ -34,8 +33,12 @@ namespace SIS_UMS.DatabaseHelper.Interface
         /// <returns>The ApplicationForm object corresponding to the given ID, or null if not found.</returns>
         ApplicationForm? GetApplicationFormById(int formId);
 
+        /// <summary>
+        /// Updates an existing application form with new values.
+        /// </summary>
+        /// <param name="updatedForm">The ApplicationForm object containing the updated values.</param>
+        /// <returns>True if the application form was successfully updated; otherwise, false.</returns>
         bool UpdateApplicationForm(ApplicationForm updatedForm);
-
 
         /// <summary>
         /// Deletes an application form from the database based on its FormId.

@@ -81,7 +81,7 @@ namespace SIS_UMS.DatabaseHelper.Repositories
         }
 
         /// <inheritdoc/>
-        public ApplicationForm GetApplicationFormById(int formId)
+        public ApplicationForm? GetApplicationFormById(int formId)
         {
             using MySqlConnection connection = new MySqlConnection(_connectionString);
             connection.Open();
@@ -110,6 +110,7 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             return null;
         }
 
+        /// <inheritdoc/>
         public bool UpdateApplicationForm(ApplicationForm applicationForm)
 
         {
