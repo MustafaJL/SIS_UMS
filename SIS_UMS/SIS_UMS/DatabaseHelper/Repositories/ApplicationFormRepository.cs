@@ -25,8 +25,7 @@ namespace SIS_UMS.DatabaseHelper.Repositories
         }
 
         /// <inheritdoc/>
-        public void CreateApplicationForm(string officeName, string studentId, DateTime applicationDate, string applicationType, ApplicationStatus status, DateTime processingDate,
-    string additionalApplicationDetails)
+        public void CreateApplicationForm(string? officeName, string? studentId, string? applicationType, string? status, string? additionalApplicationDetails)
 
         {
             using MySqlConnection connection = new MySqlConnection(_connectionString);
@@ -36,12 +35,10 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.AddWithValue("@sp_office_name", officeName);
-            command.Parameters.AddWithValue("@sp_studentId", studentId);
-            command.Parameters.AddWithValue("@sp_applicationDate", applicationDate);
-            command.Parameters.AddWithValue("@sp_applicationType", applicationType);
+            command.Parameters.AddWithValue("@sp_student_id", studentId);
+            command.Parameters.AddWithValue("@sp_application_type", applicationType);
             command.Parameters.AddWithValue("@sp_status", status);
-            command.Parameters.AddWithValue("@sp_processingDate", processingDate);
-            command.Parameters.AddWithValue("@sp_additionalApplicationDetails", additionalApplicationDetails);
+            command.Parameters.AddWithValue("@sp_additional_application_details", additionalApplicationDetails);
 
             command.Parameters.Add(new MySqlParameter("@newFormId", MySqlDbType.Int32));
             command.Parameters["@newFormId"].Direction = ParameterDirection.Output;
@@ -73,14 +70,83 @@ namespace SIS_UMS.DatabaseHelper.Repositories
                     StudentId = reader.GetString("student_id"),
                     ApplicationDate = reader.GetDateTime("application_date"),
                     ApplicationType = reader.GetString("application_type"),
-                    Status = Enum.Parse<ApplicationStatus>(reader.GetString("status"), true),
-                    ProcessingDate = reader.GetDateTime("processing_date"),
-                    AdditionalApplicationDetails = reader.GetString("additional_application_details")
+                    Status = reader.GetString("status"),
+                    AdditionalApplicationDetails = reader.IsDBNull(reader.GetOrdinal("additional_application_details"))
+                        ? null : reader.GetString("additional_application_details")
 
                 });
             }
 
             return applicationForms;
+        }
+
+        /// <inheritdoc/>
+        public ApplicationForm GetApplicationFormById(int formId)
+        {
+            using MySqlConnection connection = new MySqlConnection(_connectionString);
+            connection.Open();
+
+            using MySqlCommand command = new MySqlCommand("get_application_form_by_id", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@sp_form_id", formId);
+
+            using MySqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return new ApplicationForm
+                {
+                    FormId = reader.GetInt32("form_id"),
+                    OfficeName = reader.GetString("office_name"),
+                    StudentId = reader.GetString("student_id"),
+                    ApplicationDate = reader.GetDateTime("application_date"),
+                    ApplicationType = reader.GetString("application_type"),
+                    Status = reader.GetString("status"),
+                    AdditionalApplicationDetails = reader.GetString("additional_application_details")
+                };
+            }
+
+            return null;
+        }
+
+        public bool UpdateApplicationForm(ApplicationForm applicationForm)
+
+        {
+            using MySqlConnection connection = new MySqlConnection(_connectionString);
+            connection.Open();
+
+            using MySqlCommand command = new MySqlCommand("edit_application_form", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            // Add parameters for the updated values
+            command.Parameters.AddWithValue("@sp_office_name", applicationForm.OfficeName);
+            command.Parameters.AddWithValue("@sp_student_id", applicationForm.StudentId);
+            command.Parameters.AddWithValue("@sp_application_date", applicationForm.ApplicationDate);
+            command.Parameters.AddWithValue("@sp_application_type", applicationForm.ApplicationType);
+            command.Parameters.AddWithValue("@sp_status", applicationForm.Status);
+            command.Parameters.AddWithValue("@sp_additional_application_details", applicationForm.AdditionalApplicationDetails);
+
+            int rowsAffected = command.ExecuteNonQuery();
+
+            return rowsAffected > 0;
+        }
+
+
+        /// <inheritdoc/>
+        public bool DeleteApplicationForm(int formId)
+        {
+            using MySqlConnection connection = new MySqlConnection(_connectionString);
+            connection.Open();
+
+            using MySqlCommand command = new MySqlCommand("delete_application_form", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@sp_form_id", formId);
+
+            int rowsAffected = command.ExecuteNonQuery();
+
+            return rowsAffected > 0;
         }
     }
 }

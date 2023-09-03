@@ -6,6 +6,10 @@ call add_new_application_form(1, '1121050', '2023-09-01', 'Scholarship', 'Pendin
 
 call add_new_application_form(1, '1121010', '2023-09-01', 'Sports Aid', 'Pending', '2023-09-02', "Null");
 
+call add_new_application_form ("Accounting", '1121010', '2023-09-01', 'Sports Aid', 'Pending', '2023-09-02', "Null" );
+
+
+
 select * from application_form;
 
 delete from application_form where form_id = 2;

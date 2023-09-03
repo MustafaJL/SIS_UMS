@@ -3,11 +3,14 @@
     "",
     "\\SIS_UMS",
     "\\SIS_UMS\\DatabaseHelper",
+    "\\SIS_UMS\\DatabaseHelper\\Interface",
+    "\\SIS_UMS\\DatabaseHelper\\Repositories",
     "\\SIS_UMS\\Models",
     "\\SIS_UMS\\Views",
+    "\\SIS_UMS\\Views\\ApplicationForm",
     "\\SIS_UMS\\wwwroot",
     "\\SIS_UMS\\wwwroot\\css"
   ],
-  "SelectedNode": "\\SIS_UMS.sln",
+  "SelectedNode": "\\SIS_UMS\\DatabaseHelper\\Repositories\\ApplicationFormRepository.cs",
   "PreviewInSolutionExplorer": false
 }

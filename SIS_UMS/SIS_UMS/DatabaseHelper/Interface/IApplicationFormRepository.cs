@@ -18,9 +18,7 @@ namespace SIS_UMS.DatabaseHelper.Interface
         /// <param name="processingDate">The date when the application is processed.</param>
         /// <param name="additionalApplicationDetails">Additional details for the application (optional).</param>
         /// <returns>The ID of the newly created application form, or -1 if creation fails.</returns>
-        void CreateApplicationForm(string officeName, string studentId, DateTime applicationDate, string applicationType, ApplicationStatus status, DateTime processingDate,
-     string additionalApplicationDetails);
-
+        void CreateApplicationForm(string? officeName, string? studentId, string? applicationType, string? status, string? additionalApplicationDetails);
 
 
         /// <summary>
@@ -28,5 +26,24 @@ namespace SIS_UMS.DatabaseHelper.Interface
         /// </summary>
         /// <returns>An IEnumerable of ApplicationForm objects representing all application forms.</returns>
         IEnumerable<ApplicationForm> GetAllApplicationForms();
+
+        /// <summary>
+        /// Gets a single application form by its ID.
+        /// </summary>
+        /// <param name="formId">The ID of the application form to retrieve.</param>
+        /// <returns>The ApplicationForm object corresponding to the given ID, or null if not found.</returns>
+        ApplicationForm? GetApplicationFormById(int formId);
+
+        bool UpdateApplicationForm(ApplicationForm updatedForm);
+
+
+        /// <summary>
+        /// Deletes an application form from the database based on its FormId.
+        /// </summary>
+        /// <param name="formId">The unique identifier of the application form to delete.</param>
+        /// <returns>True if the application form was successfully deleted; otherwise, false.</returns>
+        bool DeleteApplicationForm(int formId);
+
+
     }
 }

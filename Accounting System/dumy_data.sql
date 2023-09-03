@@ -52,6 +52,8 @@ insert into status (status, is_deleted) values ('Part Time', false);
 insert into status (status, is_deleted) values ('Contract', false);
 
 
+
+
 INSERT INTO users (username, user_password, password_salt,campus_id, first_name, middle_name, last_name,
  mother_name, emergency_contact_name,
  personal_email, university_email, gender, date_of_birth, ssn, city, area, street, near_by, 

@@ -17,3 +17,9 @@ body {
   margin-bottom: 60px;
   background-color: #eee;
 }
+
+input[disabled]:hover,
+select[disabled]:hover,
+textarea[disabled]:hover {
+    cursor: not-allowed;
+}

@@ -1,0 +1,113 @@
+﻿@model SIS_UMS.Models.ApplicationForm
+
+@{
+    Layout = "_Layout";
+}
+
+
+@{
+    ViewBag.Title = "USAL | View Application Form";
+}
+
+<section class="content">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Application Form</h3> <!-- Card title -->
+                </div>
+
+                <!-- DataTables Buttons -->
+                <div class="col-sm-12 col-md-6 mt-2">
+                    <div class="dt-buttons btn-group flex-wrap">
+                        <!-- Buttons for copying, exporting data, etc. -->
+                        <button class="btn btn-secondary buttons-pdf buttons-html5" id="generatePdfButton" tabindex="0" aria-controls="example1" type="button"><span><i class="fas fa-download"></i> PDF</span></button>
+                        <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button"><span><i class="fas fa-print"></i> Print</span></button>
+                        <a class="btn btn-secondary buttons-print" href="/application-form/update-application-form/@Model.FormId" tabindex="0" aria-controls="example1">
+                            <span><i class="fas fa-pencil-alt"></i> Edit</span>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="ApplicationForm" asp-action="GetApplicationFormById">
+                        <!-- Office Name Input -->
+                        <div class="form-group">
+                            <label asp-for="OfficeName" for="inputName">Office Name</label>
+                            <input asp-for="OfficeName" type="text" id="inputName" class="form-control" disabled />
+                            <span asp-validation-for="OfficeName" class="text-danger"></span>
+
+                        </div>
+                        <!-- Student ID Input -->
+                        <div class="form-group">
+                            <label asp-for="StudentId" for="inputDescription">Student ID</label>
+                            <input asp-for="StudentId" id="inputDescription" class="form-control" rows="4" disabled />
+                            <span asp-validation-for="StudentId" class="text-danger"></span>
+
+                        </div>
+                        <!-- Application Type Select -->
+                        <div class="form-group">
+                            <label asp-for="ApplicationType" for="inputStatus">Application Type</label>
+                            <select asp-for="ApplicationType" class="form-control custom-select" disabled>
+                                <option value="" selected disabled>Select one</option>
+                                <option value="Financial Statement">Financial Statement</option>
+                                <option value="Financial Agreement">Financial Agreement</option>
+                            </select>
+                        </div>
+
+                        <!-- Status Select -->
+                        <div class="form-group">
+                            <label asp-for="Status" for="inputStatus">Status</label>
+                            <select asp-for="Status" id="inputStatus" class="form-control custom-select" disabled>
+                                <option value="Pending">Pending</option>
+                                <option value="Accepted">Accepted</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Additional Info Textarea -->
+                        <!-- Additional Info Textarea -->
+                        <div class="form-group">
+                            <label asp-for="AdditionalApplicationDetails" for="inputProjectLeader">Additional Info</label>
+                            <textarea asp-for="AdditionalApplicationDetails" type="text" id="inputProjectLeader" class="form-control" disabled></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <a asp-controller="ApplicationForm" asp-action="GetAllApplicationForm" class="btn btn-primary">Back to List</a>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+@section Scripts {
+    <script>
+        document.getElementById('generatePdfButton').addEventListener('click', function () {
+            // Create a new jsPDF instance
+            var pdf = new jsPDF();
+
+            // Get the HTML content of the card elements you want to convert to PDF
+            var cardHeader = document.querySelector('.card-header');
+            var cardBody = document.querySelector('.card-body');
+
+            // Convert the HTML to PDF using jsPDF
+            pdf.fromHTML(cardHeader.innerHTML, 15, 15);
+            pdf.addPage(); // Add a new page for the card body
+            pdf.fromHTML(cardBody.innerHTML, 15, 15);
+
+            // Save or display the PDF
+            pdf.save('application_form.pdf');
+        });
+
+
+
+    </script>
+}
