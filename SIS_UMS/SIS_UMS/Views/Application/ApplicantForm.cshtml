@@ -1,0 +1,816 @@
+﻿@model SIS_UMS.Models.User
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    
+    
+    <form action="@Url.Action("EducationInfoStep", "Application")" method="post">
+        <div class="step" id="step1">
+            <h2>Student Application - Personal Information</h2>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="middle_name">Middle Name</label>
+                        <input type="text" class="form-control" id="middle_name" name="middle_name" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="personal_email">Personal Email</label>
+                        <input type="email" class="form-control" id="personal_email" name="personal_email" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select class="form-control" id="gender" name="gender" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="date_of_birth">Date of Birth</label>
+                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="mother_name">Mother's Full Name</label>
+                        <input type="text" class="form-control" id="mother_name" name="mother_name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="marital_status">Marital Status</label>
+                        <select class="form-control" id="marital_status" name="marital_status">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="children_count">Number of Children</label>
+                        <input type="number" class="form-control" id="children_count" name="children_count" value="0" min="0" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nationality">Nationality</label>
+                        <input type="text" class="form-control" id="nationality" name="nationality" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="place_of_birth">Place of Birth</label>
+                        <input type="text" class="form-control" id="place_of_birth" name="place_of_birth" required>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="blood_type">Blood Type</label>
+                        <select class="form-control" id="blood_type" name="blood_type" required>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="family_registration">Family Registration (رقم القيد)</label>
+                        <input type="text" class="form-control" id="family_registration" name="family_registration" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Are you socially secured?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="socially_secured" id="socially_secured_yes" value="yes">
+                            <label class="form-check-label" for="socially_secured_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="socially_secured" id="socially_secured_no" value="no">
+                            <label class="form-check-label" for="socially_secured_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-4" id="social_security_type" style="display: none;">
+                <label>Choose Social Security Type</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type1" value="الضمان الأجتماعي">
+                    <label class="form-check-label" for="ss_type1">الضمان الأجتماعي</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type2" value="أنظمة القوى الأمنية">
+                    <label class="form-check-label" for="ss_type2">أنظمة القوى الأمنية</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type3" value="تعاونية موظّفي الدولة">
+                    <label class="form-check-label" for="ss_type3">تعاونية موظّفي الدولة</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type4" value="صندوق التعاضد الجامعة اللبنانيّة">
+                    <label class="form-check-label" for="ss_type4">صندوق التعاضد الجامعة اللبنانيّة</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type5" value="صندوق تعاضد القضاة">
+                    <label class="form-check-label" for="ss_type5">صندوق تعاضد القضاة</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type6" value="البلديات">
+                    <label class="form-check-label" for="ss_type6">البلديات</label>
+                </div>
+            </div>
+            <div class="form-group mb-4" id="ssnField" style="display: none;">
+                <label for="ssn">Social Security Number</label>
+                <input type="text" class="form-control" id="ssn" name="ssn">
+            </div>
+
+        </div>
+
+        <div class="step" id="step2" style="display: none;">
+            <h2>Student Application - Contact Information</h2>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="emergency_contact_name">Emergency Contact Name</label>
+                        <input type="text" class="form-control" id="emergency_contact_name" name="emergency_contact_name" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="emergency_phone_number">Emergency Phone Number</label>
+                        <input type="tel" class="form-control" id="emergency_phone_number" name="emergency_phone_number" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" name="city" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="area">Area</label>
+                        <input type="text" class="form-control" id="area" name="area" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="street">Street</label>
+                        <input type="text" class="form-control" id="street" name="street" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nearby">Nearby</label>
+                        <input type="text" class="form-control" id="nearby" name="nearby" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="building">Building</label>
+                        <input type="text" class="form-control" id="building" name="building" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="floor">Floor</label>
+                        <input type="number" class="form-control" id="floor" name="floor" min="0" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" id="step3" style="display: none;">
+            <h2>Student Application - Academic Information</h2>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="semester">Semester You Are Applying For:</label>
+                        <select class="form-control" id="semester" name="semester" required>
+                            <option value="">Select the semester</option>
+                        
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="campus">Campus:</label>
+                        <select class="form-control" id="campus" name="campus" required>
+                            <option value="">Select The Campus</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="faculty">Faculty:</label>
+                        <select class="form-control" id="faculty" name="faculty" required>
+                            <option value="">Select The Faculty</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="department">Department:</label>
+                        <select class="form-control" id="department" name="department" required>
+                            <option value="">Select The Department</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="major">Major:</label>
+                        <select class="form-control" id="major" name="major" required>
+                            <option value="">Select The Major</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label>Student Status</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="student_status" id="new_student" value="New Student">
+                            <label class="form-check-label" for="new_student">New Student</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="student_status" id="university_transferred" value="University Transferred">
+                            <label class="form-check-label" for="university_transferred">University Transferred</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="student_status" id="vocational_transferred" value="Vocational Transferred">
+                            <label class="form-check-label" for="vocational_transferred">Vocational Transferred</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" id="instituteField" style="display: none;">
+                        <label for="institute">Specify Institute</label>
+                        <input type="text" class="form-control" id="institute" name="institute" placeholder="Specify">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="school_name">Name of School Attended:</label>
+                        <input type="text" class="form-control" id="school_name" name="school_name" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="start_year">Year Started:</label>
+                        <select class="form-control" id="start_year" name="start_year" required>
+                            <option value="">Select Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="end_year">Year Finished:</label>
+                        <select class="form-control" id="end_year" name="end_year" required>
+                            <option value="">Select Year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="certificate_type">Certificate Type:</label>
+                        <select class="form-control" id="certificate_type" name="certificate_type" required>
+                            <option value="">Select Certificate Type</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Vocational">Vocational</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3" id="academic_certificate_fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="academic_certificate">Academic Certificate:</label>
+                        <select class="form-control" id="academic_certificate" name="academic_certificate" required>
+                            <option value="">Select Academic Certificate</option>
+                            <option value="LS">LS</option>
+                            <option value="GS">GS</option>
+                            <option value="LH">LH</option>
+                            <option value="SE">SE</option>
+                            <option value="HS">HS</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3" id="vocational_certificate_fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="vocational_certificate">Vocational Certificate:</label>
+                        <select class="form-control" id="vocational_certificate" name="vocational_certificate" required>
+                            <option value="">Select Vocational Certificate</option>
+                            <option value="BT">BT</option>
+                            <option value="TS">TS</option>
+                            <option value="LT">LT</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3" id="certificate_fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="certificate">Certificate:</label>
+                        <select class="form-control" id="certificate" name="certificate" required>
+                            <option value="">Select Certificate</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3" id="graduation_date" style="display: none;">
+                    <div class="form-group">
+                        <label for="graduation_date" >Date of Graduation:</label>
+                        <input type="date" class="form-control" id="graduation_date" name="graduation_date">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="step" id="step4" style="display:none;">
+            <h2>Student Application - Languages</h2>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Arabic Level:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="arabic_level" id="arabic_level_very_good" value="Very Good">
+                            <label class="form-check-label" for="arabic_level_very_good">Very Good</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="arabic_level" id="arabic_level_good" value="Good">
+                            <label class="form-check-label" for="arabic_level_good">Good</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="arabic_level" id="arabic_level_fair" value="Fair">
+                            <label class="form-check-label" for="arabic_level_fair">Fair</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="arabic_level" id="arabic_level_weak" value="Weak">
+                            <label class="form-check-label" for="arabic_level_weak">Weak</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>English Level:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="english_level" id="english_level_very_good" value="Very Good">
+                            <label class="form-check-label" for="english_level_very_good">Very Good</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="english_level" id="english_level_good" value="Good">
+                            <label class="form-check-label" for="english_level_good">Good</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="english_level" id="english_level_fair" value="Fair">
+                            <label class="form-check-label" for="english_level_fair">Fair</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="english_level" id="english_level_weak" value="Weak">
+                            <label class="form-check-label" for="english_level_weak">Weak</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>French Level:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="french_level" id="french_level_very_good" value="Very Good">
+                            <label class="form-check-label" for="french_level_very_good">Very Good</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="french_level" id="french_level_good" value="Good">
+                            <label class="form-check-label" for="french_level_good">Good</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="french_level" id="french_level_fair" value="Fair">
+                            <label class="form-check-label" for="french_level_fair">Fair</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="french_level" id="french_level_weak" value="Weak">
+                            <label class="form-check-label" for="french_level_weak">Weak</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>English Language Certificate:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="english_certificate" id="english_certificate_TOFEL" value="TOFEL">
+                            <label class="form-check-label" for="english_certificate_TOFEL">TOFEL</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="english_certificate" id="english_certificate_IELTS" value="IELTS">
+                            <label class="form-check-label" for="english_certificate_IELTS">IELTS</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="english_certificate" id="english_certificate_other" value="Other">
+                            <label class="form-check-label" for="english_certificate_other">Other</label>
+                        </div>
+                        <input type="text" class="form-control" id="english_certificate_name" name="english_certificate_name" placeholder="Specify Certificate" style="display: none;">
+                        <div class="form-group mt-3">
+                            <label for="english_certificate_date">Date Taken:</label>
+                            <input type="date" class="form-control" id="english_certificate_date" name="english_certificate_date">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="english_certificate_score">Score:</label>
+                            <input type="number" class="form-control" id="english_certificate_score" name="english_certificate_score" placeholder="Enter Score">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>French Language Certificate:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="french_certificate" id="french_certificate_DELF" value="DELF">
+                            <label class="form-check-label" for="french_certificate_DELF">DELF</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="french_certificate" id="french_certificate_DALF" value="DALF">
+                            <label class="form-check-label" for="french_certificate_DALF">DALF</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="french_certificate" id="french_certificate_other" value="Other">
+                            <label class="form-check-label" for="french_certificate_other">Other</label>
+                        </div>
+                        <input type="text" class="form-control" id="french_certificate_name" name="french_certificate_name" placeholder="Specify Certificate" style="display: none;">
+                        <div class="form-group mt-3">
+                            <label for="french_certificate_date">Date Taken:</label>
+                            <input type="date" class="form-control" id="french_certificate_date" name="french_certificate_date">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="french_certificate_score">Score:</label>
+                            <input type="number" class="form-control" id="french_certificate_score" name="french_certificate_score" placeholder="Enter Score">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="additional_languages">Additional Languages:</label>
+                        <textarea class="form-control" id="additional_languages" name="additional_languages" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="step" id="step5" style="display:none;">
+            <h2>Student Application - Other Information</h2>
+
+            <div class="row mb-3">
+                <div class="form-group">
+                    <label for="hobbies_interests">Hobbies and Interests:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="arts" name="hobbies_interests[]" value="Arts">
+                        <label class="form-check-label" for="arts">Arts</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="sports" name="hobbies_interests[]" value="Sports">
+                        <label class="form-check-label" for="sports">Sports</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="culture" name="hobbies_interests[]" value="Culture">
+                        <label class="form-check-label" for="culture">Culture</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="social_work" name="hobbies_interests[]" value="Social Work">
+                        <label class="form-check-label" for="social_work">Social Work</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="other_interest" name="hobbies_interests[]" value="Other">
+                        <label class="form-check-label" for="other_interest">Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="other_interest_field" style="display: none;">
+                    <label for="other_interest_text">Specify Other Interest:</label>
+                    <input type="text" class="form-control" id="other_interest_text" name="other_interest_text">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group">
+                    <label>Physical Problems</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="physical_disability[]" value="Sensory Disability">
+                        <label class="form-check-label" for="sensory_disability">Sensory Disability</label>
+                    </div>
+                    <input type="text" class="form-control" id="sensory_disability_specify" name="sensory_disability_specify" placeholder="Specify Disability" style="display: none;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="physical_disability[]" value="Physical Disability">
+                        <label class="form-check-label" for="physical_disability">Physical Disability</label>
+                    </div>
+                    <input type="text" class="form-control" id="physical_disability_specify" name="physical_disability_specify" placeholder="Specify Disability" style="display: none;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="physical_disability[]" value="Other" id="physical_disability_other_checkbox">
+                        <label class="form-check-label" for="physical_disability_other_checkbox">Other</label>
+                    </div>
+                    <input type="text" class="form-control" id="disability_other_specify" name="disability_other_specify" placeholder="Specify Disability" style="display: none;">
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+    <div class="fixed-navigation">
+        <button type="button" class="btn btn-primary" id="prevStep">Previous</button>
+        <button type="button" class="btn btn-primary" id="nextStep">Next</button>
+    </div>
+
+</div>
+
+<!-- Include Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sociallySecuredRadios = document.querySelectorAll('input[name="socially_secured"]');
+        const ssnField = document.getElementById('ssnField');
+        const socialSecurityType = document.getElementById('social_security_type');
+
+        sociallySecuredRadios.forEach(radio => {
+            radio.addEventListener("change", function () {
+                if (this.value === 'yes') {
+                    ssnField.style.display = "block";
+                    socialSecurityType.style.display = "block";
+                } else {
+                    ssnField.style.display = "none";
+                    socialSecurityType.style.display = "none";
+                    document.querySelector('input[name="social_security_type"]:checked').checked = false;
+                    document.getElementById('ssn').value = '';
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    const universityTransferredRadio = document.getElementById("university_transferred");
+    const vocationalTransferredRadio = document.getElementById("vocational_transferred");
+    const newStudentRadio = document.getElementById("new_student");
+    const instituteField = document.getElementById("instituteField");
+
+    universityTransferredRadio.addEventListener("change", () => {
+        instituteField.style.display = universityTransferredRadio.checked ? "block" : "none";
+    });
+
+    vocationalTransferredRadio.addEventListener("change", () => {
+        instituteField.style.display = vocationalTransferredRadio.checked ? "block" : "none";
+    });
+
+    newStudentRadio.addEventListener("change", () => {
+        if (newStudentRadio.checked) {
+            instituteField.style.display = "none";
+            instituteField.querySelector("input").value = "";
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const steps = document.querySelectorAll('.step');
+        let currentStep = 0;
+
+        function showStep(stepIndex) {
+            steps.forEach((step, index) => {
+                step.style.display = index === stepIndex ? 'block' : 'none';
+            });
+        }
+
+        function updateButtonVisibility() {
+            const nextStepBtn = document.getElementById('nextStep');
+            const prevStepBtn = document.getElementById('prevStep');
+
+            if (currentStep === 0) {
+                prevStepBtn.style.display = 'none';
+            } else {
+                prevStepBtn.style.display = 'inline';
+            }
+
+            if (currentStep === steps.length - 1) {
+                nextStepBtn.style.display = 'none';
+            } else {
+                nextStepBtn.style.display = 'inline';
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        const nextStepBtn = document.getElementById('nextStep');
+        nextStepBtn.addEventListener('click', function () {
+            nextStep();
+            updateButtonVisibility();
+        });
+
+        const prevStepBtn = document.getElementById('prevStep');
+        prevStepBtn.addEventListener('click', function () {
+            prevStep();
+            updateButtonVisibility();
+        });
+
+        updateButtonVisibility();
+
+    });
+</script>
+
+<script>
+    function populateYearSelect(selectId) {
+        const select = document.getElementById(selectId);
+        const currentYear = new Date().getFullYear();
+        for (let year = 1980; year <= currentYear; year++) {
+            const option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            select.appendChild(option);
+        }
+    }
+
+    populateYearSelect("start_year");
+    populateYearSelect("end_year");
+
+    const certificateTypeSelect = document.getElementById("certificate_type");
+    const academicCertificateFields = document.getElementById("academic_certificate_fields");
+    const vocationalCertificateField = document.getElementById("vocational_certificate_fields");
+    const vocationalCertificateChoice = document.getElementById("certificate_fields");
+    const GraduationDate = document.getElementById("graduation_date");
+
+    certificateTypeSelect.addEventListener("change", function () {
+        if (certificateTypeSelect.value === "Academic") {
+            academicCertificateFields.style.display = "block";
+            vocationalCertificateField.style.display = "none";
+            vocationalCertificateChoice.style.display = "none";
+            GraduationDate.style.display = "block";
+            vocationalCertificateField.querySelector("select").selectedIndex = 0;
+            vocationalCertificateChoice.querySelector("select").selectedIndex = 0;
+        } else if (certificateTypeSelect.value === "Vocational") {
+            academicCertificateFields.style.display = "none";
+            vocationalCertificateField.style.display = "block";
+            vocationalCertificateChoice.style.display = "block";
+            GraduationDate.style.display = "block";
+            academicCertificateFields.querySelector("select").selectedIndex = 0;
+        } else {
+            academicCertificateFields.style.display = "none";
+            vocationalCertificateField.style.display = "none";
+            vocationalCertificateChoice.style.display = "none";
+            GraduationDate.style.display = "none";
+            academicCertificateFields.querySelector("select").selectedIndex = 0;
+            vocationalCertificateField.querySelector("select").selectedIndex = 0;
+            vocationalCertificateChoice.querySelector("select").selectedIndex = 0;
+            GraduationDate.querySelector("input").value = null;
+        }
+    });
+</script>
+
+<script>
+    const EnglishCertificateRadios = document.querySelectorAll('input[name="english_certificate"]');
+    const FrenchCertificateRadios = document.querySelectorAll('input[name="french_certificate"]');
+    const EnglishCertificateNameField = document.getElementById("english_certificate_name");
+    const FrenchCertificateNameField = document.getElementById("french_certificate_name");
+
+    EnglishCertificateRadios.forEach(radio => {
+        radio.addEventListener("change", function(){
+            if(this.value === "Other"){
+                EnglishCertificateNameField.style.display = "block";
+            }else{
+                EnglishCertificateNameField.style.display = "none";
+                EnglishCertificateNameField.value = ""; 
+            }
+        })
+    });
+
+    FrenchCertificateRadios.forEach(radio => {
+        radio.addEventListener("change", function () {
+            if (this.value === "Other") {
+                FrenchCertificateNameField.style.display = "block";
+            } else {
+                FrenchCertificateNameField.style.display = "none";
+                FrenchCertificateNameField.value = "";
+            }
+        })
+    });
+</script>
+
+<script>
+    const otherInterestCheckbox = document.getElementById("other_interest");
+    const otherInterestField = document.getElementById("other_interest_field");
+
+    otherInterestCheckbox.addEventListener("change", () => {
+        otherInterestField.style.display = otherInterestCheckbox.checked ? "block" : "none";
+    });
+
+
+    const sensoryDisabilityCheckbox = document.querySelector('input[name="physical_disability[]"][value="Sensory Disability"]');
+    const sensoryDisabilityInput = document.getElementById("sensory_disability_specify");
+
+    const physicalDisabilityCheckbox = document.querySelector('input[name="physical_disability[]"][value="Physical Disability"]');
+    const physicalDisabilityInput = document.getElementById("physical_disability_specify");
+
+    const otherDisabilityCheckbox = document.getElementById("physical_disability_other_checkbox");
+    const otherDisabilityInput = document.getElementById("disability_other_specify");
+
+    sensoryDisabilityCheckbox.addEventListener("change", () => {
+        sensoryDisabilityInput.style.display = sensoryDisabilityCheckbox.checked ? "block" : "none";
+    });
+
+    physicalDisabilityCheckbox.addEventListener("change", () => {
+        physicalDisabilityInput.style.display = physicalDisabilityCheckbox.checked ? "block" : "none";
+    });
+
+    otherDisabilityCheckbox.addEventListener("change", () => {
+        otherDisabilityInput.style.display = otherDisabilityCheckbox.checked ? "block" : "none";
+    });
+
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
