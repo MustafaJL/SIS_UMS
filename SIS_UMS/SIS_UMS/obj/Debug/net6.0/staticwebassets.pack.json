@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\SIS_UMS.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\createcampus.css",
+      "PackagePath": "staticwebassets\\css\\createcampus.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

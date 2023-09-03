@@ -3,24 +3,30 @@
 <div class="container">
     <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="col-md-6">
-            <div class="card card-primary">
+            <div class="card card-primary" style="border-radius: 30px;">
                 <div class="card-header">
-                    <h3 class="card-title">Create Campus</h3>
+                   
+
+                    <h3 class="card-title" style="text-align: center; text-decoration: solid;"> <i class="fas fa-university"></i> <br />Create a new campus</h3>
                 </div>
                 <form asp-action="CreateCampus">
                     <div class="card-body">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="form-group">
-                            <label asp-for="campus_name" class="control-label">Campus Name:</label>
-                            <input asp-for="campus_name" class="form-control" required/>
-                            <span asp-validation-for="campus_name" class="text-danger"></span>
-                        </div>
-                        <br />
-                        <!-- Add other form fields here -->
-                        <div class="form-group">
-                            <label asp-for="campus_address" class="control-label">Campus Address:</label>
-                            <input asp-for="campus_address" class="form-control" required />
-                            <span asp-validation-for="campus_address" class="text-danger"></span>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="campus_name" class="control-label">Campus Name:</label>
+                                    <input asp-for="campus_name" class="form-control" required />
+                                    <span asp-validation-for="campus_name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="campus_address" class="control-label">Campus Address:</label>
+                                    <input asp-for="campus_address" class="form-control" required />
+                                    <span asp-validation-for="campus_address" class="text-danger"></span>
+                                </div>
+                            </div>
                         </div>
                         <br />
                         <div class="form-group">
@@ -44,9 +50,11 @@
                    
                     
                     
-                    <div class="card-footer">
-                        <div class="form-group">
+                    <div class="card-footer text-center" >
+                        <div class="form-group" >
+
                             <input type="submit" value="Create" class="btn btn-block btn-dark btn-lg" />
+
                         </div>
                     </div>
                 </form>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pBH0GELpTF1IetFUlAf20DF6gbXgb/GSM1ksnlp5F7M=",
+  "Hash": "+hbkEVneJT10kEyynO7uWzY8PpXQYmn4BubULVojBdo=",
   "Source": "SIS_UMS",
   "BasePath": "_content/SIS_UMS",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SIS_UMS.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\createcampus.css",
+      "SourceId": "SIS_UMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\",
+      "BasePath": "_content/SIS_UMS",
+      "RelativePath": "css/createcampus.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\createcampus.css"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\site.css",
