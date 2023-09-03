@@ -1,4 +1,6 @@
-﻿@model IEnumerable<block>
+﻿
+
+@model IEnumerable<block>
 
 @{
     ViewData["Title"] = "Index";
@@ -15,11 +17,11 @@
 
 
             <th>Id</th>
-            <th>code</th>
-            <th>campus</th>
-            <th>floor</th>
-            <th>room</th>
-            <th>date</th>
+            <th>Code</th>
+            <th>Campus</th>
+            <th>Floor</th>
+            <th>Room</th>
+            <th>Created Date</th>
 
 
             <th></th>
@@ -33,7 +35,7 @@
 
             <tr>
                 <td width="30%">
-                        @item.block_code
+                        @item.block_id
                 </td>
                 <td width="30%">
                         @item.block_code

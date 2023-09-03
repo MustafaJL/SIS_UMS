@@ -1,0 +1,59 @@
+﻿@model RoomBlockViewModel
+
+@{
+    ViewData["Title"] = "UpdateRoom";
+}
+
+<h1>Update Room</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateRoom">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="room.room_id" />
+
+            <div class="form-group">
+                <label asp-for="room.room_id" class="control-label"> Room ID: </label>
+                <input asp-for="room.room_id" class="form-control" />
+                <span asp-validation-for=" room.room_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="room.block_id">Select Block:</label>
+                <select asp-for="room.block_id" asp-items="new SelectList(Model.block, nameof(block.block_id), nameof(block.block_code))" class="form-control">
+                    <option value="room.block_id"></option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="room.room_code" class="control-label">Room Code:</label>
+                <input asp-for="room.room_code" class="form-control" />
+                <span asp-validation-for="room.room_code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="room.floor_number" class="control-label">Floor: </label>
+                <input asp-for="room.floor_number" class="form-control" />
+                <span asp-validation-for="room.floor_number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="room.room_capacity" class="control-label">Capacity: </label>
+                <input asp-for="room.room_capacity" class="form-control" />
+                <span asp-validation-for="room.room_capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

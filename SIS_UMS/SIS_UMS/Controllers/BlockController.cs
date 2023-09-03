@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SIS_UMS.DatabaseHelper.Interfaces;
+using SIS_UMS.DatabaseHelper.Repositories;
 using SIS_UMS.Models;
 
 namespace SIS_UMS.Controllers
@@ -12,6 +13,7 @@ namespace SIS_UMS.Controllers
         private readonly ILogger<BlockController> _logger;
         private readonly IBlockRepository _blockRepository;
         private readonly ICampusRepository _campusRepository;
+        
 
         public BlockController(ILogger<BlockController> logger, IBlockRepository blockRepository, ICampusRepository campusRepository)
         {
@@ -49,11 +51,11 @@ namespace SIS_UMS.Controllers
         [HttpPost("CreateBlock")]
         [ValidateAntiForgeryToken]
        
-        public IActionResult CreateBlock(BlockCampusViewModel viewModel)
+        public async Task<IActionResult> CreateBlock(BlockCampusViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                _blockRepository.CreateBlock(viewModel.block);
+                await _blockRepository.CreateBlock(viewModel.block);
                 return RedirectToAction("Index"); 
             }
 
@@ -69,13 +71,20 @@ namespace SIS_UMS.Controllers
         [HttpGet("UpdateBlock/{id}")]
         public async Task<IActionResult> UpdateBlock(int id)
         {
-            var block = await _blockRepository.GetBlockById(id);
-            if (block == null)
-            {
-                return NotFound(); // block with the specified ID not found
-            }
+            
 
-            return View(block);
+           
+
+            BlockCampusViewModel viewModel = new BlockCampusViewModel
+            {
+                block = await _blockRepository.GetBlockById(id),
+                campus = await _campusRepository.GetAllCampus()
+
+
+            };
+            return View(viewModel);
+
+
         }
 
 

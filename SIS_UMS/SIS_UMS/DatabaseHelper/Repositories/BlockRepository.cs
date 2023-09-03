@@ -159,7 +159,7 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             using MySqlConnection connection = new MySqlConnection(_connectionString);
             await connection.OpenAsync();
 
-            using MySqlCommand command = new MySqlCommand("Deleteblock", connection);
+            using MySqlCommand command = new MySqlCommand("DeleteBlock", connection);
             command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.AddWithValue("@sp_block_id", c.block_id);

@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICampusRepository , CampusRepository>();
 builder.Services.AddScoped<IBlockRepository, BlockRepository>();
-//builder.Services.AddScoped<IRoomRepository , RoomRepository>();
+builder.Services.AddScoped<IRoomRepository , RoomRepository>();
 
 var app = builder.Build();
 

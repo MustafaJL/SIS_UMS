@@ -9,6 +9,6 @@
         public int floor_number { get; set; }
         public int room_capacity { get; set;}
         public bool is_deleted { get; set; }
-        public DateTime created_at { get; set; }
+        public DateTime created_at { get; set; } = DateTime.Now;
     }
 }

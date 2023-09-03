@@ -1,16 +1,68 @@
-﻿@model campus
+﻿@*@model campus
 
 @{
     ViewData["Title"] = "CreateCampus";
 }
 
 <form asp-action="CreateCampus" asp-controller="Campus">
-
-    <input asp-for="campus_name " placeholder="campus name" />
-    <input asp-for="campus_email" placeholder="campus email" />
-    <input asp-for="campus_address" placeholder="campus address" />
-    <input asp-for="campus_fax" placeholder="campus fax" />
+    <h2>
+        Campus
+    </h2>
+    <input asp-for="campus_name " placeholder=" Name" />
+    <input asp-for="campus_email" placeholder=" Email" />
+    <input asp-for="campus_address" placeholder=" Address" />
+    <input asp-for="campus_fax" placeholder=" Fax" />
     <input asp-for="campus_phone_number" placeholder="campus phonenumber" />
     
     <input type="submit" />
+</form>*@
+@model campus
+
+@{
+    ViewData["Title"] = "CreateCampus";
+}
+
+<form asp-action="CreateCampus" asp-controller="Campus" class="form-horizontal">
+    <h2>Campus</h2>
+
+    <div class="form-group">
+        <label asp-for="campus_name" class="control-label col-md-2">Name</label>
+        <div class="col-md-10">
+            <input asp-for="campus_name" class="form-control" placeholder="Name" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="campus_email" class="control-label col-md-2">Email</label>
+        <div class="col-md-10">
+            <input asp-for="campus_email" class="form-control" placeholder="Email" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="campus_address" class="control-label col-md-2">Address</label>
+        <div class="col-md-10">
+            <input asp-for="campus_address" class="form-control" placeholder="Address" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="campus_fax" class="control-label col-md-2">Fax</label>
+        <div class="col-md-10">
+            <input asp-for="campus_fax" class="form-control" placeholder="Fax" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="campus_phone_number" class="control-label col-md-2">Campus Phone Number</label>
+        <div class="col-md-10">
+            <input asp-for="campus_phone_number" class="form-control" placeholder="Campus Phone Number" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>
 </form>

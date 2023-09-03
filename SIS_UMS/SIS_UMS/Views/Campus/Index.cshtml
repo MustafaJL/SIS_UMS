@@ -1,9 +1,27 @@
-﻿@model IEnumerable<campus>
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SIS_UMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/SIS_UMS.styles.css" asp-append-version="true" />
+    <!-- Example for referencing CSS file -->
+    <link href="~/dist/css/adminlte.css" rel="stylesheet" />
+    <link href="~/dist/css/adminlte.min.css" rel="stylesheet" />
+
+
+
+</head>
+@model IEnumerable<campus>
 
 @{
     ViewData["Title"] = "Index";
 }
-
+@*
 <h1>Index</h1>
 
 <p>
@@ -14,12 +32,12 @@
         <tr>
           
 
-            <th>Id</th>
-            <th>email</th>
+            <th>ID</th>
+            <th>Email</th>
             <th>Name</th>
-            <th>fax</th>
-            <th>nb</th>
-            <th>add</th>
+            <th>Fax</th>
+            <th>Phone Number</th>
+            <th>Address</th>
 
          
             <th></th>
@@ -62,3 +80,48 @@
 }
     </tbody>
 </table>
+*@
+<div class="container">
+  
+
+    <p>
+        <a asp-action="CreateCampus" class="btn btn-succes">Create New</a>
+    </p>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Fax</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.campus_id</td>
+                    <td>@item.campus_email</td>
+                    <td>@item.campus_name</td>
+                    <td>@item.campus_fax</td>
+                    <td>@item.campus_phone_number</td>
+                    <td>@item.campus_address</td>
+                    <td>
+                        <div class="btn-group">
+                            <a asp-action="UpdateCampus" asp-controller="Campus" asp-route-id="@item.campus_id" class="btn btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a asp-action="DeleteCampus" asp-controller="Campus" asp-route-id="@item.campus_id" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
