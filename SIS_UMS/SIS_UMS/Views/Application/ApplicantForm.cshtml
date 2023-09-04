@@ -1,4 +1,4 @@
-﻿@model SIS_UMS.Models.User
+﻿@model SIS_UMS.Models.ApplicationViewModel
 
 @{
     ViewData["Title"] = "View";
@@ -240,7 +240,14 @@
                         <label for="semester">Semester You Are Applying For:</label>
                         <select class="form-control" id="semester" name="semester" required>
                             <option value="">Select the semester</option>
-                        
+                            @{
+                                if (Model != null) {
+                                    foreach (var obj in Model.semesters)
+                                    {
+                                        <option value="@obj.SemesterId">@obj.SemesterName</option>
+                                    }
+                                }
+                            }
                         </select>
                     </div>
                 </div>
@@ -249,6 +256,15 @@
                         <label for="campus">Campus:</label>
                         <select class="form-control" id="campus" name="campus" required>
                             <option value="">Select The Campus</option>
+                            @{
+                                if (Model != null)
+                                {
+                                    foreach (var obj in Model.campuses)
+                                    {
+                                        <option value="@obj.CampusId">@obj.CampusName</option>
+                                    }
+                                }
+                            }
                         </select>
                     </div>
                 </div>
@@ -276,6 +292,15 @@
                         <label for="major">Major:</label>
                         <select class="form-control" id="major" name="major" required>
                             <option value="">Select The Major</option>
+                            @{
+                                if (Model != null)
+                                {
+                                    foreach (var obj in Model.majors)
+                                    {
+                                        <option value="@obj.MajorId">@obj.MajorName</option>
+                                    }
+                                }
+                            }
                         </select>
                     </div>
                 </div>
@@ -596,8 +621,10 @@
 </div>
 
 <!-- Include Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -810,6 +837,168 @@
     });
 
 </script>
+
+<script>
+    // Assume facultiesData contains your faculties data, serialized from the server
+    var facultiesData = @Html.Raw(Json.Serialize(Model.faculties));
+
+    // Function to populate the faculties dropdown based on the selected campus
+    function populateFacultiesDropdown(selectedCampusId) {
+        $('#faculty').empty();
+        // Filter faculties based on the selected campusId
+        var filteredFaculties = facultiesData.filter(function (faculty) {
+            // Log for debugging purposes
+            console.log('selectedCampusId:', selectedCampusId);
+            console.log('faculty.campusId:', faculty.campusId);
+            console.log(faculty.campusId === selectedCampusId);
+
+            return faculty.campusId === selectedCampusId;
+        });
+
+        // Log the filtered faculties (for debugging)
+        console.log(filteredFaculties);
+
+        // Populate the faculties dropdown with filtered faculties
+        if (filteredFaculties.length === 0) {
+            $('#faculty').append($('<option>', {
+                value: '',
+                text: 'Select The Faculty'
+            }));
+        } else {
+            $('#faculty').append($('<option>', {
+                value: '',
+                text: 'Select The Faculty'
+            }));
+            filteredFaculties.forEach(function (faculty) {
+                $('#faculty').append($('<option>', {
+                    value: faculty.facultyId,
+                    text: faculty.facultyName
+                }));
+            });
+        }
+    }
+
+    // Event handler for the campus dropdown change event
+    $('#campus').on('change', function () {
+        // Get the selected campus ID as an integer
+        var selectedCampusId = parseInt($(this).val(), 10);
+
+        // Log the selected campus ID (for debugging)
+        console.log(selectedCampusId);
+
+        // Call the function to populate the faculties dropdown
+        populateFacultiesDropdown(selectedCampusId);
+        populateDepartmentsDropdown(-1);
+        populateMajorsDropdown(-1);
+    });
+</script>
+
+<script>
+    // Assume departmentsData contains your departments data, serialized from the server
+    var DepartmentsData = @Html.Raw(Json.Serialize(Model.departments));
+
+    // Function to populate the departments dropdown based on the selected faculty
+    function populateDepartmentsDropdown(selectedFacultyId) {
+        $('#department').empty();
+        // Filter faculties based on the selected facultyId
+        var filteredDepartments = DepartmentsData.filter(function (department) {
+            // Log for debugging purposes
+            console.log('selectedFacultyId:', selectedFacultyId);
+            console.log('department.facultyId:', department.facultyId);
+            console.log(department.facultyId === selectedFacultyId);
+
+            return department.facultyId === selectedFacultyId;
+        });
+
+        // Log the filtered departments (for debugging)
+        console.log(filteredDepartments);
+
+        // Populate the departments dropdown with filtered departments
+        if (filteredDepartments.length === 0) {
+            $('#department').append($('<option>', {
+                value: '',
+                text: 'Select Department'
+            }));
+        } else {
+            $('#department').append($('<option>', {
+                value: '',
+                text: 'Select Department'
+            }));
+            filteredDepartments.forEach(function (department) {
+                $('#department').append($('<option>', {
+                    value: department.departmentId,
+                    text: department.departmentName
+                }));
+            });
+        }
+    }
+
+    // Event handler for the faculty dropdown change event
+    $('#faculty').on('change', function () {
+        // Get the selected faculty ID as an integer
+        var selectedFacultyId = parseInt($(this).val(), 10);
+
+        // Log the selected faculty ID (for debugging)
+        console.log(selectedFacultyId);
+
+        // Call the function to populate the departments dropdown
+        populateDepartmentsDropdown(selectedFacultyId);
+        populateMajorsDropdown(-1);
+    });
+</script>
+
+<script>
+    // Assume majorsData contains your majors data, serialized from the server
+    var majorsData = @Html.Raw(Json.Serialize(Model.majors));
+
+    // Function to populate the majors dropdown based on the selected department
+    function populateMajorsDropdown(selectedDepartmentId) {
+        $('#major').empty();
+        // Filter faculties based on the selected facultyId
+        var filteredmajors = majorsData.filter(function (major) {
+            // Log for debugging purposes
+            console.log('selectedDepartmentId:', selectedDepartmentId);
+            console.log('major.departmentId:', major.departmentId);
+            console.log(major.departmentId === selectedDepartmentId);
+
+            return major.departmentId === selectedDepartmentId;
+        });
+
+        // Log the filtered departments (for debugging)
+        console.log(filteredmajors);
+
+        // Populate the departments dropdown with filtered departments
+        if (filteredmajors.length === 0) {
+            $('#major').append($('<option>', {
+                value: '',
+                text: 'Select The Major'
+            }));
+        } else {
+            $('#major').append($('<option>', {
+                value: '',
+                text: 'Select The Major'
+            }));
+            filteredmajors.forEach(function (major) {
+                $('#major').append($('<option>', {
+                    value: major.majorId,
+                    text: major.majorName
+                }));
+            });
+        }
+    }
+
+    // Event handler for the faculty dropdown change event
+    $('#department').on('change', function () {
+        // Get the selected department ID as an integer
+        var selectedDepartmentId = parseInt($(this).val(), 10);
+
+        // Log the selected department ID (for debugging)
+        console.log(selectedDepartmentId);
+
+        // Call the function to populate the majors dropdown
+        populateMajorsDropdown(selectedDepartmentId);
+    });
+</script> 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
