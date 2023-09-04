@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllFaculties`()
+BEGIN
+	Select * from faculty where is_deleted != 1;
+END$$
+DELIMITER ;

@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllDepartments`()
+BEGIN
+	Select * from department where is_deleted != 1;
+END$$
+DELIMITER ;

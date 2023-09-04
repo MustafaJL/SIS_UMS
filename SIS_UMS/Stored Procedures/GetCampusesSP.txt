@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllCampuses`()
+BEGIN
+	Select * from campus;
+END$$
+DELIMITER ;

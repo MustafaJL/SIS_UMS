@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllMajors`()
+BEGIN
+	Select * from major where is_deleted != 1;
+END$$
+DELIMITER ;

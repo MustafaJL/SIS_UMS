@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetOpenSemesters`()
+BEGIN
+	Select * from semester where is_registration_start_date != 0;
+END$$
+DELIMITER ;
