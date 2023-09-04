@@ -78,3 +78,10 @@ drop column processing_date;
 
 alter table application_form
 modify status varchar(255);
+
+
+alter table financial_agreements
+drop column financial_agreement_id;
+
+alter table financial_agreements
+add column financial_agreement_id int auto_increment primary key;

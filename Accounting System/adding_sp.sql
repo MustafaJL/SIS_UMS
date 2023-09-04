@@ -10,18 +10,31 @@ call add_new_application_form ("Accounting", '1121010', '2023-09-01', 'Sports Ai
 
 call get_application_form_by_id(21);
 
+call edit_application_form(21, "Student Affier", "1121010", 'Financial Aid', 'Accepted', null);
+call edit_application_form(21, "Accounting", "1121010", 'Financial Aid', 'Accepted', null);
+
 select * from application_form;
 
 delete from application_form where form_id = 2;
 
 CALL add_new_financial_agreement(1, '1121050', '2023-09-01', 'Agreement details...', '2023-09-01', '2023-12-31', true);
+CALL add_new_financial_agreement(1, '1121010', '2023-09-01', 'Pays at 3 of each month', '2023-09-01', '2023-12-31', true);
+
+call get_all_financial_agreements();
 
 CALL add_new_financial_statement(1, '1121050', 100.00, 150000.00, 50.00, 75000.00, 50.00, 75000.00, true);
+
+call get_financial_agreements_by_id(2);
+
+call delete_financial_agreement(1);
+
+call edit_financial_statement(1, 'Accounting', '1121010', '2023-09-01', 'Pays at 4 of each month', '2023-09-01', '2023-12-31', true);
 
 CALL add_new_fee_type('Tuition Fee', 2000.00, 2500000.00, true);
 
 CALL add_new_donor(1);
 
+select * from financial_agreements where financial_agreement_id = 1;
 
 CALL add_new_scholarship('Merit Scholarship', 10.00, 15.00);
 
