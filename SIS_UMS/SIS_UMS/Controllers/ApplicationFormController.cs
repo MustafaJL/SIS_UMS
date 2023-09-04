@@ -69,14 +69,22 @@ namespace SIS_UMS.Controllers
             return View(applicationForm);
         }
 
+        // Get: update-application-form/{formId}
+        [HttpGet("update-application-form/{formId}")]
+        public IActionResult UpdateApplicationForm(int formId)
+        {
+            var applicationForm = _applicationForm.GetApplicationFormById(formId);
+            return View(applicationForm);
+        }
+
         // POST: application-form/update-application-form/{formId}
         [HttpPost("update-application-form/{formId}")]
-        public IActionResult UpdateApplicationForm(int formId, ApplicationForm updatedForm)
+        public IActionResult UpdateApplicationForm(int formId, ApplicationForm applicationForm)
         {
 
             try
             {
-                bool isUpdated = _applicationForm.UpdateApplicationForm(updatedForm);
+                bool isUpdated = _applicationForm.UpdateApplicationForm(applicationForm);
                 if (isUpdated)
                 {
                     return RedirectToAction("GetAllApplicationForm");
@@ -88,13 +96,12 @@ namespace SIS_UMS.Controllers
             }
             catch (Exception ex)
             {
-                // Log the exception to help identify the issue
                 Console.WriteLine("Error: " + ex.Message);
                 ModelState.AddModelError(string.Empty, "An error occurred while updating the application form.");
             }
 
 
-            return View(updatedForm);
+            return View(applicationForm);
         }
 
         // POST: application-form/delete/{formId}
@@ -105,13 +112,6 @@ namespace SIS_UMS.Controllers
             return RedirectToAction("GetAllApplicationForm", "ApplicationForm");
 
         }
-
-
-
-
-
-
-
 
     }
 }

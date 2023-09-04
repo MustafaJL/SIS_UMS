@@ -46,4 +46,3 @@ C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_UMS\obj\Debug\net6.0\refint\SIS_UMS.dl
 C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_UMS\obj\Debug\net6.0\SIS_UMS.pdb
 C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_UMS\obj\Debug\net6.0\SIS_UMS.genruntimeconfig.cache
 C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_UMS\obj\Debug\net6.0\ref\SIS_UMS.dll
-C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_UMS\bin\Debug\net6.0\libman.json

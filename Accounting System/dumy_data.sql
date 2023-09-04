@@ -104,8 +104,13 @@ insert into offices (campus_id, office_name, manager_user_id, phone, email,
 office_room_number, is_deleted)
 values
 ('1', 'Human Resourse', '1', '+96101111117', 'hr@usal.edu.lb', 'A1-1', false),
-('2', 'Accounting', '2', '+96101111118', 'accounting@usal.edu.lb', 'A1-2', false);
+('2', 'Accounting', '2', '+96101111118', 'accounting@usal.edu.lb', 'A1-2', false),
+('1', 'Student Affier', '2', '+96101111118', 'accounting@usal.edu.lb', 'A1-2', false);
 
+insert into offices (campus_id, office_name, manager_user_id, phone, email, 
+office_room_number, is_deleted)
+values
+('1', 'Student Affier', '2', '+96101111118', 'accounting@usal.edu.lb', 'A1-2', false);
 
 INSERT INTO faculty (campus_id, dean_user_id, faculty_name, faculty_phone_number,
  faculty_uni_email, is_deleted)

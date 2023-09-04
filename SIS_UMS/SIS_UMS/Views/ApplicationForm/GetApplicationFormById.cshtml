@@ -9,7 +9,7 @@
     ViewBag.Title = "USAL | View Application Form";
 }
 
-<section class="content">
+<section class="content media-screen">
     <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
         <div class="col-md-12">
             <div class="card card-primary">
@@ -23,10 +23,9 @@
                         <!-- Buttons for copying, exporting data, etc. -->
                         <button class="btn btn-secondary buttons-pdf buttons-html5" id="generatePdfButton" tabindex="0" aria-controls="example1" type="button"><span><i class="fas fa-download"></i> PDF</span></button>
                         <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button"><span><i class="fas fa-print"></i> Print</span></button>
-                        <a class="btn btn-secondary buttons-print" href="/application-form/update-application-form/@Model.FormId" tabindex="0" aria-controls="example1">
+                        <a class="btn btn-secondary buttons-print" href="/application-form/update-application-form/@Model.FormId" aria-controls="example1">
                             <span><i class="fas fa-pencil-alt"></i> Edit</span>
                         </a>
-
                     </div>
                 </div>
                 <div class="card-body">
@@ -67,7 +66,6 @@
 
 
                         <!-- Additional Info Textarea -->
-                        <!-- Additional Info Textarea -->
                         <div class="form-group">
                             <label asp-for="AdditionalApplicationDetails" for="inputProjectLeader">Additional Info</label>
                             <textarea asp-for="AdditionalApplicationDetails" type="text" id="inputProjectLeader" class="form-control" disabled></textarea>
@@ -85,29 +83,3 @@
 </section>
 
 
-
-
-
-@section Scripts {
-    <script>
-        document.getElementById('generatePdfButton').addEventListener('click', function () {
-            // Create a new jsPDF instance
-            var pdf = new jsPDF();
-
-            // Get the HTML content of the card elements you want to convert to PDF
-            var cardHeader = document.querySelector('.card-header');
-            var cardBody = document.querySelector('.card-body');
-
-            // Convert the HTML to PDF using jsPDF
-            pdf.fromHTML(cardHeader.innerHTML, 15, 15);
-            pdf.addPage(); // Add a new page for the card body
-            pdf.fromHTML(cardBody.innerHTML, 15, 15);
-
-            // Save or display the PDF
-            pdf.save('application_form.pdf');
-        });
-
-
-
-    </script>
-}

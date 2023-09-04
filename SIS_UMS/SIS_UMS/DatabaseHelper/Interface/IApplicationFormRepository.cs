@@ -38,7 +38,7 @@ namespace SIS_UMS.DatabaseHelper.Interface
         /// </summary>
         /// <param name="updatedForm">The ApplicationForm object containing the updated values.</param>
         /// <returns>True if the application form was successfully updated; otherwise, false.</returns>
-        bool UpdateApplicationForm(ApplicationForm updatedForm);
+        bool UpdateApplicationForm(ApplicationForm? applicationForm);
 
         /// <summary>
         /// Deletes an application form from the database based on its FormId.

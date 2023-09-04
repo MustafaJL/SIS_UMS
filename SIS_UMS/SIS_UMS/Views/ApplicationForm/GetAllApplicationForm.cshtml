@@ -4,6 +4,10 @@
     ViewBag.Title = "USAL | Application Forms";
 }
 
+@{
+    Layout = "_Layout";
+}
+
 
 <style>
    
@@ -17,10 +21,9 @@
         width: 200px;
     }
 
-
 </style>
 
-<section class="content">
+<section class="content media-screen">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -180,29 +183,23 @@
         $(document).on('click', 'a[data-form-id]', function (e) {
             e.preventDefault();
 
-            // Get the FormId from the data-form-id attribute
             var formId = $(this).data('form-id');
 
-            // Show the delete confirmation modal
             $('#deleteConfirmationModal').modal('show');
 
-            // Handle the "Delete" button click inside the modal
             $('#confirmDelete').on('click', function () {
-                // Close the modal
                 $('#deleteConfirmationModal').modal('hide');
 
-                // Send an AJAX request to delete the form
                 $.ajax({
                     url: '/application-form/delete/' + formId,
                     type: 'POST',
-                    success: function (result) {
-                        if (result.success) {
-                            // Redirect to a different page upon successful deletion
-                            window.location.href = '/application-form/all-application-form'; // Replace with your desired URL
+                    success: function (json) {
+                        if (json.isRedirect) {
+                            window.location.href = '/application-form/all-application-form';
                         }
                     },
                     error: function () {
-                        alert('An error occurred while deleting the application form.'); // Handle AJAX error
+                        alert('An error occurred while deleting the application form.');
                     }
                 });
             });

@@ -8,7 +8,7 @@ call add_new_application_form(1, '1121010', '2023-09-01', 'Sports Aid', 'Pending
 
 call add_new_application_form ("Accounting", '1121010', '2023-09-01', 'Sports Aid', 'Pending', '2023-09-02', "Null" );
 
-
+call get_application_form_by_id(21);
 
 select * from application_form;
 

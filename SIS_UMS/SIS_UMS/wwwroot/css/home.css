@@ -1,6 +1,7 @@
-﻿a {
-    text-decoration: none; 
-    color:inherit;
+﻿/* Common styles for all screen sizes */
+a {
+    text-decoration: none;
+    color: inherit;
     cursor: pointer;
 }
 
@@ -8,17 +9,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top:100px;
+    margin-top: 100px;
 }
 
-/* General styles for .info-box elements */
 .info-box {
     border-radius: 6px;
     background-color: #fff;
-    box-shadow:  7px 4px -5px rgba(0, 0, 0, 0.2), 0 8px 0 -4px #fff, 0 9px 3px -4px #ccc, 0 14px 0 -7px #fff, 0 18px 13px rgba(0, 0, 0, 0.15);
+    box-shadow: 7px 4px -5px rgba(0, 0, 0, 0.2), 0 8px 0 -4px #fff, 0 9px 3px -4px #ccc, 0 14px 0 -7px #fff, 0 18px 13px rgba(0, 0, 0, 0.15);
     width: 500px;
 }
-    
 
     .info-box .text {
         font-size: 1.2rem;
@@ -41,26 +40,48 @@
         padding-right: 7px;
     }
 
-
-     /* Styles for image inside .info-box */
-    .info-box .icon img.option-icon {
-         max-width: 100px;
-         height: auto;
-         display: inline-block;
-         vertical-align: middle;
-         margin-right: 30px;
-         transition: transform 0.2s ease;
+        .info-box .icon img.option-icon {
+            max-width: 100px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 30px;
+            transition: transform 0.2s ease;
         }
 
-
-
-
-/* Center the specific <a> element in the middle of the screen */
+/* Centered link for all screen sizes */
 a.centered-link {
     position: relative;
-    top: calc(50% + 350px);
+    top: calc(50% + 370px);
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+/* Media queries for 14-inch screens and larger */
+@media screen and (min-width: 14in) {
+    .info-box-container {
+        margin-top: 50px; 
+        margin-left: 100px;
+    }
 
+    .info-box-container .last-child {
+        margin-top: 100px;
+    }
+
+    .info-box {
+        width: 120%; 
+    }
+
+        
+}
+
+/* Media queries for 24-inch screens and larger */
+@media screen and (min-width: 24in) {
+    .info-box-container {
+        margin-top: 20px;
+    }
+
+    .info-box {
+        width: 60%; 
+    }
+}

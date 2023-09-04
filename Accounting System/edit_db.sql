@@ -72,3 +72,9 @@ modify column amount_to_pay_dollar decimal(5,2);
 
 alter table transactions
 modify column amount_to_pay_lebanese decimal(15,2);
+
+alter table application_form
+drop column processing_date;
+
+alter table application_form
+modify status varchar(255);
