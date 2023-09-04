@@ -33,14 +33,28 @@ namespace SIS_UMS.Controllers
         [HttpPost("create-new-applicationForm")]
         public IActionResult CreateApplicationForm(ApplicationForm applicationForm)
         {
-
-            if (ModelState.IsValid)
+            try
             {
-                _applicationForm.CreateApplicationForm(applicationForm.OfficeName, applicationForm.StudentId, applicationForm.ApplicationType,
-                applicationForm.Status, applicationForm.AdditionalApplicationDetails);
+                if (ModelState.IsValid)
+                {
+                    _applicationForm.CreateApplicationForm(
+                        applicationForm.OfficeName,
+                        applicationForm.StudentId,
+                        applicationForm.ApplicationType,
+                        applicationForm.Status,
+                        applicationForm.AdditionalApplicationDetails
+                    );
+                }
+                return RedirectToAction("GetAllApplicationForm");
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("CreateApplicationForm(): An error occurred while creating the application form: " + ex.Message);
+            }
+
             return RedirectToAction("GetAllApplicationForm");
         }
+
 
 
         // Get: application-form/all-application-form

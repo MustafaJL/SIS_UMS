@@ -74,14 +74,3 @@ a.centered-link {
 
         
 }
-
-/* Media queries for 24-inch screens and larger */
-@media screen and (min-width: 24in) {
-    .info-box-container {
-        margin-top: 20px;
-    }
-
-    .info-box {
-        width: 60%; 
-    }
-}

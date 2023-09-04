@@ -26,27 +26,32 @@ namespace SIS_UMS.DatabaseHelper.Repositories
 
         /// <inheritdoc/>
         public void CreateApplicationForm(string? officeName, string? studentId, string? applicationType, string? status, string? additionalApplicationDetails)
-
         {
-            using MySqlConnection connection = new MySqlConnection(_connectionString);
-            connection.Open();
+            try
+            {
+                using MySqlConnection connection = new MySqlConnection(_connectionString);
+                connection.Open();
 
-            using MySqlCommand command = new MySqlCommand("add_new_application_form", connection);
-            command.CommandType = CommandType.StoredProcedure;
+                using MySqlCommand command = new MySqlCommand("add_new_application_form", connection);
+                command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@sp_office_name", officeName);
-            command.Parameters.AddWithValue("@sp_student_id", studentId);
-            command.Parameters.AddWithValue("@sp_application_type", applicationType);
-            command.Parameters.AddWithValue("@sp_status", status);
-            command.Parameters.AddWithValue("@sp_additional_application_details", additionalApplicationDetails);
+                command.Parameters.AddWithValue("@sp_office_name", officeName);
+                command.Parameters.AddWithValue("@sp_student_id", studentId);
+                command.Parameters.AddWithValue("@sp_application_type", applicationType);
+                command.Parameters.AddWithValue("@sp_status", status);
+                command.Parameters.AddWithValue("@sp_additional_application_details", additionalApplicationDetails);
 
-            command.Parameters.Add(new MySqlParameter("@newFormId", MySqlDbType.Int32));
-            command.Parameters["@newFormId"].Direction = ParameterDirection.Output;
+                command.Parameters.Add(new MySqlParameter("@newFormId", MySqlDbType.Int32));
+                command.Parameters["@newFormId"].Direction = ParameterDirection.Output;
 
-            command.ExecuteNonQuery();
-
-
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("CreateApplicationForm(): An error occurred while creating the application form: " + ex.Message);
+            }
         }
+
 
         /// <inheritdoc/>
         public IEnumerable<ApplicationForm> GetAllApplicationForms()
@@ -199,17 +204,26 @@ namespace SIS_UMS.DatabaseHelper.Repositories
         /// <inheritdoc/>
         public bool DeleteApplicationForm(int formId)
         {
-            using MySqlConnection connection = new MySqlConnection(_connectionString);
-            connection.Open();
+            try
+            {
+                using MySqlConnection connection = new MySqlConnection(_connectionString);
+                connection.Open();
 
-            using MySqlCommand command = new MySqlCommand("delete_application_form", connection);
-            command.CommandType = CommandType.StoredProcedure;
+                using MySqlCommand command = new MySqlCommand("delete_application_form", connection);
+                command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@sp_form_id", formId);
+                command.Parameters.AddWithValue("@sp_form_id", formId);
 
-            int rowsAffected = command.ExecuteNonQuery();
+                int rowsAffected = command.ExecuteNonQuery();
 
-            return rowsAffected > 0;
+                return rowsAffected > 0;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("DeleteApplicationForm(): An error occurred while deleting the application form: " + ex.Message);
+                return false;
+            }
         }
+
     }
 }
