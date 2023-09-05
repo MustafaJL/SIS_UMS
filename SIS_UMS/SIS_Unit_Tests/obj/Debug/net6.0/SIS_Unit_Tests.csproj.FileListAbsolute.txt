@@ -1,0 +1,5 @@
+C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_Unit_Tests\obj\Debug\net6.0\SIS_Unit_Tests.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_Unit_Tests\obj\Debug\net6.0\SIS_Unit_Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_Unit_Tests\obj\Debug\net6.0\SIS_Unit_Tests.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_Unit_Tests\obj\Debug\net6.0\SIS_Unit_Tests.AssemblyInfo.cs
+C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_Unit_Tests\obj\Debug\net6.0\SIS_Unit_Tests.csproj.CoreCompileInputs.cache
