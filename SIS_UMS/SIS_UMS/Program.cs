@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICampusRepository, CampusRepository>();
 builder.Services.AddScoped<IMajorRepository, MajorRepository>();
 builder.Services.AddScoped<IFacultyRepository, FacultyRepository>();

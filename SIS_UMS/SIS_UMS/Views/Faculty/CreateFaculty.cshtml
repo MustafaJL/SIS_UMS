@@ -1,0 +1,68 @@
+﻿@model SIS_UMS.Models.Faculty
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<h4>Faculty</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="View">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="faculty_id" class="control-label"></label>
+                <input asp-for="faculty_id" class="form-control" />
+                <span asp-validation-for="faculty_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="campus_id" class="control-label"></label>
+                <input asp-for="campus_id" class="form-control" />
+                <span asp-validation-for="campus_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dean_user_id" class="control-label"></label>
+                <input asp-for="dean_user_id" class="form-control" />
+                <span asp-validation-for="dean_user_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="faculty_name" class="control-label"></label>
+                <input asp-for="faculty_name" class="form-control" />
+                <span asp-validation-for="faculty_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="faculty_phone_number" class="control-label"></label>
+                <input asp-for="faculty_phone_number" class="form-control" />
+                <span asp-validation-for="faculty_phone_number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="faculty_uni_email" class="control-label"></label>
+                <input asp-for="faculty_uni_email" class="form-control" />
+                <span asp-validation-for="faculty_uni_email" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="is_deleted" /> @Html.DisplayNameFor(model => model.is_deleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="created_at" class="control-label"></label>
+                <input asp-for="created_at" class="form-control" />
+                <span asp-validation-for="created_at" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Admin\Documents\github projects\SIS_UMS\SIS_UMS\SIS_UMS
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/AllCampuses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXEFsbENhbXB1c2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/CreateCampus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXENyZWF0ZUNhbXB1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/EditcampusDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXEVkaXRjYW1wdXNEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/CreateFaculty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxDcmVhdGVGYWN1bHR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/ShowFaculties.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxTaG93RmFjdWx0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,10 +50,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/ViewModel/View.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld01vZGVsXFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewImports.cshtml]
