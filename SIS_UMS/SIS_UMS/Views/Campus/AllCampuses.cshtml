@@ -35,11 +35,18 @@
                                 <td><span class="tag tag-@item.campus_email.ToLower()">@item.campus_email</span></td>
                                 <td>@item.campus_fax</td>
                                 <td>
-                                    @Html.ActionLink("Edit", "EditCampusDetails", new { id=item.campus_id }, new { @class = "btn btn-block btn-dark btn-" })
+                                    <a href="@Url.Action("EditCampusDetails", new { id = item.campus_id })" class="btn btn-block btn-dark" style="color: #fff;">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </a>
                                 </td>
-                                <td >
-                                    @Html.ActionLink("Delete", "DeleteCampus", new { id=item.campus_id }, new { @class = "btn btn-danger custom-delete-button" })
+
+
+                                <td>
+                                    <a href="@Url.Action("DeleteCampus", new { id = item.campus_id })" class="btn btn-danger custom-delete-button">
+                                        <i class="fa-solid fa-trash"></i> 
+                                    </a>
                                 </td>
+
                             </tr>
                         }
                </tbody>
