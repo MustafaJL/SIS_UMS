@@ -1,0 +1,36 @@
+@model Scholarships
+@{
+    ViewData["Title"] = "Add Scholarship";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <h1>Add Scholarship</h1>
+
+    <form asp-controller="Scholarships" asp-action="AddScholarship" method="post">
+        <div class="form-group">
+            <label asp-for="scholarship_type">Scholarship Type</label>
+            <input asp-for="scholarship_type" class="form-control" />
+            <span asp-validation-for="scholarship_type" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="percentage_in_dollar">Percentage in Dollar</label>
+            <input asp-for="percentage_in_dollar" class="form-control" />
+            <span asp-validation-for="percentage_in_dollar" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="percentage_in_lebanese">Percentage in Lebanese</label>
+            <input asp-for="percentage_in_lebanese" class="form-control" />
+            <span asp-validation-for="percentage_in_lebanese" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    <a asp-action="AllScholarships">Back to List</a>
+</body>
+</html>
