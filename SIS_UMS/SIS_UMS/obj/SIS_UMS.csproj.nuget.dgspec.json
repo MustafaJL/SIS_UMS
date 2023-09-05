@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\SIS_UMS.csproj": {}
+    "/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/SIS_UMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\SIS_UMS.csproj": {
+    "/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/SIS_UMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\SIS_UMS.csproj",
+        "projectUniqueName": "/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/SIS_UMS.csproj",
         "projectName": "SIS_UMS",
-        "projectPath": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\SIS_UMS.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\obj\\",
+        "projectPath": "/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/SIS_UMS.csproj",
+        "packagesPath": "/home/frost/.nuget/packages/",
+        "outputPath": "/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/frost/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,6 +46,10 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -60,8 +61,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.121/RuntimeIdentifierGraph.json"
         }
       }
     }
