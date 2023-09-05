@@ -54,6 +54,8 @@ namespace SIS_UMS.Models
 
         public string family_registration { get; set; } = "";
 
+        public string nationality { get; set; }
+
         public string place_of_birth { get; set; } = "";
 
         public string social_security_type { get; set; } = "";
@@ -62,7 +64,7 @@ namespace SIS_UMS.Models
 
         public string? additional_info { get; set; }
 
-        public bool? is_deleted { get; set; }
+        public bool? is_deleted { get; set; } = false;
 
         public DateTime? created_at { get; set; }
     }

@@ -15,19 +15,19 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        <input asp-for="@Model.user.first_name" type="text" class="form-control" id="first_name" name="first_name" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="middle_name">Middle Name</label>
-                        <input type="text" class="form-control" id="middle_name" name="middle_name" required>
+                        <input asp-for="@Model.user.middle_name" type="text" class="form-control" id="middle_name" name="middle_name" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        <input asp-for="@Model.user.last_name" type="text" class="form-control" id="last_name" name="last_name" required>
                     </div>
                 </div>
             </div>
@@ -35,13 +35,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="personal_email">Personal Email</label>
-                        <input type="email" class="form-control" id="personal_email" name="personal_email" required>
+                        <input asp-for="@Model.user.personal_email" type="email" class="form-control" id="personal_email" name="personal_email" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="gender">Gender</label>
-                        <select class="form-control" id="gender" name="gender" required>
+                        <select asp-for="@Model.user.gender" class="form-control" id="gender" name="gender" required>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
@@ -52,13 +52,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="date_of_birth">Date of Birth</label>
-                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                        <input asp-for="@Model.user.date_of_birth" type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="mother_name">Mother's Full Name</label>
-                        <input type="text" class="form-control" id="mother_name" name="mother_name" required>
+                        <input asp-for="@Model.user.mother_name" type="text" class="form-control" id="mother_name" name="mother_name" required>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="marital_status">Marital Status</label>
-                        <select class="form-control" id="marital_status" name="marital_status">
+                        <select asp-for="@Model.user.marital_status" class="form-control" id="marital_status" name="marital_status">
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
                             <option value="Divorced">Divorced</option>
@@ -76,7 +76,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="children_count">Number of Children</label>
-                        <input type="number" class="form-control" id="children_count" name="children_count" value="0" min="0" required>
+                        <input asp-for="@Model.user.children_count" type="number" class="form-control" id="children_count" name="children_count" value="0" min="0" required>
                     </div>
                 </div>
             </div>
@@ -84,13 +84,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="nationality">Nationality</label>
-                        <input type="text" class="form-control" id="nationality" name="nationality" required>
+                        <input asp-for="@Model.user.nationality" type="text" class="form-control" id="nationality" name="nationality" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="place_of_birth">Place of Birth</label>
-                        <input type="text" class="form-control" id="place_of_birth" name="place_of_birth" required>
+                        <input asp-for="@Model.user.place_of_birth" type="text" class="form-control" id="place_of_birth" name="place_of_birth" required>
                     </div>
                 </div>
 
@@ -99,7 +99,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="blood_type">Blood Type</label>
-                        <select class="form-control" id="blood_type" name="blood_type" required>
+                        <select asp-for="@Model.user.blood_type" class="form-control" id="blood_type" name="blood_type" required>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
@@ -114,7 +114,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="family_registration">Family Registration (رقم القيد)</label>
-                        <input type="text" class="form-control" id="family_registration" name="family_registration" required>
+                        <input asp-for="@Model.user.family_registration" type="text" class="form-control" id="family_registration" name="family_registration" required>
                     </div>
                 </div>
             </div>
@@ -136,33 +136,37 @@
             <div class="form-group mb-4" id="social_security_type" style="display: none;">
                 <label>Choose Social Security Type</label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type1" value="الضمان الأجتماعي">
+                    <input asp-for="@Model.user.social_security_type" class="form-check-input" type="radio" name="social_security_type" id="ss_type1" value="الضمان الأجتماعي">
                     <label class="form-check-label" for="ss_type1">الضمان الأجتماعي</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type2" value="أنظمة القوى الأمنية">
+                    <input asp-for="@Model.user.social_security_type" class="form-check-input" type="radio" name="social_security_type" id="ss_type2" value="أنظمة القوى الأمنية">
                     <label class="form-check-label" for="ss_type2">أنظمة القوى الأمنية</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type3" value="تعاونية موظّفي الدولة">
+                    <input asp-for="@Model.user.social_security_type" class="form-check-input" type="radio" name="social_security_type" id="ss_type3" value="تعاونية موظّفي الدولة">
                     <label class="form-check-label" for="ss_type3">تعاونية موظّفي الدولة</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type4" value="صندوق التعاضد الجامعة اللبنانيّة">
+                    <input asp-for="@Model.user.social_security_type" class="form-check-input" type="radio" name="social_security_type" id="ss_type4" value="صندوق التعاضد الجامعة اللبنانيّة">
                     <label class="form-check-label" for="ss_type4">صندوق التعاضد الجامعة اللبنانيّة</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type5" value="صندوق تعاضد القضاة">
+                    <input asp-for="@Model.user.social_security_type" class="form-check-input" type="radio" name="social_security_type" id="ss_type5" value="صندوق تعاضد القضاة">
                     <label class="form-check-label" for="ss_type5">صندوق تعاضد القضاة</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="social_security_type" id="ss_type6" value="البلديات">
+                    <input asp-for="@Model.user.social_security_type" class="form-check-input" type="radio" name="social_security_type" id="ss_type6" value="البلديات">
                     <label class="form-check-label" for="ss_type6">البلديات</label>
                 </div>
             </div>
             <div class="form-group mb-4" id="ssnField" style="display: none;">
                 <label for="ssn">Social Security Number</label>
-                <input type="text" class="form-control" id="ssn" name="ssn">
+                <input asp-for="@Model.user.ssn" type="text" class="form-control" id="ssn" name="ssn">
+            </div>
+
+            <div id="step1_error" class="error_message" style="display:none;">
+                <p>Required fields are missing!</p>
             </div>
 
         </div>
@@ -292,15 +296,6 @@
                         <label for="major">Major:</label>
                         <select class="form-control" id="major" name="major" required>
                             <option value="">Select The Major</option>
-                            @{
-                                if (Model != null)
-                                {
-                                    foreach (var obj in Model.majors)
-                                    {
-                                        <option value="@obj.MajorId">@obj.MajorName</option>
-                                    }
-                                }
-                            }
                         </select>
                     </div>
                 </div>
@@ -699,9 +694,13 @@
         }
 
         function nextStep() {
-            if (currentStep < steps.length - 1) {
-                currentStep++;
-                showStep(currentStep);
+            console.log("Entered Next Step!");
+            if (validateStep(currentStep)) {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    showStep(currentStep);
+                    updateButtonVisibility();
+                }
             }
         }
 
@@ -954,7 +953,7 @@
     // Function to populate the majors dropdown based on the selected department
     function populateMajorsDropdown(selectedDepartmentId) {
         $('#major').empty();
-        // Filter faculties based on the selected facultyId
+        // Filter majors based on the selected facultyId
         var filteredmajors = majorsData.filter(function (major) {
             // Log for debugging purposes
             console.log('selectedDepartmentId:', selectedDepartmentId);
@@ -964,10 +963,10 @@
             return major.departmentId === selectedDepartmentId;
         });
 
-        // Log the filtered departments (for debugging)
+        // Log the filtered majors (for debugging)
         console.log(filteredmajors);
 
-        // Populate the departments dropdown with filtered departments
+        // Populate the majors dropdown with filtered majors
         if (filteredmajors.length === 0) {
             $('#major').append($('<option>', {
                 value: '',
@@ -987,7 +986,7 @@
         }
     }
 
-    // Event handler for the faculty dropdown change event
+    // Event handler for the department dropdown change event
     $('#department').on('change', function () {
         // Get the selected department ID as an integer
         var selectedDepartmentId = parseInt($(this).val(), 10);
@@ -1000,6 +999,92 @@
     });
 </script> 
 
+<script>
+    // Validation functions for each step
+    function validateStep(stepIndex) {
+        if(stepIndex === 0){
+            const firstName = document.getElementById('first_name');
+            const middleName = document.getElementById('middle_name');
+            const lastName = document.getElementById('last_name');
+            const personalEmail = document.getElementById('personal_email');
+            const Gender = document.getElementById('gender');
+            const motherName = document.getElementById('mother_name');
+            const martialStatus = document.getElementById('marital_status');
+            const nationality = document.getElementById('nationality');
+            const placeOfBirth = document.getElementById('place_of_birth');
+            const bloodType = document.getElementById('blood_type');
+            const familyRegistration = document.getElementById('family_registration');
+            const sociallySecuredYes = document.getElementById('socially_secured_yes');
+            const sociallySecuredNo = document.getElementById('socially_secured_no');
+            const socialSecurityRadios = document.querySelectorAll('input[name="social_security_type"]');
+            const errorDiv = document.getElementById('step1_error');
+
+            let isValid = true;
+
+            function validateField(field, fieldName) {
+                if (!field.value.trim()) {
+                    field.classList.add('error'); // Add a CSS class for highlighting
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            }
+
+            //Validate each field
+            validateField(firstName, 'First Name');
+            validateField(middleName, 'Middle Name');
+            validateField(lastName, 'Last Name');
+            validateField(motherName, "Mother's Full Name");
+            validateField(nationality, 'Nationality');
+            validateField(placeOfBirth, 'Place of Birth');
+            validateField(familyRegistration, 'Family Registration');
+
+            let isSocialSecurityChecked = false;
+
+            if(!sociallySecuredYes.checked && !sociallySecuredNo.checked){
+                isValid = false;
+            }
+
+            //Check if "Yes" is selected for "Are you socially secured?"
+            if (sociallySecuredYes.checked) {
+                // Iterate through the social security radio buttons
+                socialSecurityRadios.forEach(function (radio) {
+                    if (radio.checked) {
+                        isSocialSecurityChecked = true;
+                    }
+                });
+            }
+
+            if (sociallySecuredYes.checked && !isSocialSecurityChecked) {
+                // Handle the case where the user chose "Yes" but didn't select a social security option
+                isValid = false;
+            }
+
+            //Display error message if needed
+            if(!isValid) {
+                errorDiv.style.display = 'block';
+            } else {
+                errorDiv.style.display = 'none';
+            }
+
+            return isValid;
+        }
+
+    }
+</script>
+<style>
+    /* CSS for validation error */
+    .error {
+        border: 1px solid #dc3545; /* Red border color */
+    }
+
+    /* Optional: You can also add additional styling for error messages */
+    .error_message {
+        color: #dc3545; /* Red text color */
+        font-size: 14px; /* Adjust font size as needed */
+    }
+
+</style>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -23,7 +23,7 @@ namespace SIS_UMS.Controllers
             MajorRepository mr = new MajorRepository(_configuration);
             SemesterRepository sr = new SemesterRepository(_configuration);
             ApplicationViewModel model = new ApplicationViewModel();
-            model.applicant = new User();
+            model.user = new User();
             model.campuses = cm.GetAllCampuses();
             model.faculties = fy.GetAllFaculties();
             model.departments = dt.GetAllDepartments();
