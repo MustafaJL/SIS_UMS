@@ -18,7 +18,7 @@ builder.Configuration["ConnectionStrings:Default"] = connectionString;
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IApplicationFormRepository, ApplicationFormRepository>();
 builder.Services.AddScoped<IFinancialAgreementRepository, FinancialAgreementRespository>();
-
+builder.Services.AddScoped<IScholarshipsRepository, ScholarshipsRepository>();
 
 var app = builder.Build();
 
