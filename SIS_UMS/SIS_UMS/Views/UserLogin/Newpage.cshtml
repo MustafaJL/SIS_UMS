@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SIS_UMS.Models.User>
+
+@{
+    ViewData["Title"] = "Newpage";
+}
+
+<h1>Dashboard</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password_salt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user_password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+   
+</table>
