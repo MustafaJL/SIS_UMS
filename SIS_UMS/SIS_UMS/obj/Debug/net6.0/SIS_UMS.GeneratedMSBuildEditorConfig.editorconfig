@@ -5,84 +5,81 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SIS_UMS
 build_property.RootNamespace = SIS_UMS
-build_property.ProjectDir = /home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/
+build_property.ProjectDir = C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_UMS\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS
+build_property.MSBuildProjectDirectory = C:\Users\USER\Desktop\SIS_UMS\SIS_UMS\SIS_UMS
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Accounting/AccountingLandingPage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudGluZy9BY2NvdW50aW5nTGFuZGluZ1BhZ2UuY3NodG1s
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Accounting/AccountingLandingPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudGluZ1xBY2NvdW50aW5nTGFuZGluZ1BhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/ApplicationForm/CreateApplicationForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwbGljYXRpb25Gb3JtL0NyZWF0ZUFwcGxpY2F0aW9uRm9ybS5jc2h0bWw=
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/ApplicationForm/CreateApplicationForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25Gb3JtXENyZWF0ZUFwcGxpY2F0aW9uRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/ApplicationForm/GetAllApplicationForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwbGljYXRpb25Gb3JtL0dldEFsbEFwcGxpY2F0aW9uRm9ybS5jc2h0bWw=
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/ApplicationForm/GetAllApplicationForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25Gb3JtXEdldEFsbEFwcGxpY2F0aW9uRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/ApplicationForm/GetApplicationFormById.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwbGljYXRpb25Gb3JtL0dldEFwcGxpY2F0aW9uRm9ybUJ5SWQuY3NodG1s
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/ApplicationForm/GetApplicationFormById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25Gb3JtXEdldEFwcGxpY2F0aW9uRm9ybUJ5SWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/ApplicationForm/UpdateApplicationForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwbGljYXRpb25Gb3JtL1VwZGF0ZUFwcGxpY2F0aW9uRm9ybS5jc2h0bWw=
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/ApplicationForm/UpdateApplicationForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25Gb3JtXFVwZGF0ZUFwcGxpY2F0aW9uRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/CreateFinancialAgreement.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmluYW5jaWFsQWdyZWVtZW50L0NyZWF0ZUZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/CreateFinancialAgreement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsQWdyZWVtZW50XENyZWF0ZUZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/GetAllFinancialAgreement.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmluYW5jaWFsQWdyZWVtZW50L0dldEFsbEZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/GetAllFinancialAgreement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsQWdyZWVtZW50XEdldEFsbEZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/GetFinancialAgreementById.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmluYW5jaWFsQWdyZWVtZW50L0dldEZpbmFuY2lhbEFncmVlbWVudEJ5SWQuY3NodG1s
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/GetFinancialAgreementById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsQWdyZWVtZW50XEdldEZpbmFuY2lhbEFncmVlbWVudEJ5SWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/UpdateFinancialAgreement.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmluYW5jaWFsQWdyZWVtZW50L1VwZGF0ZUZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/UpdateFinancialAgreement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsQWdyZWVtZW50XFVwZGF0ZUZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Scholarships/AllScholarships.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2Nob2xhcnNoaXBzL0FsbFNjaG9sYXJzaGlwcy5jc2h0bWw=
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Students/GetAllStudentCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcR2V0QWxsU3R1ZGVudENvdXJzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Students/GetAllStudentCourses.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudHMvR2V0QWxsU3R1ZGVudENvdXJzZXMuY3NodG1s
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/frost/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-bftimyidzy
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-rxsrsw477e
