@@ -1,0 +1,92 @@
+﻿@model SIS_UMS.Models.FinancialAgreement
+
+@{
+    Layout = "_Layout";
+}
+
+
+@{
+    ViewBag.Title = "USAL | View Financial Agreement";
+}
+
+<section class="content media-screen">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Financial Agreement</h3> <!-- Card title -->
+                </div>
+
+                <!-- DataTables Buttons -->
+                <div class="col-sm-12 col-md-6 mt-2">
+                    <div class="dt-buttons btn-group flex-wrap">
+                        <!-- Buttons for copying, exporting data, edit -->
+                        <button class="btn btn-secondary buttons-pdf buttons-html5" id="generatePdfButton" tabindex="0" aria-controls="example1" type="button"><span><i class="fas fa-download"></i> PDF</span></button>
+                        <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button"><span><i class="fas fa-print"></i> Print</span></button>
+                        <a class="btn btn-secondary buttons-print" href="#" aria-controls="example1">
+                            <span><i class="fas fa-pencil-alt"></i> Edit</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="FinancialAgreement" asp-action="GetFinancialAgreementById">
+                        <!-- Office Name Input -->
+                        <div class="form-group">
+                            <label asp-for="OfficeName" for="inputName">Office Name</label>
+                            <input asp-for="OfficeName" type="text" id="inputName" class="form-control" disabled />
+
+                        </div>
+                        <!-- Student ID Input -->
+                        <div class="form-group">
+                            <label asp-for="StudentId" for="inputDescription">Student ID</label>
+                            <input asp-for="StudentId" id="inputDescription" class="form-control" rows="4" disabled />
+
+                        </div>
+                        <!-- Agreement Date Select -->
+                        <div class="form-group">
+                            <label asp-for="AgreementDate" for="inputStatus">Agreement Date</label>
+                            <input asp-for="AgreementDate" id="inputDescription" class="form-control" rows="4" disabled />
+
+                        </div>
+
+                        <!-- Agreement Details Select -->
+                        <div class="form-group">
+                            <label asp-for="AgreementDetails" for="inputStatus">Agreement Details</label>
+                            <input asp-for="AgreementDetails" id="inputDescription" class="form-control" rows="4" disabled />
+
+                        </div>
+
+                        <!-- Start Date Input -->
+                        <div class="form-group">
+                            <label asp-for="StartDate" for="inputStatus">Start Date</label>
+                            <input asp-for="StartDate" id="inputDescription" class="form-control" rows="4" disabled />
+
+                        </div>
+
+                        <!-- End Date Input -->
+                        <div class="form-group">
+                            <label asp-for="EndDate" for="inputStatus">End Date</label>
+                            <input asp-for="EndDate" id="inputDescription" class="form-control" rows="4" disabled />
+
+                        </div>
+
+                        <!-- Is Active Input -->
+                        <div class="form-check">
+                            <input asp-for="IsActive" type="checkbox" class="form-check-input" id="IsActive" readonly disabled>
+                            <label class="form-check-label" for="IsActive">Is Active</label>
+                        </div>
+
+
+
+                        <!-- Submit Button -->
+                        <a asp-controller="FinancialAgreement" asp-action="GetAllFinancialAgreement" class="btn btn-primary">Back to List</a>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</section>
+
+

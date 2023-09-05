@@ -3,7 +3,11 @@
     "",
     "\\SIS_UMS",
     "\\SIS_UMS\\DatabaseHelper",
+<<<<<<< HEAD
     "\\SIS_UMS\\DatabaseHelper\\Repositories",
+=======
+    "\\SIS_UMS\\DatabaseHelper\\Interface",
+>>>>>>> financialAgreements
     "\\SIS_UMS\\Models",
     "\\SIS_UMS\\Views",
     "\\SIS_UMS\\Views\\ApplicationForm",
@@ -11,6 +15,10 @@
     "\\SIS_UMS\\wwwroot",
     "\\SIS_UMS\\wwwroot\\css"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\SIS_UMS\\DatabaseHelper\\Repositories\\ApplicationFormRepository.cs",
+=======
+  "SelectedNode": "\\SIS_UMS\\DatabaseHelper\\Interface\\IFinancialAgreementRepository.cs",
+>>>>>>> financialAgreements
   "PreviewInSolutionExplorer": false
 }

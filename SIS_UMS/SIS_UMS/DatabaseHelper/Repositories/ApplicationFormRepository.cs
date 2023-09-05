@@ -68,6 +68,7 @@ namespace SIS_UMS.DatabaseHelper.Repositories
 
             while (reader.Read())
             {
+
                 try
                 {
                     applicationForms.Add(new ApplicationForm

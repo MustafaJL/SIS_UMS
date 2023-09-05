@@ -36,6 +36,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25Gb3JtXFVwZGF0ZUFwcGxpY2F0aW9uRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/CreateFinancialAgreement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsQWdyZWVtZW50XENyZWF0ZUZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/GetAllFinancialAgreement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsQWdyZWVtZW50XEdldEFsbEZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/GetFinancialAgreementById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsQWdyZWVtZW50XEdldEZpbmFuY2lhbEFncmVlbWVudEJ5SWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/FinancialAgreement/UpdateFinancialAgreement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsQWdyZWVtZW50XFVwZGF0ZUZpbmFuY2lhbEFncmVlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/USER/Desktop/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
