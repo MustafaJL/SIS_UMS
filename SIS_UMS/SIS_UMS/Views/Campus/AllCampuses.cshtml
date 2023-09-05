@@ -4,55 +4,55 @@
     ViewData["Title"] = "All Campuses";
 }
 
-<h1>All Campuses</h1>
 
+<div class="col-12 justify-content-center align-items-center">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title text-center">All Campuses</h3>
+
+           
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+                <thead>
+                    <tr>
+                        <th>Campus Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Fax</th>
+                    </tr>
+                </thead>
+               <tbody>
+                        
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.campus_name</td>
+                                <td>@item.campus_name</td>
+                                <td>@item.campus_phone_number</td>
+                                <td><span class="tag tag-@item.campus_email.ToLower()">@item.campus_email</span></td>
+                                <td>@item.campus_fax</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "EditCampusDetails", new { id=item.campus_id }, new { @class = "btn btn-block btn-dark btn-" })
+                                </td>
+                                <td >
+                                    @Html.ActionLink("Delete", "DeleteCampus", new { id=item.campus_id }, new { @class = "btn btn-danger custom-delete-button" })
+                                </td>
+                            </tr>
+                        }
+               </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+<br />
+<div>
 <p>
-    <a asp-action="CreateCampus">Create New</a>
+    <a asp-action="CreateCampus" class="btn btn-block btn-outline-dark">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.campus_name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.campus_address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.campus_phone_number)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.campus_email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.campus_fax)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.campus_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.campus_address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.campus_phone_number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.campus_email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.campus_fax)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditCampusDetails", new { id=item.campus_id })
-                @Html.ActionLink("Delete", "DeleteCampus", new { id=item.campus_id })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+</div>
+

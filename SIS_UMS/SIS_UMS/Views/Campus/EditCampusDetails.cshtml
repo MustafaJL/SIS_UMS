@@ -1,48 +1,78 @@
-﻿@model Campus
+﻿@model SIS_UMS.Models.Campus
 
 
-<h4>Campus</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="EditCampusDetails">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="campus_name" class="control-label"></label>
-                <input asp-for="campus_name" class="form-control" value="@Model.campus_name" />
-                <span asp-validation-for="campus_name" class="text-danger"></span>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col-md-6">
+            <div class="card card-primary" style="border-radius: 30px;">
+                <div class="card-header">
+
+
+                    <h3 class="card-title" style="text-align: center; text-decoration: solid;"> <i class="fas fa-university"></i> <br />Edit Campus Details</h3>
+                </div>
+                <form asp-action="EditCampusDetails">
+                    <div class="card-body">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="campus_name" class="control-label">Campus Name:</label>
+                                    <input asp-for="campus_name" class="form-control" required />
+                                    <span asp-validation-for="campus_name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="campus_phone_number" class="control-label">Campus Phone Number:</label>
+                                    <input asp-for="campus_phone_number" class="form-control" required />
+                                    <span asp-validation-for="campus_phone_number" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="campus_address" class="control-label">Campus Address:</label>
+                            <input asp-for="campus_address" class="form-control" required />
+                            <span asp-validation-for="campus_address" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="campus_email" class="control-label">Campus Email:</label>
+                            <input asp-for="campus_email" class="form-control" required />
+                            <span asp-validation-for="campus_email" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="campus_fax" class="control-label">Campus Fax:</label>
+                            <input asp-for="campus_fax" class="form-control" required />
+                            <span asp-validation-for="campus_fax" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card-footer text-center">
+                        <div class="form-group">
+                            <input type="submit" value="Save Changes" class="btn btn-block btn-dark btn-lg" asp-action="EditCampusDetails" />
+                        </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="campus_address" class="control-label"></label>
-                <input asp-for="campus_address" class="form-control" value="@Model.campus_address"/>
-                <span asp-validation-for="campus_address" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="text-center">
+            <a asp-action="AllCampuses" class="btn btn-block btn-outline-dark">Back to List</a>
+        </div>
+
+                    </div>
+                
             </div>
-            <div class="form-group">
-                <label asp-for="campus_phone_number" class="control-label"></label>
-                <input asp-for="campus_phone_number" class="form-control" value="@Model.campus_phone_number" />
-                <span asp-validation-for="campus_phone_number" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="campus_email" class="control-label"></label>
-                <input asp-for="campus_email" class="form-control"  value="@Model.campus_email"/>
-                <span asp-validation-for="campus_email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="campus_fax" class="control-label"></label>
-                <input asp-for="campus_fax" class="form-control" />
-                <span asp-validation-for="campus_fax" class="text-danger" value="@Model.campus_fax"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save Changes" class="btn btn-primary" asp-action="EditCampusDetails" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="AllCampuses">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
