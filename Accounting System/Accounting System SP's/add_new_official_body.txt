@@ -1,0 +1,9 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_official_body`(
+    in sp_user_id int,
+    in sp_official_body_type varchar(255)
+)
+BEGIN
+    -- Add a new record into the official_body table
+    insert into official_body (user_id, official_body_type, is_deleted)
+    values (sp_user_id, sp_official_body_type, false);
+END

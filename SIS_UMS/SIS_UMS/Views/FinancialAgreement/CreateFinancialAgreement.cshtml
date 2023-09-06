@@ -1,0 +1,119 @@
+﻿@model SIS_UMS.Models.FinancialAgreement
+
+
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "USAL | Create New Financial Agreement";
+}
+
+
+<section class="content media-screen">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Add New Financial Agreement</h3> <!-- Card title -->
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="FinancialAgreement" asp-action="CreateFinancialAgreement">
+                        <!-- Office Name Input -->
+                        <div class="form-group">
+                            <label asp-for="OfficeName" for="inputName">Office Name</label>
+                            <input asp-for="OfficeName" type="text" id="inputName" class="form-control">
+                            <span asp-validation-for="OfficeName" class="text-danger"></span>
+                            
+                        </div>
+                        <!-- Student ID Input -->
+                        <div class="form-group">
+                            <label asp-for="StudentId" for="inputDescription">Student ID</label>
+                            <input asp-for="StudentId" id="inputDescription" class="form-control" rows="4" />
+                            <span asp-validation-for="StudentId" class="text-danger"></span>
+
+                        </div>
+            
+                        <!-- Agreement Details Input -->
+                        <div class="form-group">
+                            <label asp-for="AgreementDetails" for="inputStatus">Agreement Details</label>
+                            <input asp-for="AgreementDetails" type="text" id="inputName" class="form-control" />
+                            <span asp-validation-for="AgreementDetails" class="text-danger"></span>
+                        </div>
+
+                        <!-- Start Date Picker -->
+                        <div class="form-group">
+                            <label for="StartDate" class="control-label">Start Date</label>
+                            <input type="date" id="StartDate" name="StartDate" class="form-control datepicker" required>
+                            <span class="text-danger" id="StartDateValidation"></span>
+                        </div>
+
+                        <!-- End Date Picker -->
+                        <div class="form-group">
+                            <label for="EndDate" class="control-label">End Date</label>
+                            <input type="date" id="EndDate" name="EndDate" class="form-control datepicker" required>
+                            <span class="text-danger" id="EndDateValidation"></span>
+                        </div>
+
+                        <!-- Is Active Input -->
+                        <div class="form-check">
+                            <input asp-for="IsActive" type="checkbox" class="form-check-input" id="IsActive">
+                            <label class="form-check-label" for="IsActive">Is Active</label>
+                        </div>
+
+
+                        <!-- Submit Button -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts {
+    <script>
+        var startDateInput = document.getElementById("StartDate");
+        var endDateInput = document.getElementById("EndDate");
+        var isActiveCheckbox = document.getElementById("IsActive");
+
+        // Attach an event listener to the Start Date input
+        startDateInput.addEventListener("input", function () {
+            var startDate = new Date(this.value);
+            if (!isNaN(startDate.getTime())) {
+                // If a valid date is selected, calculate the End Date
+                var endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() + 3); // Add 3 months
+                endDateInput.valueAsDate = endDate; // Set the value of End Date input
+            } else {
+                endDateInput.value = ""; // Clear the End Date if Start Date is invalid
+            }
+
+            // Update the "Is Active" checkbox based on the current date and End Date
+            var currentDate = new Date();
+            if (!isNaN(endDateInput.valueAsDate) && endDateInput.valueAsDate >= currentDate) {
+                isActiveCheckbox.checked = true;
+            } else {
+                isActiveCheckbox.checked = false;
+            }
+        });
+
+        // Attach an event listener to the End Date input
+        endDateInput.addEventListener("input", function () {
+            // Update the "Is Active" checkbox based on the current date and End Date
+            var currentDate = new Date();
+            var endDate = new Date(this.value);
+            if (!isNaN(endDate.getTime()) && endDate >= currentDate) {
+                isActiveCheckbox.checked = true;
+            } else {
+                isActiveCheckbox.checked = false;
+            }
+        });
+    </script>
+}

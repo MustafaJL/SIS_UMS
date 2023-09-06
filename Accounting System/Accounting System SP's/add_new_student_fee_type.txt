@@ -1,0 +1,11 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_student_fee_type`(
+    in sp_user_id int,
+    in sp_fee_type varchar(255),
+    in sp_amount_to_pay_dollar decimal(10, 2),
+    in sp_amount_to_pay_lebanese decimal(15, 2),
+    in sp_scholarship_applies bool
+)
+BEGIN
+    insert into student_fees (user_id, fee_type, amount_to_pay_dollar, amount_to_pay_lebanese, scholarship_applies, is_deleted)
+    values (sp_user_id, sp_fee_type, sp_amount_to_pay_dollar, sp_amount_to_pay_lebanese, sp_scholarship_applies, false);
+END

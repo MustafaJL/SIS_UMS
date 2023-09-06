@@ -15,4 +15,18 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #eee;
+}
+
+input[disabled]:hover,
+select[disabled]:hover,
+textarea[disabled]:hover {
+    cursor: not-allowed;
+}
+
+@media screen and (min-width: 14in) {
+    
+    .media-screen {
+        margin-left: 100px;
+    }
 }

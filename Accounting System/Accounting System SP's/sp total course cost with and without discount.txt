@@ -1,0 +1,88 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `get_student_total_courses_cost`(
+    in sp_student_id varchar(10)
+)
+BEGIN
+-- Declare variables to hold the calculated values
+-- for cost and scholarship discounts
+    declare total_cost_dollar decimal(10, 2);
+    declare total_cost_lebanese decimal(15, 2);
+    declare total_cost_dollar_after_discount decimal(10, 2);
+    declare total_cost_lebanese_after_discount decimal(15, 2);
+    declare total_scholarship_discount_dollar decimal(10, 2);
+    declare total_scholarship_discount_lebanese decimal(15, 2);
+    
+
+
+	-- Calculate the total cost of registered courses for the student in both dollar and Lebanese currency.
+-- The following steps outline the process for each currency:
+--   1. The `student_courses` table (aliased as `sc`) contains course enrollment information for the student.
+--   2. The `course_offering` table (aliased as `co`) provides details about course offerings, including the corresponding course ID.
+--   3. The `courses` table (aliased as `c`) holds information about each course, such as its credits and department ID.
+--   4. The `department_course_cost` table (aliased as `dcc_dollar` and `dcc_lebanese`) provides the cost per credit for each department and currency.
+--   5. The `currency` table provides currency details, including the currency ID associated with 'Dollar' and 'Lebanese'.
+-- The query joins these tables using appropriate joins:
+--   - It matches course offering IDs and course IDs between the tables.
+--   - It also matches department IDs between the `courses` and `department_course_cost` tables.
+--   - The subquery `(select currency_id from currency where currency_name = 'Dollar')` retrieves the currency ID for 'Dollar'.
+--   - Similar steps are taken for calculating costs in Lebanese currency.
+-- The results of each query are stored in the respective declared variables:
+--   - `total_cost_dollar` holds the total cost of registered courses in dollar currency.
+--   - `total_cost_lebanese` holds the total cost of registered courses in Lebanese currency.
+
+	select sum(c.credits * dcc_dollar.amount_cost) into total_cost_dollar
+	from student_courses sc
+	join course_offering co on sc.course_offering_id = co.course_offering_id
+	join courses c on co.course_id = c.course_id
+	join department_course_cost dcc_dollar on c.department_id = dcc_dollar.department_id and dcc_dollar.currency_id = (select currency_id from currency where currency_name = 'Dollar')
+	where sc.student_id = sp_student_id;
+
+	select sum(c.credits * dcc_lebanese.amount_cost) into total_cost_lebanese
+	from student_courses sc
+	join course_offering co on sc.course_offering_id = co.course_offering_id
+	join courses c on co.course_id = c.course_id
+	join department_course_cost dcc_lebanese on c.department_id = dcc_lebanese.department_id and dcc_lebanese.currency_id = (select currency_id from currency where currency_name = 'Lebanese')
+	where sc.student_id = sp_student_id;
+
+
+	-- Calculate the total scholarship discount in both dollar and Lebanese currency for the given student.
+-- The following steps outline the process for each currency:
+--   1. The `student_scholarships` table (aliased as `ss`) contains scholarship information associated with the student.
+--   2. The `scholarships` table (aliased as `sch`) provides details about each scholarship, including its percentage discounts.
+-- The query joins these tables based on the scholarship ID:
+--   - It matches scholarship IDs between the `student_scholarships` and `scholarships` tables.
+--   - The `IFNULL` function is used to handle cases where there are no scholarships for the student, ensuring a default value of 0.
+-- The result of each query is stored in the respective declared variables:
+--   - `total_scholarship_discount_dollar` holds the total scholarship discount in dollar currency.
+--   - `total_scholarship_discount_lebanese` holds the total scholarship discount in Lebanese currency.
+
+	select ifnull(sum(sch.percentage_in_dollar), 0) into total_scholarship_discount_dollar
+	from student_scholarships ss
+	join scholarships sch on ss.scholarship_id = sch.scholarship_id
+	where ss.student_id = sp_student_id;
+
+	select ifnull(sum(sch.percentage_in_lebanese), 0) into total_scholarship_discount_lebanese
+	from student_scholarships ss
+	join scholarships sch on ss.scholarship_id = sch.scholarship_id
+	where ss.student_id = sp_student_id;
+
+
+    -- Calculate the total cost after applying scholarship discounts
+    set total_cost_dollar_after_discount = total_cost_dollar * (1 - total_scholarship_discount_dollar / 100);
+    set total_cost_lebanese_after_discount = total_cost_lebanese * (1 - total_scholarship_discount_lebanese / 100);
+
+   -- Retrieve student information and calculated costs for the student's registered courses in both currencies.
+-- The following query joins the `students` and `users` tables to get student details.
+-- The calculated costs (total costs before and after discounts) are added as columns in the output.
+-- The provided `sp_student_id` parameter is used to filter the results to the specific student.
+
+	select
+		s.student_id,
+		concat(u.first_name, ' ', u.middle_name, ' ', u.last_name) as full_name,
+		total_cost_dollar as total_cost_in_dollar,
+		total_cost_lebanese as total_cost_in_lebanese,
+		total_cost_dollar_after_discount as total_cost_in_dollar_after_discount,
+		total_cost_lebanese_after_discount as total_cost_in_lebanese_after_discount
+	from students s
+	join users u on s.user_id = u.user_id
+	where s.student_id = sp_student_id;
+END

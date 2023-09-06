@@ -1,0 +1,22 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_accounts_from_fees`(
+    in sp_user_id int,
+    in sp_account_type_id int
+)
+BEGIN
+    declare total_need_to_pay_dollar decimal(5, 2);
+    declare total_need_to_pay_lebanese decimal(15, 2);
+
+    -- Calculate the sum amount_to_pay_dollar amount from the student_fees table
+    select sum(amount_to_pay_dollar) into total_need_to_pay_dollar
+    from student_fees
+    where user_id = sp_user_id;
+
+	-- Calculate the sum need_to_pay_lebanese amount from the student_fees table
+    select sum(amount_to_pay_lebanese) into total_need_to_pay_lebanese
+    from student_fees
+    where user_id = sp_user_id;
+
+    -- Add a new row into the accounts table
+    insert into accounts (user_id, account_type_id, need_to_pay_dollar, need_to_pay_lebanese, need_to_purchase_dollar, need_to_purchase_lebanese, is_deleted)
+    values (sp_user_id, sp_account_type_id, total_need_to_pay_dollar, total_need_to_pay_lebanese, 0, 0, false);
+END

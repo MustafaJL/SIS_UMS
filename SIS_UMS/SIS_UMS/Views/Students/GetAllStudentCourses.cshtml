@@ -1,0 +1,26 @@
+﻿@model List<StudentCourse>
+
+<h1>List of Student Courses</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Course Name</th>
+            <th>Course Status</th>
+            <th>Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Loop through the model data to populate the table -->
+        @foreach (var studentCourse in Model)
+        {
+            <tr>
+                <td>@studentCourse.StudentId</td>
+                <td>@studentCourse.CourseName</td>
+                <td>@studentCourse.CourseStatus</td>
+                <td>@studentCourse.CreatedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>

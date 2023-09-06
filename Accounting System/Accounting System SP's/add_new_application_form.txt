@@ -1,0 +1,14 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_application_form`(
+    in sp_office_id int,
+    in sp_student_id varchar(10),
+    in sp_application_date date,
+    in sp_application_type varchar(255),
+    in sp_status enum('Pending', 'Accepted', 'Rejected'),
+    in sp_processing_date date,
+    in sp_additional_application_details text
+)
+BEGIN
+    -- Add a new record into the application_form table
+    insert into application_form (office_id, student_id, application_date, application_type, status, processing_date, additional_application_details, is_deleted)
+    values (sp_office_id, sp_student_id, sp_application_date, sp_application_type, sp_status, sp_processing_date, sp_additional_application_details, false);
+END

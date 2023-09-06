@@ -1,0 +1,71 @@
+﻿@model SIS_UMS.Models.ApplicationForm
+
+
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "USAL | Update Application Forms";
+}
+
+
+
+<section class="content media-screen">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Update Application Form</h3> <!-- Card title -->
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="ApplicationForm" asp-action="UpdateApplicationForm">
+                        <!-- Office Name Input -->
+                        <div class="form-group">
+                            <label asp-for="OfficeName" for="inputName">Office Name</label>
+                            <input asp-for="OfficeName" type="text" id="inputName" class="form-control">
+
+                        </div>
+                        <!-- Student ID Input -->
+                        <div class="form-group">
+                            <label asp-for="StudentId" for="inputDescription">Student ID</label>
+                            <input asp-for="StudentId" id="inputDescription" class="form-control" rows="4" />
+
+                        </div>
+                        <!-- Application Type Select -->
+                        <div class="form-group">
+                            <label asp-for="ApplicationType" for="inputDescription">Application Type</label>
+                            <input asp-for="ApplicationType" id="inputDescription" class="form-control" rows="4" />
+
+                        </div>
+
+                        <!-- Status Select -->
+                        <div class="form-group">
+                            <label asp-for="Status" for="inputStatus">Status</label>
+                            <select asp-for="Status" id="inputStatus" class="form-control custom-select">
+                                <option value="Pending">Pending</option>
+                                <option value="Accepted">Accepted</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Additional Info Textarea -->
+                        <div class="form-group">
+                            <label asp-for="AdditionalApplicationDetails" for="inputProjectLeader">Additional Info</label>
+                            <textarea asp-for="AdditionalApplicationDetails" type="text" id="inputProjectLeader" class="form-control"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Edit Form</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</section>
+

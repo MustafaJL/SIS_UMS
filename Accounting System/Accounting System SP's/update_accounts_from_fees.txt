@@ -1,0 +1,27 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `update_accounts_from_fees`(
+    IN sp_user_id INT,
+    IN sp_account_type_id INT
+)
+BEGIN
+    -- Declare variables for total amounts
+    DECLARE total_need_to_pay_dollar DECIMAL(5, 2);
+    DECLARE total_need_to_pay_lebanese DECIMAL(15, 2);
+
+    -- Calculate the total need_to_pay dollar amount from the student_fees table
+    SELECT SUM(amount_to_pay_dollar) INTO total_need_to_pay_dollar
+    FROM student_fees
+    WHERE user_id = sp_user_id;
+
+    -- Calculate the total need_to_pay Lebanese amount from the student_fees table
+    SELECT SUM(amount_to_pay_lebanese) INTO total_need_to_pay_lebanese
+    FROM student_fees
+    WHERE user_id = sp_user_id;
+
+    INSERT INTO accounts (user_id, account_type_id, need_to_pay_dollar, need_to_pay_lebanese, need_to_purchase_dollar, need_to_purchase_lebanese, is_deleted)
+	VALUES (sp_user_id, sp_account_type_id, total_need_to_pay_dollar
+	, total_need_to_pay_lebanese, 0, 0 , false );
+
+    
+    
+   
+END

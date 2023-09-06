@@ -1,0 +1,11 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_scholarship`(
+    in sp_scholarship_type varchar(255),
+    in sp_percentage_in_dollar decimal(5, 2),
+    in sp_percentage_in_lebanese decimal(15, 2)
+)
+BEGIN
+    -- Add new scholarship
+    insert into scholarships (scholarship_type, percentage_in_dollar, percentage_in_lebanese, is_deleted)
+    values (sp_scholarship_type, sp_percentage_in_dollar, sp_percentage_in_lebanese, false);
+
+END

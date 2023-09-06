@@ -1,0 +1,76 @@
+﻿/* Common styles for all screen sizes */
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.info-box-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.info-box {
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 7px 4px -5px rgba(0, 0, 0, 0.2), 0 8px 0 -4px #fff, 0 9px 3px -4px #ccc, 0 14px 0 -7px #fff, 0 18px 13px rgba(0, 0, 0, 0.15);
+    width: 500px;
+}
+
+    .info-box .text {
+        font-size: 1.2rem;
+        width: auto;
+        margin: 0;
+        font-weight: 600;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 80px;
+        margin-top: 30px;
+    }
+
+    .info-box .icon {
+        display: inline-block;
+        border-radius: 100px;
+        margin: 0 0 0 10px;
+        vertical-align: middle;
+        width: 50px;
+        background: none;
+        padding-right: 7px;
+    }
+
+        .info-box .icon img.option-icon {
+            max-width: 100px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 30px;
+            transition: transform 0.2s ease;
+        }
+
+/* Centered link for all screen sizes */
+a.centered-link {
+    position: relative;
+    top: calc(50% + 370px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Media queries for 14-inch screens and larger */
+@media screen and (min-width: 14in) {
+    .info-box-container {
+        margin-top: 50px; 
+        margin-left: 100px;
+    }
+
+    .info-box-container .last-child {
+        margin-top: 100px;
+    }
+
+    .info-box {
+        width: 120%; 
+    }
+
+        
+}

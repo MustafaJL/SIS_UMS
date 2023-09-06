@@ -1,0 +1,26 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_new_financial_statement`(
+    in sp_office_id int,
+    in sp_student_id varchar(10),
+    in sp_total_amount_dollar decimal(5, 2),
+    in sp_total_amount_lebanese decimal(15, 2),
+    in sp_payments_amount_dollar decimal(5, 2),
+    in sp_payments_amount_lebanese decimal(15, 2),
+    in sp_remaining_amount_dollar decimal(5, 2),
+    in sp_remaining_amount_lebanese decimal(15, 2),
+    in sp_has_official_body bool
+)
+BEGIN
+    -- Add a new record into the financial_statement table
+    insert into financial_statement (
+        office_id, student_id, total_amount_dollar, total_amount_lebanese,
+        payments_amount_dollar, payments_amount_lebanese,
+        remaining_amount_dollar, remaining_amount_lebanese,
+        has_official_body, is_deleted
+    )
+    values (
+        sp_office_id, sp_student_id, sp_total_amount_dollar, sp_total_amount_lebanese,
+        sp_payments_amount_dollar, sp_payments_amount_lebanese,
+        sp_remaining_amount_dollar, sp_remaining_amount_lebanese,
+        sp_has_official_body, false
+    );
+END

@@ -1,0 +1,10 @@
+CREATE DEFINER=`hatan`@`localhost` PROCEDURE `add_student_scholarship`(
+    IN sp_student_id varchar(10),
+    IN sp_scholarship_id int
+)
+BEGIN
+    DECLARE new_student_scholarship_id int;
+
+    INSERT INTO student_scholarships (student_id, scholarship_id, is_deleted)
+    VALUES (sp_student_id, sp_scholarship_id, false);
+END

@@ -1,0 +1,101 @@
+﻿@model SIS_UMS.Models.ApplicationForm
+
+
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "USAL | Create New Application Forms";
+}
+
+<!-- Include Bootstrap CSS (if not already included) -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Include Bootstrap datepicker CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+<!-- Include jQuery (required for Bootstrap and Bootstrap datepicker) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Bootstrap JavaScript (if not already included) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Include Bootstrap datepicker JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+
+
+<section class="content media-screen">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Add New Application Form</h3> <!-- Card title -->
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="ApplicationForm" asp-action="CreateApplicationForm">
+                        <!-- Office Name Input -->
+                        <div class="form-group">
+                            <label asp-for="OfficeName" for="inputName">Office Name</label>
+                            <input asp-for="OfficeName" type="text" id="inputName" class="form-control">
+                            <span asp-validation-for="OfficeName" class="text-danger"></span>
+                            
+                        </div>
+                        <!-- Student ID Input -->
+                        <div class="form-group">
+                            <label asp-for="StudentId" for="inputDescription">Student ID</label>
+                            <input asp-for="StudentId" id="inputDescription" class="form-control" rows="4" />
+                            <span asp-validation-for="StudentId" class="text-danger"></span>
+
+                        </div>
+                        <!-- Application Type Select -->
+                        <div class="form-group">
+                            <label asp-for="ApplicationType" for="inputStatus">Application Type</label>
+                            <select asp-for="ApplicationType" class="form-control custom-select">
+                                <option value="" selected disabled>Select one</option>
+                                <option value="Financial Statement">Financial Statement</option>
+                                <option value="Financial Agreement">Financial Agreement</option>
+                            </select>
+                        </div>
+
+                        <!-- Status Select -->
+                        <div class="form-group">
+                            <label asp-for="Status" for="inputStatus">Status</label>
+                            <select asp-for="Status" id="inputStatus" class="form-control custom-select">
+                                <option value="Pending">Pending</option>
+                                <option value="Accepted">Accepted</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Additional Info Textarea -->
+                        <!-- Additional Info Textarea -->
+                        <div class="form-group">
+                            <label asp-for="AdditionalApplicationDetails" for="inputProjectLeader">Additional Info</label>
+                            <textarea asp-for="AdditionalApplicationDetails" type="text" id="inputProjectLeader" class="form-control"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(document).ready(function () {
+        $('#datepicker').datepicker({
+            autoclose: true,
+            format: 'yyyy-mm-dd' // You can adjust the date format as needed
+        });
+    });
+</script>
