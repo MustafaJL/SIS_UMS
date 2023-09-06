@@ -4,33 +4,55 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>Login</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Start of Card -->
+            <div class="card">
+                <!-- Card Header -->
+                <div class="card-header bg-info text-white">
+                    <!-- Title of the Card -->
+                    <h3 class="card-title">Username</h3>
+                </div>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="UsernameLogin">
-            @Html.ValidationSummary()
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="username" class="control-label"></label>
-                <input type="text" asp-for="username" class="form-control" />
-                <span asp-validation-for="username" class="text-danger"></span>
-            </div>
+                <!-- Form for User Login -->
+                <form class="form-horizontal" asp-action="UsernameLogin">
 
-            <div class="form-group">
-                <input type="submit" value="Next" class="btn btn-primary" />
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <!-- Form Group for Username Input -->
+                        <div class="form-group row">
+                            <!-- Validation Summary for Model Errors -->
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <!-- Username Input -->
+                            <div class="form-group col-sm-8 ml-4">
+                                <!-- Label for Username Input -->
+                                <label>Please Enter Your Username:</label>
+
+                                <!-- Username Input Field -->
+                                <input type="text" asp-for="username" class="form-control mt-3" style="width: 100%;" placeholder="Username">
+
+                                <!-- Validation Error Message for Username -->
+                                <span asp-validation-for="username" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer -->
+                    <div class="card-footer">
+                        <!-- Button Group with Back and Next Buttons -->
+                        <div class="d-flex justify-content-between">
+                            <!-- Back Button Linked to Home/Index -->
+                            <a asp-action="Index" asp-controller="Home" class="btn btn-secondary px-4">Back</a>
+
+                            <!-- Next Button for Form Submission -->
+                            <button type="submit" class="btn btn-success px-4">Next</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+            <!-- End of Card -->
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

@@ -6,6 +6,11 @@ using SIS_UMS.Models;
 
 namespace SIS_UMS.Controllers
 {
+    /// <summary>
+    /// Controller responsible for handling user login and related actions.
+    /// Also the General idea of this controller it take the username encrypt it and put it in the url to be passed.
+    /// After that,the passed username in the url will taken from it then decrypted and passed to the function to check the creditentials.
+    /// </summary>
     public class UserLoginController : Controller
     {
         private readonly IUserRepository _userRepository;
@@ -14,114 +19,96 @@ namespace SIS_UMS.Controllers
         {
             _userRepository = userRepository;
         }
-       
 
+        /// <summary>
+        /// Displays the UsernameLogin view.
+        /// </summary>
         [HttpGet]
         public IActionResult UsernameLogin()
         {
             return View();
         }
+
+        /// <summary>
+        /// Handles the submission of the UsernameLogin form.
+        /// </summary>
+        /// <param name="username">The user's username.</param>
         [HttpPost]
         public IActionResult UsernameLogin(int username)
         {
+            // Check if the username exists using the Check_Username function from the repository.
             bool usernameExists = _userRepository.Check_Username(username);
 
             if (usernameExists)
             {
-                // Encrypt the username and pass it as a string in the URL
+                // Encrypt the username using the Encrypt method from the EncryptionHelper class.
                 string encryptedUsername = EncryptionHelper.Encrypt(username);
+                // Redirect to the PasswordLogin view and pass the encryptedUsername as a parameter in the URL.
                 return RedirectToAction("PasswordLogin", new { encryptedUsername });
             }
             else
             {
-                ModelState.Clear(); // Clear previous errors
-                ModelState.AddModelError("username", $"The username '{username}' does not exist.");
+                // Clear previous errors.
+                ModelState.Clear();
+                // If the username does not exist, display an error message.
+                ModelState.AddModelError("username", "This username does not exist.");
+                // Return the UsernameLogin view.
                 return View();
             }
         }
 
-
-
+        /// <summary>
+        /// Displays the PasswordLogin view and passes an encrypted username as a parameter.
+        /// </summary>
+        /// <param name="encryptedUsername">The encrypted username to be passed as a parameter.</param>
         [HttpGet]
-        public IActionResult PasswordLogin( string encryptedUsername)
+        public IActionResult PasswordLogin(string encryptedUsername)
         {
-            User userModle = new User();
-            userModle.password_salt= encryptedUsername;
-            return View(userModle);
+            // Create a model in the view from the User Model to hold necessary variables.
+            User userModel = new User();
+            // Add the encryptedUsername to the password_salt field in the model.
+            userModel.password_salt = encryptedUsername;
+            // Return the view and pass the userModel as the model.
+            return View(userModel);
         }
 
-
-        //[HttpPost]
-        //public IActionResult PasswordLogin(User userModel , string encryptedUsername)
-        //{
-        //    var password = userModel.user_password;
-        //  return RedirectToAction("PassLogin", new { encryptedUsername, password });
-        //}
-
-        //[HttpPost]
-        //public IActionResult PassLogin( string encryptedUsername, string password)
-        //{
-
-        //    int username = EncryptionHelper.Decrypt(encryptedUsername);
-        //    // Use the 'username' parameter for password validation
-        //    bool isValidPassword = _userRepository.ValidatePassword(username, password);
-
-
-        //    if (isValidPassword)
-        //    {
-        //        ViewBag.IsValid = true;
-        //        // Password is valid, redirect to the dashboard page or perform other actions
-        //        //return RedirectToAction("Newpage");
-        //        return RedirectToAction("Index","Home");
-        //    }
-
-        //    ModelState.Clear(); // Clear previous errors
-        //    ModelState.AddModelError("password", "Invalid password.");
-        //    ViewBag.IsValid = false;
-        //    return RedirectToAction("PasswordLogin", new { encryptedUsername });
-        //}
-
-
+        /// <summary>
+        /// Handles the submission of the PasswordLogin form.
+        /// </summary>
+        /// <param name="userModel">The User model containing encrypted username and password.</param>
         [HttpPost]
         public IActionResult PassLogin([FromBody] User userModel)
         {
-
-            // You can access properties of the JSON object like this:
+            // Retrieve the encrypted username and password from the model.
             string encryptedUsername = userModel.password_salt;
-
             string password = userModel.user_password;
 
-            // Check if the expected properties are present
-            if (encryptedUsername == null)
-            {
-                // Handle the case where expected properties are missing
-                return BadRequest("Missing username properties in JSON data.");
-            }
-
-
+            // Decrypt the username using the Decrypt method from the EncryptionHelper class.
             int username = EncryptionHelper.Decrypt(encryptedUsername);
-            // Use the 'username' parameter for password validation
-            bool isValidPassword = _userRepository.ValidatePassword(username, password);
 
+            // Use the 'username' parameter for password validation.
+            bool isValidPassword = _userRepository.ValidatePassword(username, password);
 
             if (isValidPassword)
             {
-                ViewBag.IsValid = true;
-                // Password is valid, redirect to the dashboard page or perform other actions
-                //return RedirectToAction("Newpage");
-                return RedirectToAction("Index", "Home");
+                // Redirect to a new page, dashboard, etc., upon successful login.
+                return RedirectToAction("Newpage");
             }
 
-            ModelState.Clear(); // Clear previous errors
+            // Clear previous errors.
+            ModelState.Clear();
+            // Display an error indicating that the password is incorrect.
             ModelState.AddModelError("password", "Invalid password.");
-            ViewBag.IsValid = false;
+            // Redirect to the PasswordLogin view and pass the encryptedUsername as a parameter.
             return RedirectToAction("PasswordLogin", new { encryptedUsername });
         }
 
-
-
+        /// <summary>
+        /// Displays the Newpage view.
+        /// </summary>
         public IActionResult Newpage()
         {
+            // Return the view for the Newpage.
             return View();
         }
     }

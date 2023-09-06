@@ -1,0 +1,29 @@
+﻿-- Stored Procedure Name: Check_Username
+-- Purpose: This procedure checks whether a given username exists in the 'users' table.
+--          It returns TRUE if the username exists, or FALSE if it does not.
+-- Input Parameters:
+--   input_username (IN): The username to be validated.
+--                        Data Type: VARCHAR(255)
+-- Output Parameters:
+--   is_valid (OUT): Indicates whether the username exists.
+--                   Data Type: BOOLEAN
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Check_Username`(IN input_username VARCHAR(255), OUT is_valid BOOLEAN)
+BEGIN
+    -- Declare a variable to store the count of matching usernames
+    DECLARE user_count INT;
+
+    -- Count the number of records where the username matches the input
+    SELECT COUNT(*) INTO user_count
+    FROM users
+    WHERE username = input_username;
+
+    -- Check if the username exists
+    IF user_count > 0 THEN
+        -- Username exists
+        SET is_valid = TRUE;
+    ELSE
+        -- Username does not exist
+        SET is_valid = FALSE;
+    END IF;
+END;

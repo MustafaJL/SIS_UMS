@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\SIS_UMS.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\adminlte.min.css",
+      "PackagePath": "staticwebassets\\css\\adminlte.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\css\\all.min.css"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SIS_UMS\\SIS_UMS\\SIS_UMS\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
