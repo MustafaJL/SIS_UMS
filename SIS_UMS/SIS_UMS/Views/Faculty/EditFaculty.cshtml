@@ -3,21 +3,22 @@
 <h4>Faculty</h4>
 <hr />
 <div class="row">
+    <p>@ViewBag.hi</p>
     <div class="col-md-4">
-        <form asp-action="CreateFaculty" asp-controller="Faculty">
+        <form asp-action="EditFaculty">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="faculty.faculty_name" class="control-label"></label>
-                <input asp-for="faculty.faculty_name" class="form-control" />
+                <label asp-for="@Model.faculty.faculty_name" class="control-label"></label>
+                <input asp-for="@Model.faculty.faculty_name" class="form-control" value=@Model.faculty.faculty_name id="1"/>
                 <span asp-validation-for="faculty.faculty_name" class="text-danger"></span>
             </div>
             <div class="form-group">
                  <label asp-for="faculty.campus_id">Select Campus:</label>
                  <select asp-for="faculty.campus_id" class="form-control">
-                 <option asp-for="@Model.faculty.campus_id">-- Select Campus --</option>
-                     @foreach ( var campus in Model.campuses)
+                 <option value="">-- Select Campus --</option>
+                    @foreach (var campus in Model.campuses)
                     {
-                       <option value="@campus.campus_id">@campus.campus_name</option> 
+                           <option value="@campus.campus_id">@campus.campus_name</option> 
                     }
                 </select>
             </div>
@@ -27,31 +28,29 @@
                  <option value="">-- Select Dean --</option>
                     @foreach (var user in Model.users)
                     {
-                           <option value="@user.user_id">@String.Concat(@user.first_name," ",@user.last_name)</option> 
+                               <option value="@user.user_id">@String.Concat(@user.first_name," ",@user.last_name)</option> 
                     }
                 </select>
             </div>
             <div class="form-group">
                 <label asp-for="@Model.faculty.faculty_phone_number" class="control-label"></label>
-                <input asp-for="@Model.faculty.faculty_phone_number" class="form-control" />
+                <input asp-for="@Model.faculty.faculty_phone_number" class="form-control" value="@Model.faculty.faculty_phone_number"/>
                 <span asp-validation-for="@Model.faculty.faculty_phone_number" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="@Model.faculty.faculty_uni_email" class="control-label"></label>
-                <input asp-for="@Model.faculty.faculty_uni_email" class="form-control" />
+                <input asp-for="@Model.faculty.faculty_uni_email" class="form-control" value="@Model.faculty.faculty_uni_email"/>
                 <span asp-validation-for="@Model.faculty.faculty_uni_email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save Changes" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -4,11 +4,13 @@ namespace SIS_UMS.DatabaseHelper.Interfaces
 {
     public interface IFacultyRepository
     {
-        bool CreateFaculty(Faculty faculty);
-        IEnumerable<Faculty> GetAllFaculties(int campus_id);
+        bool CreateFaculty(int campus_id,string faculty_name,int dean_user_id,string faculty_phone_number,string faculty_uni_email);
+        IEnumerable<Faculty> GetAllFacultiesInACampus(int campus_id);
 
-        //bool EditFaculty(Faculty faculty);
+        IEnumerable<Faculty> GetAllFaculties();
+        Faculty GetFaculty(int facultyid);
+        void EditFaculty(int faculty_id,int campus_id, string faculty_name, int dean_user_id, string faculty_phone_number, string faculty_uni_email);
 
-        //bool DeleteFaculty(int facultyid);
+        Task<bool> DeleteFaculty(int id);
     }
 }

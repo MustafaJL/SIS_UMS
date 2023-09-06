@@ -1,8 +1,6 @@
-﻿@model IEnumerable<Faculty>
+﻿@model IEnumerable<Faculty>;
 
-<p>
-    <a asp-action="CreateFaculty">Create New</a>
-</p>
+<p><a asp-action="CreateFaculty">Create New</a></p>
 <table class="table">
     <thead>
         <tr>
@@ -31,7 +29,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                    @Html.DisplayFor(modelItem => item.campus_name)
+                @Html.DisplayFor(modelItem => item.campus_name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.dean_user_name)
@@ -46,9 +44,8 @@
                 @Html.DisplayFor(modelItem => item.faculty_uni_email)
             </td>
             <td>
-                    @Html.ActionLink("Edit", "Edit", new { item.faculty_id }) |
-                    @Html.ActionLink("Details", "Details", new { item.faculty_id }) |
-                    @Html.ActionLink("Delete", "Delete", new { item.faculty_id })
+                    @Html.ActionLink("Edit Faculty", "EditFaculty", new { id=item.faculty_id }) |
+                    @Html.ActionLink("Delete Faculty", "DeleteFaculty", new { id=item.faculty_id })
             </td>
         </tr>
 }
