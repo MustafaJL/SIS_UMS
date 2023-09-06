@@ -1,7 +1,4 @@
-﻿
-
-@model IEnumerable<block>
-
+﻿@model IEnumerable<BlockViewModel>
 @{
     ViewData["Title"] = "Index";
 }
@@ -10,13 +7,14 @@
 
 <p>
     <a asp-action="CreateBlock">Create New</a>
+
 </p>
 <table class="table">
     <thead>
         <tr>
 
 
-            <th>Id</th>
+          
             <th>Code</th>
             <th>Campus</th>
             <th>Floor</th>
@@ -35,13 +33,11 @@
 
             <tr>
                 <td width="30%">
-                        @item.block_id
+                    @item.block_code
                 </td>
+               
                 <td width="30%">
-                        @item.block_code
-                </td>
-                <td width="30%">
-                        @item.campus_id
+                        @item.campus_name
                 </td>
                 <td width="30%">
                         @item.floor_count

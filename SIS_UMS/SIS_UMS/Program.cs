@@ -32,3 +32,15 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "Campus",
+        pattern: "{controller=Campus}/{action=Index}/{id?}");
+
+    endpoints.MapControllerRoute(
+        name: "Block",
+        pattern: "{controller=Block}/{action=Index}/{id?}");
+
+    // Other endpoints and configurations
+});

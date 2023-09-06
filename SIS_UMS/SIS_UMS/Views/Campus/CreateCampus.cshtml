@@ -16,15 +16,16 @@
     
     <input type="submit" />
 </form>*@
+
 @model campus
 
 @{
     ViewData["Title"] = "CreateCampus";
 }
 
-<form asp-action="CreateCampus" asp-controller="Campus" class="form-horizontal">
+<form  asp-action="CreateCampus" asp-controller="Campus" class="form-horizontal">
     <h2>Campus</h2>
-
+    
     <div class="form-group">
         <label asp-for="campus_name" class="control-label col-md-2">Name</label>
         <div class="col-md-10">
@@ -42,27 +43,32 @@
     <div class="form-group">
         <label asp-for="campus_address" class="control-label col-md-2">Address</label>
         <div class="col-md-10">
-            <input asp-for="campus_address" class="form-control" placeholder="Address" />
+            <input asp-for="campus_address" class="form-control" placeholder="Address" required />
         </div>
     </div>
 
     <div class="form-group">
         <label asp-for="campus_fax" class="control-label col-md-2">Fax</label>
         <div class="col-md-10">
-            <input asp-for="campus_fax" class="form-control" placeholder="Fax" />
+            <input asp-for="campus_fax" class="form-control" placeholder="Fax" required />
         </div>
     </div>
 
     <div class="form-group">
         <label asp-for="campus_phone_number" class="control-label col-md-2">Campus Phone Number</label>
         <div class="col-md-10">
-            <input asp-for="campus_phone_number" class="form-control" placeholder="Campus Phone Number" />
+            <input asp-for="campus_phone_number" class="form-control" placeholder="Campus Phone Number" required/>
         </div>
     </div>
-
+    
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-action="Index" asp-controller="Campus" class="btn btn-primary">Back to List</a>
+         
+            <button type="submit" name="action" value="Create" class="btn btn-primary">Create</button>
+            <button type="submit" name="action" value="CreateAndNext" class="btn btn-success">Create and Next</button>
+
+           
         </div>
     </div>
 </form>

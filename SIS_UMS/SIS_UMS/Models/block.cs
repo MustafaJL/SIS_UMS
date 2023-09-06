@@ -7,7 +7,7 @@
         public string block_code { get; set; }
         public int floor_count { get; set; }
         public int room_count { get; set; }
-        public bool is_deleted { get; set; }
+        public bool is_deleted { get; set; } = false;
         public DateTime created_at { get; set; } = DateTime.Now;
     }
 }

@@ -25,13 +25,25 @@ namespace SIS_UMS.Controllers
         [HttpGet("Index")]
         public async Task<IActionResult> Index()
         {
+            // Retrieve the blocks data using your existing repository method
+            var blocks = await _blockRepository.GetAllBlocks();
 
-            IEnumerable<block> block = await _blockRepository.GetAllBlocks();
+            // Create a list of BlockViewModel and populate it with the data
+            var blockViewModels = blocks.Select(block => new BlockViewModel
+            {
+                block_id = block.block_id,
+                campus_id = block.campus_id,
+                created_at = block.created_at,
+                block_code = block.block_code,
+                floor_count = block.floor_count,
+                room_count = block.room_count,
+                campus_name = block.campus_name,
+                // Populate other properties as needed
+            }).ToList();
 
-            return View(block);
-
-
+            return View(blockViewModels);
         }
+
 
 
         [HttpGet("CreateBlock")]
@@ -39,7 +51,7 @@ namespace SIS_UMS.Controllers
         {
             BlockCampusViewModel blockCampusViewModel = new BlockCampusViewModel
             {
-                block = new block(),
+                 block =  new block(),
                 campus = await _campusRepository.GetAllCampus()
 
 
@@ -48,19 +60,34 @@ namespace SIS_UMS.Controllers
         }
 
 
+
+
         [HttpPost("CreateBlock")]
         [ValidateAntiForgeryToken]
-       
-        public async Task<IActionResult> CreateBlock(BlockCampusViewModel viewModel)
+
+        public ActionResult CreateBlock(block block, string action)
         {
             if (ModelState.IsValid)
             {
-                await _blockRepository.CreateBlock(viewModel.block);
-                return RedirectToAction("Index"); 
+                _blockRepository.CreateBlock(block);
+
+                if (action == "CreateAndNext")
+                {
+                    // Redirect to the CreateBlock action in the BlockController
+                    return RedirectToAction("CreateRoom", "Room");
+                }
+
+                // Redirect to the Index action in the CampusController
+                return RedirectToAction("Index");
             }
 
-            return View(viewModel);
+            return View(block);
         }
+
+
+
+
+
 
 
 

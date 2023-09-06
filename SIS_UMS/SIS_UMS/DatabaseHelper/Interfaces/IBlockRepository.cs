@@ -5,7 +5,7 @@ namespace SIS_UMS.DatabaseHelper.Interfaces
     public interface IBlockRepository
     {
 
-        Task<IEnumerable<block>> GetAllBlocks();
+        Task<IEnumerable<BlockViewModel>> GetAllBlocks();
         Task<block> GetBlockById(int blockId);
 
 

@@ -5,22 +5,33 @@
 }
 
 <form asp-action="CreateBlock" asp-controller="Block">
-
-    <input asp-for="block.block_code" placeholder="block code" />
+    <label asp-for="block.block_code">Block Code</label>
+    <input asp-for="block.block_code" placeholder="block code" required/>
 
     <div class="form-group">
         <label asp-for="block.campus_id">Select Campus:</label>
-        <select asp-for="block.campus_id" asp-items="new SelectList(Model.campus, nameof(campus.campus_id), nameof(campus.campus_name))" class="form-control">
+        <select asp-for="block.campus_id" asp-items="new SelectList(Model.campus, nameof(campus.campus_id), nameof(campus.campus_name))" class="form-control" required>
             <option value="">-- Select Campus --</option>
         </select>
          
     </div>
 
 
+    <label asp-for="block.floor_count" >Floor Number</label>
+    <input asp-for="block.floor_count" placeholder="Number of Floor " required />
 
-    <input asp-for="block.floor_count" placeholder="Floor" />
-    <input asp-for="block.room_count" placeholder=" Room" />
+    <label asp-for="block.floor_count">Number of Room</label>
+    <input asp-for="block.room_count" placeholder="Number of Room" required />
   
     
-    <input type="submit" />
+    <input type="submit" class="btn btn-primary" />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a asp-action="Index" asp-controller="Block" class="btn btn-primary">Back to List</a>
+            @* <button type="submit" class="btn btn-primary">Create</button>*@
+            <button type="submit" name="action" value="Create" class="btn btn-primary">Create</button>
+            <button type="submit" name="action" value="CreateAndNext" class="btn btn-success">Create and Next</button>
+
+
+        </div>
 </form>

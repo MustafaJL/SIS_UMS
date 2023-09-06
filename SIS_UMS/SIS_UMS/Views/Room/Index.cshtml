@@ -1,4 +1,4 @@
-﻿@model IEnumerable<room>
+﻿@model IEnumerable<RoomViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -36,7 +36,7 @@
                         @item.room_id
                 </td>
                 <td width="30%">
-                        @item.block_id
+                        @item.block_code
                 </td>
                 <td width="30%">
                         @item.room_code

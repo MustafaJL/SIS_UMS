@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SIS_UMS.DatabaseHelper.Interfaces;
 using SIS_UMS.Models;
 
+
 namespace SIS_UMS.Controllers
 {
     [Route("Campus")]
@@ -33,18 +34,39 @@ namespace SIS_UMS.Controllers
         [HttpGet("CreateCampus")]
         public IActionResult CreateCampus()
         {
+
             return View();
         }
-      
-       [HttpPost("CreateCampus")]
-       [ValidateAntiForgeryToken]
-            public ActionResult CreateCampus(campus campus)
+
+        //[HttpPost("CreateCampus")]
+        //[ValidateAntiForgeryToken]
+        //     public ActionResult CreateCampus(campus campus)
+        //     {
+
+        //             _campusRepository.CreateCampus(campus);
+        //             return RedirectToAction("Index");
+
+        //     }
+        [HttpPost("CreateCampus")]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateCampus(campus campus, string action)
+        {
+            if (ModelState.IsValid)
             {
-               
-                    _campusRepository.CreateCampus(campus);
-                    return RedirectToAction("Index");
-             
+                _campusRepository.CreateCampus(campus);
+
+                if (action == "CreateAndNext")
+                {
+                    // Redirect to the CreateBlock action in the BlockController
+                    return RedirectToAction("CreateBlock", "Block");
+                }
+
+                // Redirect to the Index action in the CampusController
+                return RedirectToAction("Index");
             }
+
+            return View(campus);
+        }
 
 
 

@@ -29,9 +29,10 @@ namespace SIS_UMS.DatabaseHelper.Repositories
 
 
 
-        public async Task<IEnumerable<room>> GetAllRoom()
+        public async Task<IEnumerable<RoomViewModel>> GetAllRoom()
         {
-            List<room> room = new();
+      
+            List<RoomViewModel> room = new List<RoomViewModel>();
 
             using MySqlConnection connection = new(_connectionString);
             await connection.OpenAsync();
@@ -44,14 +45,15 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             // Convert the table to a list of type 
             while (reader.Read())
             {
-                room.Add(new room
+                room.Add(new RoomViewModel
                 {
                     room_id = reader.GetInt32("room_id"),
                     block_id = reader.GetInt32("block_id"),
                     room_code = reader.GetString("room_code"),
                     floor_number= reader.GetInt32("floor_number"),
                     room_capacity = reader.GetInt32("room_capacity"),
-                    created_at = reader.GetDateTime("created_at")
+                    created_at = reader.GetDateTime("created_at"),
+                    block_code = reader.GetChar("block_code"),
 
 
 

@@ -29,9 +29,9 @@ namespace SIS_UMS.DatabaseHelper.Repositories
 
 
 
-        public async Task<IEnumerable<block>> GetAllBlocks()
+        public async Task<IEnumerable<BlockViewModel>> GetAllBlocks()
         {
-            List<block> block = new();
+            List<BlockViewModel> blocks = new List<BlockViewModel>();
 
             using MySqlConnection connection = new(_connectionString);
             await connection.OpenAsync();
@@ -44,14 +44,15 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             // Convert the table to a list of type 
             while (reader.Read())
             {
-                block.Add(new block
+                blocks.Add(new BlockViewModel
                 {
                     block_id = reader.GetInt32("block_id"),
                     campus_id = reader.GetInt32("campus_id"),
                     created_at = reader.GetDateTime("created_at"),
                     block_code = reader.GetString("block_code"),
                     floor_count = reader.GetInt32("floor_count"),
-                    room_count = reader.GetInt32("room_count")
+                    room_count = reader.GetInt32("room_count"),
+                    campus_name = reader.GetString("campus_name")
 
 
 
@@ -60,7 +61,7 @@ namespace SIS_UMS.DatabaseHelper.Repositories
 
             connection.Close();
 
-            return block;
+            return blocks;
 
         }
 
