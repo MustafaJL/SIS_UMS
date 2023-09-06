@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Task 2\\Project\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\ApplicantFormJavaScript.js",
+      "PackagePath": "staticwebassets\\js\\ApplicantFormJavaScript.js"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Task 2\\Project\\SIS_UMS\\SIS_UMS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

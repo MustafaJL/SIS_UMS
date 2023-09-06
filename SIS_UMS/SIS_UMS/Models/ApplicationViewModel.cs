@@ -6,6 +6,8 @@ namespace SIS_UMS.Models
     {
         public User user { get; set; }
         public ProspectiveStudent student { get; set; }
+        public UserPhoneNumbers PersonalPhoneNumber { get; set; }
+        public UserPhoneNumbers EmergencyPhoneNumber { get; set; }
         public IEnumerable<Campus> campuses { get; set; }
         public IEnumerable<Faculty> faculties { get; set; }
         public IEnumerable<Department> departments { get; set; }

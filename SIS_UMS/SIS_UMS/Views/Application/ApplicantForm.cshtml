@@ -36,6 +36,7 @@
                     <div class="form-group">
                         <label for="personal_email">Personal Email</label>
                         <input asp-for="@Model.user.personal_email" type="email" class="form-control" id="personal_email" name="personal_email" required>
+                        <small class="text-danger" id="email_error" style="display: none;">Please enter a valid email address!</small>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -52,7 +53,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="date_of_birth">Date of Birth</label>
-                        <input asp-for="@Model.user.date_of_birth" type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                        <input asp-for="@Model.user.date_of_birth" type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="dd/mm/yyyy" required>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -177,19 +178,21 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="phone_number">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone_number" name="phone_number" required>
+                        <input asp-for="@Model.PersonalPhoneNumber.PhoneNumber" type="tel" class="form-control" id="phone_number" name="phone_number" required>
+                        <small class="error_message" id="phone_error" style="display:none;">Invalid Phone Format!</small>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="emergency_contact_name">Emergency Contact Name</label>
-                        <input type="text" class="form-control" id="emergency_contact_name" name="emergency_contact_name" required>
+                        <input asp-for="@Model.user.emergency_contact_name" type="text" class="form-control" id="emergency_contact_name" name="emergency_contact_name" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="emergency_phone_number">Emergency Phone Number</label>
-                        <input type="tel" class="form-control" id="emergency_phone_number" name="emergency_phone_number" required>
+                        <input asp-for="@Model.EmergencyPhoneNumber.PhoneNumber" type="tel" class="form-control" id="emergency_phone_number" name="emergency_phone_number" required>
+                        <small class="error_message" id="er_phone_error" style="display:none;">Invalid Phone Format!</small>
                     </div>
                 </div>
             </div>
@@ -197,19 +200,19 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" name="city" required>
+                        <input asp-for="@Model.user.city" type="text" class="form-control" id="city" name="city" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="area">Area</label>
-                        <input type="text" class="form-control" id="area" name="area" required>
+                        <input asp-for="@Model.user.area" type="text" class="form-control" id="area" name="area" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="street">Street</label>
-                        <input type="text" class="form-control" id="street" name="street" required>
+                        <input asp-for="@Model.user.street" type="text" class="form-control" id="street" name="street" required>
                     </div>
                 </div>
             </div>
@@ -217,22 +220,27 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="nearby">Nearby</label>
-                        <input type="text" class="form-control" id="nearby" name="nearby" required>
+                        <input asp-for="@Model.user.near_by" type="text" class="form-control" id="nearby" name="nearby" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="building">Building</label>
-                        <input type="text" class="form-control" id="building" name="building" required>
+                        <input asp-for="@Model.user.building" type="text" class="form-control" id="building" name="building" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="floor">Floor</label>
-                        <input type="number" class="form-control" id="floor" name="floor" min="0" required>
+                        <input asp-for="@Model.user.floor" type="number" class="form-control" id="floor" name="floor" min="0" required>
                     </div>
                 </div>
             </div>
+
+            <div id="step2_error" class="error_message" style="display:none;">
+                <p>Required fields are missing!</p>
+            </div>
+
         </div>
 
         <div class="step" id="step3" style="display: none;">
@@ -407,6 +415,10 @@
                     </div>
                 </div>
 
+            </div>
+
+            <div id="step3_error" class="error_message" style="display:none;">
+                <p>Required fields are missing!</p>
             </div>
 
         </div>
@@ -622,6 +634,7 @@
 
 
 <script>
+    //Function to track changes to the socially secured radio buttons and updating fields according to those changes
     document.addEventListener("DOMContentLoaded", function () {
         const sociallySecuredRadios = document.querySelectorAll('input[name="socially_secured"]');
         const ssnField = document.getElementById('ssnField');
@@ -644,6 +657,7 @@
 </script>
 
 <script>
+    //Functionality to track changes to the student status radio buttons and updating inputs accoeding to those changes
     const universityTransferredRadio = document.getElementById("university_transferred");
     const vocationalTransferredRadio = document.getElementById("vocational_transferred");
     const newStudentRadio = document.getElementById("new_student");
@@ -666,16 +680,20 @@
 </script>
 
 <script>
+    // Function to handle the steps of the application going through each step
     document.addEventListener("DOMContentLoaded", function () {
+        // getting the total steps in the application
         const steps = document.querySelectorAll('.step');
         let currentStep = 0;
 
+        //functions that shows the current step
         function showStep(stepIndex) {
             steps.forEach((step, index) => {
                 step.style.display = index === stepIndex ? 'block' : 'none';
             });
         }
 
+        //function to handle the visibility of next and previous button
         function updateButtonVisibility() {
             const nextStepBtn = document.getElementById('nextStep');
             const prevStepBtn = document.getElementById('prevStep');
@@ -693,6 +711,7 @@
             }
         }
 
+        //function to handle showing the next step according to validations function
         function nextStep() {
             console.log("Entered Next Step!");
             if (validateStep(currentStep)) {
@@ -704,6 +723,7 @@
             }
         }
 
+        //Function to handle showing the previous step in case user needs to check info
         function prevStep() {
             if (currentStep > 0) {
                 currentStep--;
@@ -711,12 +731,14 @@
             }
         }
 
+        //Handling the click of the next button
         const nextStepBtn = document.getElementById('nextStep');
         nextStepBtn.addEventListener('click', function () {
             nextStep();
             updateButtonVisibility();
         });
 
+        //Handling the click of the previous button
         const prevStepBtn = document.getElementById('prevStep');
         prevStepBtn.addEventListener('click', function () {
             prevStep();
@@ -724,11 +746,11 @@
         });
 
         updateButtonVisibility();
-
     });
 </script>
 
 <script>
+    //Function for populating the year select input
     function populateYearSelect(selectId) {
         const select = document.getElementById(selectId);
         const currentYear = new Date().getFullYear();
@@ -740,9 +762,11 @@
         }
     }
 
+    //populting the select inputs of years
     populateYearSelect("start_year");
     populateYearSelect("end_year");
 
+    //Handling the educational certificates input according to user choice
     const certificateTypeSelect = document.getElementById("certificate_type");
     const academicCertificateFields = document.getElementById("academic_certificate_fields");
     const vocationalCertificateField = document.getElementById("vocational_certificate_fields");
@@ -777,6 +801,7 @@
 </script>
 
 <script>
+    //Handling language certificate inputs according to user choices
     const EnglishCertificateRadios = document.querySelectorAll('input[name="english_certificate"]');
     const FrenchCertificateRadios = document.querySelectorAll('input[name="french_certificate"]');
     const EnglishCertificateNameField = document.getElementById("english_certificate_name");
@@ -806,6 +831,7 @@
 </script>
 
 <script>
+    //Handling Other Information inputs according to user choices
     const otherInterestCheckbox = document.getElementById("other_interest");
     const otherInterestField = document.getElementById("other_interest_field");
 
@@ -846,11 +872,6 @@
         $('#faculty').empty();
         // Filter faculties based on the selected campusId
         var filteredFaculties = facultiesData.filter(function (faculty) {
-            // Log for debugging purposes
-            console.log('selectedCampusId:', selectedCampusId);
-            console.log('faculty.campusId:', faculty.campusId);
-            console.log(faculty.campusId === selectedCampusId);
-
             return faculty.campusId === selectedCampusId;
         });
 
@@ -901,11 +922,6 @@
         $('#department').empty();
         // Filter faculties based on the selected facultyId
         var filteredDepartments = DepartmentsData.filter(function (department) {
-            // Log for debugging purposes
-            console.log('selectedFacultyId:', selectedFacultyId);
-            console.log('department.facultyId:', department.facultyId);
-            console.log(department.facultyId === selectedFacultyId);
-
             return department.facultyId === selectedFacultyId;
         });
 
@@ -955,11 +971,6 @@
         $('#major').empty();
         // Filter majors based on the selected facultyId
         var filteredmajors = majorsData.filter(function (major) {
-            // Log for debugging purposes
-            console.log('selectedDepartmentId:', selectedDepartmentId);
-            console.log('major.departmentId:', major.departmentId);
-            console.log(major.departmentId === selectedDepartmentId);
-
             return major.departmentId === selectedDepartmentId;
         });
 
@@ -1000,9 +1011,36 @@
 </script> 
 
 <script>
-    // Validation functions for each step
+    // Validation functions for each step of the application
     function validateStep(stepIndex) {
+
+        let isValid = true;
+
+        function validateField(field) {
+            if (!field.value.trim()) {
+                field.classList.add('error'); // Add a CSS class for highlighting
+                isValid = false;
+            } else {
+                field.classList.remove('error');
+            }
+        }
+
+        function validatePhoneNumber(PhoneNumber,divoferror){
+            const phoneFormat = /^961\d{8}$/;
+            inputvalue = PhoneNumber.value;
+            if (!phoneFormat.test(inputvalue)) {
+                PhoneNumber.classList.add('error');
+                isValid = false;
+                divoferror.style.display = 'block';
+            } else {
+                divoferror.style.display = 'none';
+                PhoneNumber.classList.remove('error');
+            }
+        }
+
+
         if(stepIndex === 0){
+            //Retrieving the elements that need validation in first step
             const firstName = document.getElementById('first_name');
             const middleName = document.getElementById('middle_name');
             const lastName = document.getElementById('last_name');
@@ -1018,29 +1056,32 @@
             const sociallySecuredNo = document.getElementById('socially_secured_no');
             const socialSecurityRadios = document.querySelectorAll('input[name="social_security_type"]');
             const errorDiv = document.getElementById('step1_error');
+            const emailError = document.getElementById('email_error');
 
-            let isValid = true;
-
-            function validateField(field, fieldName) {
-                if (!field.value.trim()) {
-                    field.classList.add('error'); // Add a CSS class for highlighting
-                    isValid = false;
-                } else {
-                    field.classList.remove('error');
-                }
-            }
 
             //Validate each field
-            validateField(firstName, 'First Name');
-            validateField(middleName, 'Middle Name');
-            validateField(lastName, 'Last Name');
-            validateField(motherName, "Mother's Full Name");
-            validateField(nationality, 'Nationality');
-            validateField(placeOfBirth, 'Place of Birth');
-            validateField(familyRegistration, 'Family Registration');
+            validateField(firstName);
+            validateField(middleName);
+            validateField(lastName);
+            validateField(motherName);
+            validateField(nationality);
+            validateField(placeOfBirth);
+            validateField(familyRegistration);
+
+            //Checking the email format entered by the user
+            const emailRegex = /^[A-Za-z0-9._%+\-]+@@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$/; 
+            if (!emailRegex.test(personalEmail.value.trim())) {
+                personalEmail.classList.add('error');
+                emailError.style.display = 'block';
+                isValid = false;
+            }else{
+                personalEmail.classList.remove('error');
+                emailError.style.display = "none";
+            }
 
             let isSocialSecurityChecked = false;
 
+            //Checking if socially secured question is answered
             if(!sociallySecuredYes.checked && !sociallySecuredNo.checked){
                 isValid = false;
             }
@@ -1055,8 +1096,8 @@
                 });
             }
 
+            // Handle the case where the user chose "Yes" but didn't select a social security option
             if (sociallySecuredYes.checked && !isSocialSecurityChecked) {
-                // Handle the case where the user chose "Yes" but didn't select a social security option
                 isValid = false;
             }
 
@@ -1069,6 +1110,45 @@
 
             return isValid;
         }
+
+
+        if(stepIndex === 1){
+            //Retrieving the elements that need validation in second step
+            const PhoneNumber = document.getElementById('phone_number');
+            const EmergencyContactName = document.getElementById('emergency_contact_name');
+            const EmergencyPhoneNumber = document.getElementById('emergency_phone_number');
+            const City = document.getElementById('city');
+            const Area = document.getElementById('area');
+            const Street = document.getElementById('street');
+            const Nearby = document.getElementById('nearby');
+            const Building = document.getElementById('building');
+            const Floor = document.getElementById('floor');
+            const PhoneError = document.getElementById('phone_error');
+            const ERPhoneError = document.getElementById('er_phone_error');
+            const errorDiv = document.getElementById('step2_error');
+
+            //Validating each input checking if empty
+            validateField(PhoneNumber);
+            validateField(EmergencyContactName);
+            validateField(EmergencyPhoneNumber);
+            validateField(City);
+            validateField(Area);
+            validateField(Street);
+            validateField(Nearby);
+            validateField(Building);
+            validateField(Floor);
+
+            //Validating the Phone Format the user entered
+            validatePhoneNumber(PhoneNumber, PhoneError);
+            validatePhoneNumber(EmergencyPhoneNumber,ERPhoneError);
+
+            return isValid;
+        }
+
+
+        //if(stepindex == 3){
+
+        //}
 
     }
 </script>
