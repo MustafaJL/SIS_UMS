@@ -28,6 +28,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXEVkaXRjYW1wdXNEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/AllDepartments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxBbGxEZXBhcnRtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/CreateDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxDcmVhdGVEZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/EditDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxFZGl0RGVwYXJ0bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/ShowDepartmentsInFaculty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxTaG93RGVwYXJ0bWVudHNJbkZhY3VsdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/AllFaculties.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxBbGxGYWN1bHRpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

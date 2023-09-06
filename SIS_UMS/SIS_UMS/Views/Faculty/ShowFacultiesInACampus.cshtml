@@ -45,7 +45,8 @@
             </td>
             <td>
                     @Html.ActionLink("Edit Faculty", "EditFaculty", new { id=item.faculty_id }) |
-                    @Html.ActionLink("Delete Faculty", "DeleteFaculty", new { id=item.faculty_id })
+                    @Html.ActionLink("Delete Faculty", "DeleteFaculty", new { id=item.faculty_id }) |
+                    @Html.ActionLink("Show Departments", "ShowDepartmentsInFaculty", "Department", new { id=item.faculty_id })
             </td>
         </tr>
 }

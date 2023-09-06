@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SIS_UMS.Models.Department>
+
+
+<h1>AllDepartments</h1>
+
+<p>
+    <a asp-action="CreateDepartment">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.faculty_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department_phone_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department_uni_email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.faculty_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department_phone_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department_uni_email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit Department", "EditDepartment", new { id=item.department_id }) |
+                    @Html.ActionLink("Delete Department", "DeleteDepartment", new { id=item.department_id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
