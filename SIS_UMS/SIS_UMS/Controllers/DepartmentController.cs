@@ -27,6 +27,14 @@ namespace SIS_UMS.Controllers
             return View(departments);
         }
 
+        // GET: DepartmentController/Read
+        [HttpGet("AllDepartments/{id}")]
+        public IActionResult ShowDepartmentsInFaculty(int id)
+        {
+            IEnumerable<Department> departments = _departmentRepository.GetAllDepartmentsInAFaculty(id);
+            return View(departments);
+        }
+
         [HttpGet("CreateDepartment")]
         public IActionResult CreateDepartment()
         {
@@ -72,12 +80,6 @@ namespace SIS_UMS.Controllers
             return RedirectToAction("AllDepartments");
         }
 
-        // GET: DepartmentController/Read
-        [HttpGet("AllDepartments/{id}")]
-        public IActionResult ShowDepartmentsInFaculty(int id)
-        {
-            IEnumerable<Department> departments = _departmentRepository.GetAllDepartmentsInAFaculty(id);
-            return View(departments);
-        }
+      
     }
 }

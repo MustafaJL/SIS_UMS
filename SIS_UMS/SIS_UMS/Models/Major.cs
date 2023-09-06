@@ -4,6 +4,7 @@
     {
         public int major_id{ get; set;}
         public int department_id{ get; set;}
+        public string department_name { get; set;}
         public string major_name{ get; set;}
         public int university_requirements{ get; set;}
         public int department_requirements{ get; set;}

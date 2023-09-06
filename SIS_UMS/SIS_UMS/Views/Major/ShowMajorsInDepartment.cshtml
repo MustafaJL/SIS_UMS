@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SIS_UMS.Models.Major>
+
+@{
+    ViewData["Title"] = "ShowMajorsInDepartment";
+}
+
+<h1>ShowMajorsInDepartment</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.department_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.major_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.university_requirements)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department_requirements)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.concentration_requirements)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.elective_requirements)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.department_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.major_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.university_requirements)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department_requirements)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.concentration_requirements)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.elective_requirements)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit Major", "EditMajor", new { id=item.department_id  }) |
+                    @Html.ActionLink("Delete Major", "DeleteMajor", new { id=item.department_id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
