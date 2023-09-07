@@ -1,0 +1,55 @@
+﻿@model SIS_UMS.Models.View_Model.MajorDepartmentViewModel
+
+<h1>EditMajor</h1>
+
+<h4>Major</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditMajor">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.major.major_name" class="control-label"></label>
+                <input asp-for="@Model.major.major_name" class="form-control" />
+                <span asp-validation-for="@Model.major.major_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.major.university_requirements" class="control-label"></label>
+                <input asp-for="@Model.major.university_requirements" class="form-control" />
+                <span asp-validation-for="@Model.major.university_requirements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <label asp-for="@Model.major.department_id">Select Department:</label>
+                 <select asp-for="@Model.major.department_id" class="form-control">
+                 <option asp-for="@Model.major.department_id">-- Select Department --</option>
+                    @foreach (var department in Model.departments)
+                    {
+                       <option value="@department.department_id">@department.department_name</option> 
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.major.department_requirements" class="control-label"></label>
+                <input asp-for="@Model.major.department_requirements" class="form-control" />
+                <span asp-validation-for="@Model.major.department_requirements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.major.concentration_requirements" class="control-label"></label>
+                <input asp-for="@Model.major.concentration_requirements" class="form-control" />
+                <span asp-validation-for="@Model.major.concentration_requirements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.major.elective_requirements" class="control-label"></label>
+                <input asp-for="@Model.major.elective_requirements" class="form-control" />
+                <span asp-validation-for="@Model.major.elective_requirements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -59,5 +59,25 @@ namespace SIS_UMS.Controllers
             _majorRepository.CreateMajor(major.department_id, major.major_name, major.university_requirements, major.department_requirements,major.elective_requirements,major.concentration_requirements);
             return RedirectToAction("AllMajors");
         }
+
+        [HttpGet("EditMajor/{id}")]
+        public IActionResult EditMajor(int id)
+        {
+            MajorDepartmentViewModel MajorDepartmentViewModel = new MajorDepartmentViewModel
+            {
+                major = _majorRepository.GetMajorById(id),
+                departments = _departmentRepository.GetAllDepartments()
+            };
+            return View(MajorDepartmentViewModel);
+        }
+
+
+        // POST: MajorController/Edit
+        [HttpPost("EditMajor/{id}")]
+        public IActionResult EditMajor(int id, Major Major)
+        {
+            _majorRepository.EditMajor(id,Major.major_name,Major.department_id,Major.university_requirements,Major.department_requirements,Major.elective_requirements,Major.concentration_requirements);
+            return RedirectToAction("AllMajors");
+        }
     }
 }
