@@ -2,6 +2,7 @@
 using SIS_UMS.DatabaseHelper.Interfaces;
 using SIS_UMS.DatabaseHelper.Repositories;
 using SIS_UMS.Models;
+using SIS_UMS.Models.View_Model;
 
 namespace SIS_UMS.Controllers
 {
@@ -32,6 +33,31 @@ namespace SIS_UMS.Controllers
         {
             IEnumerable<Major> majors = _majorRepository.GetAllMajorsInADepartment(id);
             return View(majors);
+        }
+
+        public async Task<IActionResult> DeleteMajor(int id)
+        {
+            await _majorRepository.DeleteMajor(id);
+            return RedirectToAction("AllMajors");
+        }
+
+        [HttpGet("CreateMajor")]
+        public IActionResult CreateMajor()
+        {
+            MajorDepartmentViewModel MajorDepartmentViewModel = new MajorDepartmentViewModel
+            {
+                major = new Major(),
+                departments= _departmentRepository.GetAllDepartments()
+            };
+            return View(MajorDepartmentViewModel);
+        }
+
+        // POST: DepartmentController/Create
+        [HttpPost("CreateMajor")]
+        public IActionResult CreateMajor(Major major)
+        {
+            _majorRepository.CreateMajor(major.department_id, major.major_name, major.university_requirements, major.department_requirements,major.elective_requirements,major.concentration_requirements);
+            return RedirectToAction("AllMajors");
         }
     }
 }

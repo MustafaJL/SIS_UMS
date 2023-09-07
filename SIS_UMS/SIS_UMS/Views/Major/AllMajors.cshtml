@@ -7,7 +7,7 @@
 <h1>AllMajors</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="CreateMajor">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -55,9 +55,8 @@
                 @Html.DisplayFor(modelItem => item.elective_requirements)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "EditMajor", new { id=item.major_id}) |
+                @Html.ActionLink("DeleteMajor", "DeleteMajor", new { id=item.major_id})
             </td>
         </tr>
 }

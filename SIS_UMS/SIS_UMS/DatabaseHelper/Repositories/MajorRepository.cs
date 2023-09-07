@@ -36,7 +36,7 @@ namespace SIS_UMS.DatabaseHelper.Repositories
                 {
                     major_id = reader.GetInt32("major_id"),
                     department_id = reader.GetInt32("department_id"),
-                    department_name = reader.GetString("faculty_name"),
+                    department_name = reader.GetString("department_name"),
                     major_name = reader.GetString("major_name"),
                     university_requirements=reader.GetInt32("university_requirements"),
                     department_requirements=reader.GetInt32("department_requirements"),
@@ -82,5 +82,41 @@ namespace SIS_UMS.DatabaseHelper.Repositories
 
             return majors;
         }
+
+        public async Task<bool> DeleteMajor(int majorid)
+        {
+            using MySqlConnection connection = new(_connectionString);
+            await connection.OpenAsync();
+
+            using MySqlCommand command = new("delete_major", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@p_major_id", majorid);
+
+            command.ExecuteNonQuery();
+            connection.Close();
+            return true;
+        }
+
+        public void CreateMajor(int department_id, string major_name, int university_requirements, int department_requirements,int elective_requirements, int concentration_requirements)
+        {
+            using MySqlConnection connection = new(_connectionString);
+            connection.Open();
+
+            using MySqlCommand command = new("create_major", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+
+            command.Parameters.AddWithValue("@p_department_id", department_id);
+            command.Parameters.AddWithValue("@p_major_name", major_name);
+            command.Parameters.AddWithValue("@p_university_requirements", university_requirements);
+            command.Parameters.AddWithValue("@p_department_requirements", department_requirements);
+            command.Parameters.AddWithValue("@p_elective_requirements", elective_requirements);
+            command.Parameters.AddWithValue("@p_concentration_requirements", concentration_requirements);
+
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
     }
 }
