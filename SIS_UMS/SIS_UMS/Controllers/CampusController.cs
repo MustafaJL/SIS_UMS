@@ -51,27 +51,27 @@ namespace SIS_UMS.Controllers
 
         // GET: CampusController
         [HttpGet("AllCampuses")]
-        public ActionResult AllCampuses()
+        public async Task<ActionResult> AllCampuses()
         {
-            IEnumerable<Campus> campuses = _campusRepository.GetAllCampuses();
+            IEnumerable<Campus> campuses = await _campusRepository.GetAllCampuses();
             return View(campuses);
         }
 
         // GET: CampusController
         [HttpGet("EditCampusDetails/{id}")]
-        public ActionResult EditCampusDetails(int id)
+        public async Task<ActionResult> EditCampusDetails(int id)
         {
-            Campus campus = _campusRepository.GetCampus(id);
+            Campus campus = await _campusRepository.GetCampus(id);
             return View(campus);
         }
 
         // POST: CampusController
         [HttpPost("EditCampusDetails/{id}")]
-        public ActionResult EditCampusDetails(int id, Campus campus)
+        public  async Task<ActionResult> EditCampusDetails(int id, Campus campus)
         {
             try
             {
-                bool isSuccess = _campusRepository.EditCampus(id, campus.campus_name, campus.campus_address, campus.campus_phone_number, campus.campus_fax, campus.campus_email);
+                bool isSuccess = _campusRepository.EditCampus(id, campus);
                 if (isSuccess)
                 {
                     return RedirectToAction("AllCampuses");

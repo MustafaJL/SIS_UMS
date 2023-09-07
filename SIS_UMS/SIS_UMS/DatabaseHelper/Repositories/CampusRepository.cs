@@ -18,12 +18,12 @@ namespace SIS_UMS.DatabaseHelper.Repositories
         }
 
         /// <inheritdoc/>
-        public IEnumerable<Campus> GetAllCampuses()
+        public async Task<IEnumerable<Campus>> GetAllCampuses()
         {
             List<Campus> campuses = new();
 
             using MySqlConnection connection = new(_connectionString);
-            connection.Open();
+            await connection.OpenAsync();
 
             using MySqlCommand command = new("getAllCampuses", connection);
             command.CommandType = CommandType.StoredProcedure;
@@ -71,10 +71,10 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             connection.Close();
             return result;
         }
-        public Campus GetCampus(int campus_id)
+        public async Task<Campus> GetCampus(int campus_id)
         {
             using MySqlConnection connection = new(_connectionString);
-            connection.Open();
+            await connection.OpenAsync();
             using MySqlCommand command = new("get_campus_from_id", connection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@p_campus_id", campus_id);
@@ -95,7 +95,7 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             return campus;
         }
 
-        public bool EditCampus(int? campus_id, string? campus_name, string? campus_address, string? campus_phone_number, string? campus_fax, string? campus_email)
+        public bool EditCampus(int campus_id, Campus campus)
         {
             using MySqlConnection connection = new(_connectionString);
             connection.Open();
@@ -104,11 +104,11 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.AddWithValue("@p_campus_id", campus_id);
-            command.Parameters.AddWithValue("@p_campus_name", campus_name);
-            command.Parameters.AddWithValue("@p_campus_address", campus_address);
-            command.Parameters.AddWithValue("@p_campus_phone_number", campus_phone_number);
-            command.Parameters.AddWithValue("@p_campus_email", campus_email);
-            command.Parameters.AddWithValue("@p_campus_fax", campus_fax);
+            command.Parameters.AddWithValue("@p_campus_name", campus.campus_name);
+            command.Parameters.AddWithValue("@p_campus_address", campus.campus_address);
+            command.Parameters.AddWithValue("@p_campus_phone_number", campus.campus_phone_number);
+            command.Parameters.AddWithValue("@p_campus_email", campus.campus_email);
+            command.Parameters.AddWithValue("@p_campus_fax", campus.campus_fax);
 
             command.Parameters.Add(new MySqlParameter("@edited_successfully", MySqlDbType.Bit));
             command.Parameters["@edited_successfully"].Direction = ParameterDirection.Output;

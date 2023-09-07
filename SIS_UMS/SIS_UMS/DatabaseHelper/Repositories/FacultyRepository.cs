@@ -88,10 +88,10 @@ namespace SIS_UMS.DatabaseHelper.Repositories
             return faculties;
         }
 
-        public bool CreateFaculty(int campus_id,string faculty_name,int dean_user_id,string faculty_phone_number,string faculty_uni_email)
+        public async Task<bool> CreateFaculty(int campus_id,string faculty_name,int dean_user_id,string faculty_phone_number,string faculty_uni_email)
         {
             using MySqlConnection connection = new(_connectionString);
-            connection.Open();
+            await connection.OpenAsync();
 
             using MySqlCommand command = new("create_faculty", connection);
             command.CommandType = CommandType.StoredProcedure;

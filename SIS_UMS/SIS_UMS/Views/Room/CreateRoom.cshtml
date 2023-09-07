@@ -1,0 +1,30 @@
+﻿@model SIS_UMS.Models.ViewModels.RoomBlockViewModel
+
+@{
+    ViewData["Title"] = "CreateRoom";
+}
+
+<form asp-action="CreateRoom" asp-controller="Room">
+    <label asp-for="room.room_code" >Room Code</label>
+    <input asp-for="room.room_code" placeholder="Room Code :" required />
+
+    <div class="form-group">
+        <label asp-for="room.block_id">Select Block :</label>
+        <select asp-for="room.block_id" asp-items="new SelectList(Model.block, nameof(block.block_id), nameof(block.block_code))" class="form-control">
+            <option value="">-- Select Block --</option>
+        </select>
+    </div>
+
+    <label asp-for="room.floor_number" >Floor Number</label>
+    <input asp-for="room.floor_number" required />
+
+    <label asp-for="room.room_capacity"> Room Capacity</label>
+    <input asp-for="room.room_capacity"  required />
+
+    <a asp-action="Index" asp-controller="Campus" class="btn btn-primary">Back to List</a>
+
+    <button type="submit" name="action" value="Create" class="btn btn-primary">Create</button>
+    <button type="submit" name="action" value="CreateAndNext" class="btn btn-success">Create and Next</button>
+
+
+</form>

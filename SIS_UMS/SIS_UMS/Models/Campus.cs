@@ -9,6 +9,6 @@
         public string? campus_email { get; set; }
         public string? campus_fax { get; set; }
         public Boolean? is_deleted { get; set; }
-        public DateTime? created_at{get; set;}
+        public DateTime? created_at { get; set; }
     }
 }

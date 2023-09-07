@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SIS_UMS.Models.ViewModels.RoomViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="CreateRoom">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+
+            <th>ID</th>
+            <th>Block</th>
+            <th>Room Code</th>
+            <th>Floor Number</th>
+            <th>Capacity</th>
+            <th>Created Date</th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+
+
+                <tr>
+                    <td width="30%">
+                        @item.room_id
+                    </td>
+                    <td width="30%">
+                        @item.block_code
+                    </td>
+                    <td width="30%">
+                        @item.room_code
+                    </td>
+                    <td width="30%">
+                        @item.floor_number
+                    </td>
+                    <td width="30%">
+                        @item.room_capacity
+                    </td>
+                    <td width="30%">
+                        @item.created_at
+                    </td>
+                    <td>
+                        <div>
+                            <a asp-action="UpdateRoom" asp-controller="Room" asp-route-id="@item.room_id" class="btn btn-primary m-md-2">Edit </a>
+                            <a asp-action="DeleteRoom" asp-controller="Room" asp-route-id="@item.room_id" class="btn btn-primary m-md-2">Delete </a>
+
+                        </div>
+                    </td>
+                </tr>
+
+                </tr>
+        }
+    </tbody>
+</table>

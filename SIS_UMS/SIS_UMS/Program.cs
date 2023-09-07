@@ -10,6 +10,8 @@ builder.Services.AddScoped<ICampusRepository, CampusRepository>();
 builder.Services.AddScoped<IMajorRepository, MajorRepository>();
 builder.Services.AddScoped<IFacultyRepository, FacultyRepository>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+builder.Services.AddScoped<IBlockRepository, BlockRepository>();
 
 var app = builder.Build();
 

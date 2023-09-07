@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Admin\Documents\github projects\SIS_UMS\SIS_UMS\SIS_UMS
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/CreateBlock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvY2tcQ3JlYXRlQmxvY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvY2tcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/UpdateBlock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvY2tcVXBkYXRlQmxvY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/AllCampuses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXEFsbENhbXB1c2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -82,6 +94,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/ShowMajorsInDepartment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFqb3JcU2hvd01ham9yc0luRGVwYXJ0bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/CreateRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxDcmVhdGVSb29tLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/UpdateRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxVcGRhdGVSb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/Error.cshtml]

@@ -1,0 +1,68 @@
+﻿@model SIS_UMS.Models.ViewModels.BlockCampusViewModel
+
+@{
+    ViewData["Title"] = "UpdateBlock";
+}
+
+<h1>Update Block</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateBlock">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="block.block_id" />
+
+            <div class="form-group">
+                <label asp-for="block.block_code" class="control-label"> Name:</label>
+                <input asp-for="block.block_code" class="form-control" />
+                <span asp-validation-for="block.block_code" class="text-danger"></span>
+            </div>
+        @*    <div class="form-group">
+                <label asp-for="block.campus_id">Select Campus:</label>
+                <select asp-for="block.campus_id" asp-items="new SelectList(Model.campus, nameof(campus.campus_id), nameof(campus.campus_name))" class="form-control">
+                    <option value="block.campus_id"></option>
+                </select>
+            </div>*@
+            <div class="form-group">
+                 <label asp-for="block.campus_id">Select Campus:</label>
+                 <select asp-for="block.campus_id" class="form-control">
+                 <option asp-for="block.campus_id">-- Select Campus --</option>
+                    @foreach (var campus in Model.campus)
+                    {
+                               <option value="@campus.campus_id">@campus.campus_name</option> 
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="block.floor_count" class="control-label">Floor</label>
+                <input asp-for="block.floor_count" class="form-control" />
+                <span asp-validation-for="block.floor_count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="block.room_count" class="control-label">Number of Room</label>
+                <input asp-for="block.room_count" class="form-control" />
+                <span asp-validation-for="block.room_count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="block.created_at" class="control-label"> Created Date</label>
+                <input asp-for="block.created_at" class="form-control" />
+                <span asp-validation-for="block.created_at" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

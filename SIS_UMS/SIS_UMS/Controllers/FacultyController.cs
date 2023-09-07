@@ -39,41 +39,41 @@ namespace SIS_UMS.Controllers
 
         // GET: FacultyController/Create
         [HttpGet("CreateFaculty")]
-        public IActionResult CreateFaculty()
+        public async Task<IActionResult> CreateFaculty()
         {
             FacultyUserCampusViewModel FacultyUserCampus = new FacultyUserCampusViewModel
             {
                 faculty = new Faculty(),
                 users = _userRepository.GetAllUsers(),
-                campuses = _campusRepository.GetAllCampuses()
+                campuses = await _campusRepository.GetAllCampuses()
             };
             return View(FacultyUserCampus);
         }
 
         // POST: FacultyController/Create
         [HttpPost("CreateFaculty")]
-        public IActionResult CreateFaculty(Faculty faculty)
+        public async Task<IActionResult> CreateFaculty(Faculty faculty)
         {
-            _facultyRepository.CreateFaculty(faculty.campus_id,faculty.faculty_name,faculty.dean_user_id,faculty.faculty_phone_number,faculty.faculty_uni_email);
+            await _facultyRepository.CreateFaculty(faculty.campus_id,faculty.faculty_name,faculty.dean_user_id,faculty.faculty_phone_number,faculty.faculty_uni_email);
             return RedirectToAction("AllFaculties","Faculty");
         }
 
         // Get: FacultyController/Edit
         [HttpGet("EditFaculty/{id}")]
-        public IActionResult EditFaculty(int id)
+        public async Task<IActionResult> EditFaculty(int id)
         {
             FacultyUserCampusViewModel FacultyUserCampus = new FacultyUserCampusViewModel
             {
                 faculty =_facultyRepository.GetFaculty(id),
                 users = _userRepository.GetAllUsers(),
-                campuses = _campusRepository.GetAllCampuses()
+                campuses = await _campusRepository.GetAllCampuses()
             };
             return View(FacultyUserCampus);
         }
 
         // POST: FacultyController/Edit
         [HttpPost("EditFaculty/{id}")]
-        public IActionResult EditFaculty(int id, Faculty faculty)
+        public async Task<IActionResult> EditFaculty(int id, Faculty faculty)
         {
              _facultyRepository.EditFaculty(id,faculty.campus_id,faculty.faculty_name,faculty.dean_user_id,faculty.faculty_phone_number,faculty.faculty_uni_email);
               return RedirectToAction("AllFaculties");
