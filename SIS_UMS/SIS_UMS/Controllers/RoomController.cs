@@ -27,6 +27,7 @@ namespace SIS_UMS.Controllers
         {
 
             // Retrieve the blocks data using your existing repository method
+            //sss
             var rooms = await _roomRepository.GetAllRoom();
 
             // Create a list of BlockViewModel and populate it with the data

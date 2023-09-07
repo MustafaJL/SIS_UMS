@@ -9,121 +9,121 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SIS_UMS
 build_property.RootNamespace = SIS_UMS
-build_property.ProjectDir = C:\Users\Admin\Documents\github projects\SIS_UMS\SIS_UMS\SIS_UMS\
+build_property.ProjectDir = C:\Users\user\Desktop\SIS_UMS_2.0\SIS_UMS\SIS_UMS\SIS_UMS\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Admin\Documents\github projects\SIS_UMS\SIS_UMS\SIS_UMS
+build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\SIS_UMS_2.0\SIS_UMS\SIS_UMS\SIS_UMS
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/CreateBlock.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/CreateBlock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvY2tcQ3JlYXRlQmxvY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/Index.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvY2tcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/UpdateBlock.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Block/UpdateBlock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvY2tcVXBkYXRlQmxvY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/AllCampuses.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/AllCampuses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXEFsbENhbXB1c2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/CreateCampus.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/CreateCampus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXENyZWF0ZUNhbXB1cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/EditcampusDetails.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Campus/EditcampusDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHVzXEVkaXRjYW1wdXNEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/AllDepartments.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/AllDepartments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxBbGxEZXBhcnRtZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/CreateDepartment.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/CreateDepartment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxDcmVhdGVEZXBhcnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/EditDepartment.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/EditDepartment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxFZGl0RGVwYXJ0bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/ShowDepartmentsInFaculty.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Department/ShowDepartmentsInFaculty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxTaG93RGVwYXJ0bWVudHNJbkZhY3VsdHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/AllFaculties.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/AllFaculties.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxBbGxGYWN1bHRpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/CreateFaculty.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/CreateFaculty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxDcmVhdGVGYWN1bHR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/EditFaculty.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/EditFaculty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxFZGl0RmFjdWx0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/ShowFacultiesInACampus.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Faculty/ShowFacultiesInACampus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVxTaG93RmFjdWx0aWVzSW5BQ2FtcHVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Index.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Privacy.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/AllMajors.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/AllMajors.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFqb3JcQWxsTWFqb3JzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/CreateMajor.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/CreateMajor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFqb3JcQ3JlYXRlTWFqb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/EditMajor.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/EditMajor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFqb3JcRWRpdE1ham9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/ShowMajorsInDepartment.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Major/ShowMajorsInDepartment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFqb3JcU2hvd01ham9yc0luRGVwYXJ0bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/CreateRoom.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/CreateRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxDcmVhdGVSb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/Index.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/UpdateRoom.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Room/UpdateRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxVcGRhdGVSb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/Error.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewImports.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewStart.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/github projects/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_Layout.cshtml]
+[C:/Users/user/Desktop/SIS_UMS_2.0/SIS_UMS/SIS_UMS/SIS_UMS/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-rxsrsw477e
